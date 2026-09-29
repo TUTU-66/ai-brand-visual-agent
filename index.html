@@ -107,6 +107,23 @@
     @media(prefers-reduced-motion:reduce){.preview-window img{animation:none}}
     @media(min-width:700px){:root{--h:min(844px,calc(100vh - 56px))}body{background:radial-gradient(circle at 50% 42%,#f1ecff 0,#d7d1da 43%,#bdb7be 100%)}.app{width:390px;border-radius:28px;box-shadow:0 34px 100px rgba(31,26,43,.3),0 0 0 1px rgba(255,255,255,.52)}}
     @media(max-height:760px){.screen{padding-top:50px}.cover-copy{margin-top:8px}.brand-mark{width:82px;height:82px;margin-bottom:14px}.cover h1{font-size:40px}.intro-grid{gap:6px;margin-top:12px}.intro-card{padding:12px}.route-item{min-height:74px}.module-card{padding:12px}.months{margin-top:12px}.month{min-height:160px}.event-grid{margin-top:11px}.contact-card{height:375px;bottom:45px}.qr-area{grid-template-columns:120px 1fr}.qr{width:120px}.case-stage{top:125px}.case-visual{height:535px}@keyframes floatLong{to{transform:translateY(calc(-100% + 535px))}}}
+    /* v0.6.10 — remove interior labels and protect the bottom action area on short phones */
+    :root{--visual-h:calc(var(--h) - 230px)}
+    .mini-mark{display:none!important}
+    .screen:not(.cover){padding-top:30px;padding-bottom:94px}
+    .case-headline{top:28px}
+    .case-stage,.digital-case .digital-stage{inset:110px 0 0}
+    .case-visual,.digital-visual{height:var(--visual-h)}
+    .scroll-rail{height:calc(var(--visual-h) - 40px)}
+    .case-tabs,.digital-tabs{bottom:82px}
+    .contact-card{bottom:91px;height:min(390px,calc(var(--h) - 250px))}
+    @keyframes floatLong{to{transform:translateY(calc(-100% + var(--visual-h)))}}
+    @media(max-height:760px){
+      .route-map{margin-top:8px;padding:4px 12px}.route-map:before{left:29px;top:24px;bottom:24px}.route-item{min-height:62px}.route-item b{font-size:16px}.route-item small{font-size:11px!important}.route-foot{display:none}
+      .foundation-work{padding-top:20px}.foundation-work h2{font-size:30px;margin-bottom:8px}.foundation-work p.muted{font-size:13px;line-height:1.5}.foundation-work .twin{margin-top:12px;gap:8px}.foundation-work .twin-card{min-height:0;padding:12px 14px}.foundation-work .twin-card h3{font-size:18px;margin:5px 0}.foundation-work .twin-card p{font-size:11px;line-height:1.45}.foundation-work .twin-list{margin-top:7px;gap:4px}.foundation-work .twin-list span{font-size:10px}.foundation-work .asset-strip{margin-top:6px}
+      .months{gap:6px;margin:10px 0 8px}.month{min-height:0!important;padding:9px 12px;grid-template-columns:35px 78px 1fr}.month .n{font-size:21px}.month b{font-size:14px}.month p{font-size:10px;line-height:1.35}.run-in .quote{margin-top:9px;font-size:16px}
+      .outcome-grid{gap:4px;margin-top:10px}.outcome{height:42px;padding:6px 11px}.outcome b{font-size:13px}
+    }
     @media(prefers-reduced-motion:reduce){.deck{scroll-behavior:auto}.enter,.case-panel{transition:none}.case-visual img{animation:none}}
   </style>
 </head>
