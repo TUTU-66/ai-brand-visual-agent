@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>分格漫画生成器｜梦玉视觉能力岛</title>
+  <link rel="stylesheet" href="comic.css?v=stage-compact-4">
+<link rel="stylesheet" href="platform-theme.css?v=tool-shell-3">
+<script src="platform-theme.js?v=tool-shell-3"></script></head>
+<body class="platform-comic">
+  <header class="topbar">
+    <a class="back" href="index.html">← 返回能力岛</a>
+    <div class="tool-name"><span>C</span><div><b>分格漫画生成器</b><small>选择角色和画风，带走可复用设定</small></div></div>
+    <div class="top-actions"><button class="ghost" id="saveProject">保存项目</button><button class="primary" id="exportProfile" hidden>下载草稿配置</button></div>
+  </header>
+
+  <main class="workspace">
+    <aside class="style-panel">
+      <div class="panel-heading"><span>STYLE</span><h1>选择视觉风格</h1><p>选择已有风格参考；当前不会重新生成案例画面。</p></div>
+      <div class="style-grid" id="styleGrid">
+        <button class="style-card active" data-style="p01" data-name="扁平编辑"><img src="assets/comic/p01.png" alt="扁平编辑漫画预览"><span><b>扁平编辑</b><small>知识解释 · 清楚轻快</small></span></button>
+        <button class="style-card" data-style="p02" data-name="轻线条"><img src="assets/comic/p02.png" alt="轻线条漫画预览"><span><b>轻线条</b><small>人物连载 · 亲和自然</small></span></button>
+        <button class="style-card" data-style="p03" data-name="手绘日记"><img src="assets/comic/p03.png" alt="手绘日记漫画预览"><span><b>手绘日记</b><small>个人经验 · 温暖松弛</small></span></button>
+        <button class="style-card" data-style="p04" data-name="黑白报刊"><img src="assets/comic/p04.png" alt="黑白报刊漫画预览"><span><b>黑白报刊</b><small>观点观察 · 有力度</small></span></button>
+        <button class="style-card" data-style="p05" data-name="孔版印刷"><img src="assets/comic/p05.png" alt="孔版印刷漫画预览"><span><b>孔版印刷</b><small>步骤知识 · 年轻醒目</small></span></button>
+        <button class="style-card" data-style="p06" data-name="剪纸拼贴"><img src="assets/comic/p06.png" alt="剪纸拼贴漫画预览"><span><b>剪纸拼贴</b><small>抽象关系 · 图形表达</small></span></button>
+      </div>
+    </aside>
+
+    <section class="preview-stage" aria-label="漫画预览">
+      <div class="stage-bar">
+        <div class="stage-status"><span class="status-dot"></span><b id="routeStatus">解释型内容</b><small>已有样张 · 非实时生成</small></div>
+        <div class="stage-actions"><button id="fitPreview" type="button">完整显示</button><button id="zoomPreview" type="button">放大查看</button><button class="icon-btn" id="refreshRoute" aria-label="重新分析内容">↻</button></div>
+      </div>
+      <div class="canvas-wrap">
+        <article class="comic-canvas" id="comicCanvas">
+          <header><p id="previewKicker">稳定输出指南</p><h2 id="previewTitle">为什么<span>结果</span><br>总在<em>漂移</em>？</h2></header>
+          <img id="previewImage" src="assets/comic/preview-panels.png" alt="当前漫画风格预览">
+        </article>
+      </div>
+      <div class="stage-foot"><span id="styleState">扁平编辑 · 个人风格校准中</span><span>配置记录小红书、小绿书与朋友圈用途</span></div>
+    </section>
+
+    <aside class="inspector">
+      <section class="control-section"><div class="section-title"><span>01</span><h2>内容</h2></div>
+        <label>标题<input id="titleInput" value="为什么结果总在漂移？"></label>
+        <label>校准内容<textarea id="contentInput" rows="5">同样的内容，为什么每次生成的角色、画风和版式都会变化？先固定人物和风格，再让内容决定分镜。</textarea></label>
+        <button class="wide-button" id="analyzeBtn">分析内容类型</button>
+      </section>
+      <section class="control-section"><div class="section-title"><span>02</span><h2>个人形象</h2></div>
+        <label class="toggle-row"><span><b>使用我的漫画形象</b><small>填写角色设定；尚未接入形象生成</small></span><input id="identityToggle" type="checkbox"><i></i></label>
+        <div class="identity-fields" id="identityFields" hidden>
+          <label>角色名称<input id="characterName" placeholder="例如：梦玉"></label>
+          <label>身份特点<input id="characterTraits" placeholder="短发、眼镜、米色外套"></label>
+          <label class="upload">添加参考照片<input id="portraitUpload" type="file" accept="image/*"><span id="uploadState">仅用于当前项目</span></label>
+        </div>
+      </section>
+      <section class="control-section"><div class="section-title"><span>03</span><h2>颜色与字体</h2></div>
+        <div class="color-row"><label>主色<input id="primaryColor" type="color" value="#315cd6"></label><label>强调色<input id="accentColor" type="color" value="#ef5a3c"></label><label>底色<input id="paperColor" type="color" value="#f6f2e9"></label></div>
+        <label>字体组合<select id="fontPair"><option value="editorial">现代编辑黑体</option><option value="diary">手记楷体</option><option value="news">报刊宋体</option><option value="bold">醒目黑体</option></select></label>
+        <p class="hint">颜色和字体即时作用于标题及底色；图片内的文字与颜色不会改变。设置会保存到配置中。</p>
+      </section>
+      <section class="control-section export-section"><div class="section-title"><span>04</span><h2>带走</h2></div><p>确认样稿后，带走可复用的角色、画风、配色和字体规则。测试内容不作为以后必须复用的固定内容。当前仅可下载草稿配置；漫画样稿生成与完整 Skill 包尚未接入，参考照片不会随配置导出。</p><button class="wide-button secondary" id="runRegression">保存待验证草稿</button></section>
+    </aside>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="comic.js?v=stage-compact-4"></script>
+</body>
+</html>
+
+
+

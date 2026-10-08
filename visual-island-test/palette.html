@@ -1,0 +1,100 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>五色配色卡｜梦玉视觉能力岛</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="platform-theme.css?v=unified-2">
+  <link rel="stylesheet" href="palette.css?v=5">
+  <script src="platform-theme.js?v=unified-2"></script>
+</head>
+<body class="platform-palette">
+  <header class="appbar">
+    <a class="back" href="index.html">← 返回能力岛</a>
+    <div class="tool-name"><span>P</span><div><b>五色配色卡</b><small>从常用套色开始，少调几步就能带走</small></div></div>
+    <div class="top-spacer"></div>
+    <div class="top-actions">
+      <button class="quiet" id="saveBtn">保存配色</button>
+      <button class="primary" id="copyAllBtn">复制整组</button>
+    </div>
+  </header>
+
+  <main class="palette-workspace">
+    <aside class="palette-panel" aria-label="配色选择与调整">
+      <div class="panel-intro">
+        <small>CURATED PALETTES</small>
+        <h1>先选接近的，<br>再做一点调整</h1>
+        <p>先按用途选一组能直接落地的五色卡，再做少量调整。趋势色只作依据，不让你自己研究色轮。</p>
+      </div>
+
+      <section class="control-block" aria-labelledby="presetTitle">
+        <div class="block-title"><span>01</span><div><h2 id="presetTitle">先选要做什么</h2><p>每组都写清适用内容与搭配依据</p></div></div>
+        <div class="filter-row" id="filterRow" role="group" aria-label="配色筛选">
+          <button class="selected" data-filter="all">全部</button>
+          <button data-filter="knowledge">知识内容</button>
+          <button data-filter="website">专业网站</button>
+          <button data-filter="lifestyle">生活方式</button>
+          <button data-filter="poster">活动海报</button>
+          <button data-filter="brand">品牌发布</button>
+        </div>
+        <div class="preset-list" id="presetList"></div>
+      </section>
+
+      <section class="control-block" aria-labelledby="adjustTitle">
+        <div class="block-title"><span>02</span><div><h2 id="adjustTitle">不满意，快速调</h2><p>先锁住喜欢的颜色，再只调整其余颜色</p></div></div>
+        <div class="adjust-grid">
+          <button data-adjust="soft">更柔和</button>
+          <button data-adjust="bright">更明亮</button>
+          <button data-adjust="deep">更稳重</button>
+          <button data-adjust="contrast">对比更强</button>
+        </div>
+        <button class="wide-secondary" id="shuffleBtn">换一组相近配色</button>
+        <p class="micro-help">色块右上角可以锁定。没有锁定时会换整组；锁定后只替换其余颜色。</p>
+      </section>
+
+      <section class="control-block seed-block" aria-labelledby="seedTitle">
+        <div class="block-title"><span>03</span><div><h2 id="seedTitle">带一个喜欢的颜色开始</h2><p>系统寻找最接近的成熟套色，再把你的颜色放进去</p></div></div>
+        <div class="seed-row">
+          <input id="seedColor" type="color" value="#3A5A40" aria-label="喜欢的颜色">
+          <input id="seedHex" value="#3A5A40" maxlength="7" aria-label="喜欢的颜色色值">
+          <button class="quiet" id="buildFromSeed">找相近套色</button>
+        </div>
+      </section>
+    </aside>
+
+    <section class="palette-stage">
+      <div class="stagebar">
+        <div><span class="status-dot"></span><b id="paletteName">森林大地</b><small id="paletteBasis">常用自然绿 · 明暗完整</small></div>
+        <div class="stage-actions">
+          <a id="sourceLink" href="https://coolors.co/" target="_blank" rel="noopener">查看来源</a>
+          <button id="downloadBtn">下载 JSON</button>
+        </div>
+      </div>
+
+      <div class="stage-scroll">
+        <section class="swatch-grid" id="swatchGrid" aria-label="当前五色配色"></section>
+
+        <section class="evidence-strip" aria-label="配色可用性提示">
+          <div><span>适合做</span><b id="scenarioText">—</b><em id="usageText">读取中</em></div>
+          <div><span>搭配依据</span><b id="harmonyText">—</b><em>补色只做重点，不平均用力</em></div>
+          <div><span>浅底可读</span><b id="lightPair">—</b><em id="lightPass">计算中</em></div>
+          <div><span>深底可读</span><b id="darkPair">—</b><em id="darkPass">计算中</em></div>
+        </section>
+
+        <div class="preview-head">
+          <div><small>APPLICATION PREVIEW</small><h2>看看这组颜色放进画面里的效果</h2></div>
+          <div class="preview-mode" role="group" aria-label="预览模式">
+            <button class="selected" data-preview="light">浅底</button>
+            <button data-preview="dark">深底</button>
+          </div>
+        </div>
+        <section class="preview-shell" id="previewShell" aria-live="polite"></section>
+      </div>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="palette.js?v=4"></script>
+</body>
+</html>
+

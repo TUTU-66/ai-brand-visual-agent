@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>公众号排版｜梦玉视觉能力岛</title>
+  <link rel="stylesheet" href="wechat.css?v=prototype-3">
+  <link rel="stylesheet" href="platform-theme.css?v=unified-2">
+  <script src="platform-theme.js?v=unified-2"></script>
+</head>
+<body class="platform-wechat">
+  <header class="appbar">
+    <a class="back" href="index.html">← 返回能力岛</a>
+    <div class="tool-name"><span>微</span><div><b>公众号排版</b><small>逐项确定样式，生成个人风格配置</small></div></div>
+    <div class="progress-note"><b id="progressCount">9 / 9</b><span>结构位置可调整</span></div>
+    <div class="top-actions">
+      <button class="quiet" id="helpBtn">使用说明</button>
+      <button class="quiet" id="saveBtn">保存项目</button>
+      <button class="primary" id="downloadBtn">下载风格配置</button>
+      <button class="quiet disabled" id="skillBtn" disabled title="待接入">生成 Skill 包 · 待接入</button>
+    </div>
+    <button class="mobile-action" id="editDrawerBtn">编辑</button>
+  </header>
+
+  <main class="workspace">
+    <aside class="control-panel" id="controlPanel" aria-label="文章结构样式">
+      <div class="panel-head">
+        <div><small>从文章顶部向下设置</small><h1>排版结构</h1></div>
+        <button class="close-panel" data-close-panel>×</button>
+      </div>
+      <p class="scope-note"><b>选择形式，不填写正式内容</b><span>预览使用同一篇校准文章；以后由用户自己的 AI 按内容匹配。</span></p>
+      <div class="slot-list" id="slotList"></div>
+    </aside>
+
+    <section class="stage" aria-label="公众号文章预览">
+      <div class="stagebar">
+        <div><span class="status-dot"></span><b>343px 公众号正文预览</b><small id="stageHint">点击预览中的区块，可定位到左侧设置</small></div>
+        <div class="view-switch"><button class="active" data-preview-view="phone">手机</button><button data-preview-view="wide">桌面</button></div>
+      </div>
+      <div class="canvas-space" id="canvasSpace">
+        <div class="phone-shell" id="phoneShell">
+          <article class="wx-article style-paper density-balanced decor-dots" id="articlePreview">
+            <header class="article-hero preview-node" data-slot="title">
+              <div class="article-kicker">DESIGN × AI · 01</div>
+              <h1>AI进入团队之后，<br>设计发生了什么？</h1>
+              <p class="article-deck preview-node" data-slot="deck">一份关于协作关系的阶段观察</p>
+            </header>
+
+            <p class="article-lead preview-node" data-slot="body">过去，我们只是让 AI 帮忙修改文字和图片。现在，它开始<span class="keyword">理解内容关系</span>，并参与一部分判断。真正需要改变的，<span class="marker preview-node" data-slot="emphasis">不是工具的速度，而是人与工具之间的工作关系。</span></p>
+
+            <section class="chapter preview-node" data-slot="chapter"><span class="chapter-index">01</span><div><small>工作关系的变化</small><h2>从操作工具<br>走向视觉同事</h2></div></section>
+
+            <section class="article-section preview-node" data-slot="subtitle"><h3>工具开始理解内容之后</h3><p>当 AI 进入项目，角色、权限和确认机制都需要重新设计。它不能只会执行，也要知道什么时候应该停下来。</p></section>
+
+            <blockquote class="quote preview-node" data-slot="emphasis">稳定的协作，不是让 AI 替人决定，而是让它承担可验证的判断。</blockquote>
+
+            <figure class="media preview-node" data-slot="media"><div class="image-placeholder"><span>图片位置</span></div><figcaption>图 01｜内容、判断与执行开始形成新的连接</figcaption></figure>
+
+            <section class="list preview-node" data-slot="list">
+              <div><span>01</span><p><b>固定模板</b><small>先解决重复修改与替换</small></p></div>
+              <div><span>02</span><p><b>理解内容</b><small>再识别重点与内容关系</small></p></div>
+              <div><span>03</span><p><b>进入协作</b><small>最后承担一部分判断</small></p></div>
+            </section>
+
+            <footer class="ending preview-node" data-slot="ending"><div><small>KEEP IN TOUCH</small><b id="endingTitle">扫码，继续关注</b><p id="endingNote">获取后续设计与 AI 实践更新</p></div><div class="qr-placeholder">二维码</div></footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <aside class="inspector" id="inspector" aria-label="全局风格设置">
+      <div class="panel-head"><div><small>统一整篇文章</small><h2>风格与细节</h2></div><button class="close-panel" data-close-inspector>×</button></div>
+
+      <section class="inspector-section">
+        <div class="section-label"><b>基础方向</b><small>只是起点，可继续逐项调整</small></div>
+        <div class="style-grid" id="styleGrid"></div>
+      </section>
+
+      <section class="inspector-section">
+        <div class="section-label"><b>颜色</b><small>只替换当前方向允许的色彩角色</small></div>
+        <div class="color-row"><label>主色<input type="color" id="primaryColor" value="#a94f2d"></label><label>浅色<input type="color" id="softColor" value="#ead6b2"></label><label>纸色<input type="color" id="paperColor" value="#f7f1e6"></label></div>
+      </section>
+
+      <section class="inspector-section">
+        <div class="section-label"><b>阅读疏密</b><small>字号保持安全，只调整节奏</small></div>
+        <div class="segmented" id="densityControl"><button data-density="compact">紧凑</button><button class="active" data-density="balanced">均衡</button><button data-density="relaxed">舒展</button></div>
+      </section>
+
+      <section class="inspector-section">
+        <div class="section-label"><b>小元素</b><small>每套只使用一种简单语法</small></div>
+        <div class="decor-grid" id="decorControl">
+          <button data-decor="none"><i class="decor-none"></i>无</button>
+          <button class="active" data-decor="dots"><i class="decor-dots"></i>圆点</button>
+          <button data-decor="squares"><i class="decor-squares"></i>方块</button>
+          <button data-decor="rings"><i class="decor-rings"></i>叠圆</button>
+          <button data-decor="arrow"><i class="decor-arrow">↓</i>箭头</button>
+        </div>
+      </section>
+
+      <section class="inspector-section">
+        <div class="section-label"><b>个人结尾</b><small>二维码由用户自己的素材替换</small></div>
+        <label class="field">引导标题<input id="endingTitleInput" value="扫码，继续关注"></label>
+        <label class="field">补充说明<input id="endingNoteInput" value="获取后续设计与 AI 实践更新"></label>
+      </section>
+
+      <section class="output-card">
+        <div><small>当前输出</small><b id="outputName">纸本注释 · 个人风格配置</b></div>
+        <ul><li>9 个语义位置规则</li><li>1 套颜色与疏密参数</li><li>图片只用单图／双图／纯文字</li></ul>
+        <p><b>跨文章稳定性：</b>尚未完成第二篇文章回归，不标记百分比。</p>
+      </section>
+    </aside>
+  </main>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <div class="mobile-dock"><button id="mobileStructureBtn">结构</button><button id="mobileStyleBtn">风格</button><button id="mobileDownloadBtn">带走配置</button></div>
+
+  <dialog class="modal" id="helpModal">
+    <button class="modal-close" data-modal-close>×</button><div class="modal-kicker">HOW IT WORKS</div>
+    <h2>先搭一套能反复使用的排版规则，<br>不是只排好这一篇。</h2>
+    <ol><li><b>选基础方向</b><span>纸本、索引、强势编辑或轻盈叙事。</span></li><li><b>从上往下调结构</b><span>标题、章节、正文、图片和结尾分别选择。</span></li><li><b>统一颜色和疏密</b><span>小元素只做少量、稳定的变化。</span></li><li><b>下载风格配置</b><span>把 JSON 与文章交给自己的 AI；本工具不连接微信后台。</span></li></ol>
+    <button class="modal-primary" data-modal-close>开始设置</button>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="wechat.js?v=prototype-1"></script>
+</body>
+</html>

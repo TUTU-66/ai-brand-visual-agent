@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>个人空间｜梦玉视觉能力岛</title>
+  <link rel="stylesheet" href="account.css?v=member-1">
+</head>
+<body>
+  <div class="space-loading" id="loading">正在读取个人空间…</div>
+  <div class="space-shell">
+    <aside class="space-side">
+      <a class="space-brand" href="index.html"><span class="brand-mark"><i></i></span><strong>梦玉视觉能力岛</strong></a>
+      <nav class="space-nav" aria-label="个人空间导航">
+        <a class="active" href="#overview">概览</a><a href="#projects">我的项目</a><a href="#capabilities">我的能力库</a><a href="#account">账户与安全</a>
+      </nav>
+      <div class="space-user"><b id="sideName">—</b><span id="sideTier">普通成员</span><button class="link-button" id="logout">退出登录</button></div>
+    </aside>
+    <main class="space-main">
+      <header class="space-top"><a class="btn btn-secondary mobile-space-menu" href="index.html">← 能力岛</a><div class="space-top-copy"><h1 id="greeting">你好</h1><p>这里先承接你的账户状态与实际项目入口。</p></div><a class="btn btn-secondary top-action" href="index.html">返回能力岛</a></header>
+
+      <section id="overview" class="membership-card">
+        <div class="membership-copy"><div class="eyebrow">Membership</div><h2>普通成员账户</h2><p>注册与付费是两件事。你现在已经可以登录并使用个人空间；VIP 需要后续完成付费后再升级。</p></div>
+        <div class="membership-state"><span class="tier">当前等级<strong id="tierName">FREE</strong></span><div class="vip-note" id="vipNote">VIP 付费与权益尚未接入，本页不会生成订单，也不会自动扣费。</div></div>
+      </section>
+
+      <section id="projects"><div class="section-title"><h2>我的项目</h2><span>先区分本机草稿与云端项目</span></div><div class="empty-projects"><div><h3 id="projectTitle">暂时没有云端项目</h3><p id="projectText">现有工具保存的项目仍在当前浏览器里，不会因为注册就自动上传。后续接入云端保存时，再在这里显示跨设备项目。</p></div><a class="btn btn-secondary" href="builder.html?v=light-2">进入网站组装器</a></div></section>
+
+      <section id="capabilities"><div class="section-title"><h2>能力入口</h2><span>继续使用现有工具</span></div><div class="space-grid">
+        <article class="space-card"><h3>品牌网站组装器</h3><p>选择网站结构、模块形式和配色。当前项目保存在这个浏览器。</p><a class="btn btn-secondary" href="builder.html?v=light-2">进入工具</a></article>
+        <article class="space-card"><h3>分格漫画生成器</h3><p>选择角色方式与画风，调整测试内容、配色和字体。</p><a class="btn btn-secondary" href="comic.html">进入工具</a></article>
+        <article class="space-card"><h3>公众号排版</h3><p>从文章结构到颜色与疏密，保存个人风格配置。</p><a class="btn btn-secondary" href="wechat.html">进入工具</a></article>
+      </div></section>
+
+      <section id="account"><div class="section-title"><h2>账户与安全</h2><span>真实身份和会员状态分开管理</span></div><div class="space-card" style="min-height:auto"><form id="profileForm" class="profile-row"><div class="field"><label for="displayName">显示名称</label><input class="control" id="displayName" maxlength="24" autocomplete="nickname"></div><button class="btn btn-primary" type="submit" style="width:auto">保存名称</button></form><p class="profile-message" id="profileMessage" role="status"></p><div class="identity-list" id="identityList"></div></div></section>
+    </main>
+  </div>
+  <script src="space.js?v=member-1"></script>
+</body>
+</html>
+
