@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>账号登录｜梦玉的能力岛</title>
+  <meta name="description" content="使用手机号账号和密码登录梦玉的能力岛">
+  <link rel="stylesheet" href="account.css?v=site-audit-004">
+  <script src="preview-mode.js"></script>
+</head>
+<body data-account-page="login">
+  <main class="account-shell">
+    <section class="account-context" aria-label="账户与会员说明">
+      <a class="back-home" href="index.html"><img class="account-wordmark" src="assets/home-psd-001/mengyu-logo.webp" alt="MENGYU" width="2028" height="594"><span>梦玉的能力岛</span></a>
+      <div class="context-copy">
+        <div class="eyebrow">ACCOUNT LOGIN</div>
+        <h1>回来继续<br>你的项目</h1>
+        <p>账号只负责识别你是谁。登录后，Free 可以继续体验；Pro 与 Max 可以下载和导出结果。</p>
+        <div class="account-logic">
+          <div class="logic-step"><b>账号登录</b><span>手机号与密码进入同一账户</span></div>
+          <div class="logic-arrow">→</div>
+          <div class="logic-step"><b>继续使用</b><span>项目和会员状态跟随账户</span></div>
+        </div>
+      </div>
+      <div class="context-foot">登录不会自动购买会员，也不会产生订单。</div>
+    </section>
+
+    <section class="account-task compact-account-task">
+      <div class="task-wrap">
+        <div class="mobile-brand"><a href="index.html"><img class="account-wordmark" src="assets/home-psd-001/mengyu-logo.webp" alt="MENGYU" width="2028" height="594"><span>梦玉的能力岛</span></a></div>
+        <div class="eyebrow" style="color:var(--purple)">LOGIN</div>
+        <h2>账号登录</h2>
+        <p class="lead">使用注册时的手机号和密码进入个人空间。</p>
+        <form id="passwordAuthForm" novalidate>
+          <div class="field">
+            <label for="phone">账号（手机号）</label>
+            <div class="phone-control"><span class="country">+86</span><input id="phone" inputmode="numeric" autocomplete="username" maxlength="11" placeholder="请输入 11 位手机号"></div>
+          </div>
+          <div class="field">
+            <label for="password">密码</label>
+            <div class="password-control"><input id="password" type="password" autocomplete="current-password" maxlength="64" placeholder="请输入密码"><button type="button" data-password-toggle="password" aria-label="显示密码">显示</button></div>
+          </div>
+          <div class="form-options"><a href="forgot-password.html">忘记密码</a></div>
+          <button class="btn btn-primary" id="submitPassword" type="submit">登录</button>
+          <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+        </form>
+        <div class="account-paths">
+          <span>还没有账号？<a href="register.html">免费注册</a></span>
+          <a href="auth.html?mode=login">使用短信验证码登录</a>
+        </div>
+        <nav class="account-policy-links" aria-label="账户说明"><a href="terms.html">用户协议</a><a href="privacy.html">隐私说明</a><a href="cancellation.html">账号注销</a></nav>
+      </div>
+    </section>
+  </main>
+  <script src="password-auth.js?v=site-pages-1"></script>
+</body>
+</html>
+

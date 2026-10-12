@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Skill｜梦玉的能力岛</title>
+  <meta name="description" content="下载 Skill 工具包，保存公众号排版风格，预览确认后推送到草稿箱。">
+  <link rel="stylesheet" href="platform-theme.css?v=site-audit-004">
+  <link rel="stylesheet" href="homepage.css?v=site-audit-004">
+  <link rel="stylesheet" href="homepage-artwork.css?v=site-audit-004">
+  <link rel="stylesheet" href="skills.css?v=catalog-001">
+  <script src="preview-mode.js"></script>
+</head>
+<body class="editorial-home skills-page logged-out">
+  <div class="ambient-stage" aria-hidden="true"><span class="ambient-blob ambient-primary"></span><span class="ambient-blob ambient-soft"></span><span class="ambient-blob ambient-warm"></span><span class="ambient-blob ambient-light"></span></div>
+  <header class="site-header">
+    <a class="site-name home-brand island-brand" href="index.html"><img src="assets/home-psd-001/mengyu-logo.webp" alt="MENGYU" width="2028" height="594"><span>梦玉的能力岛</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="打开导航" aria-expanded="false"><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav" aria-label="主导航"><a href="website-templates.html">网站</a><a href="wechat-templates.html">公众号</a><a href="gallery.html?type=comic">分格漫画</a><a href="gallery.html?type=palette">配色</a><a href="membership.html">会员</a></nav>
+    <div class="account-nav"><div class="guest-links" id="guestLinks"><a href="login.html?returnTo=%2Fskills.html">登录</a><a href="register.html?returnTo=%2Fskills.html">注册</a></div><a class="account-avatar" id="accountAvatar" href="space.html" aria-label="进入个人空间"><span aria-hidden="true"></span></a></div>
+  </header>
+  <main class="skills-main">
+    <div class="skills-intro"><a class="skills-back" href="index.html">← 返回首页</a><h1>Skill</h1></div>
+    <section class="skill-list" aria-label="可下载的 Skill 工具包">
+      <article class="skill-row" id="wechatpublish" aria-labelledby="wechatpublishTitle">
+        <div class="skill-description">
+          <p class="skill-file">wechatpublish · ZIP · 612 KB</p>
+          <h2 id="wechatpublishTitle">公众号排版与草稿箱推送</h2>
+          <p class="skill-purpose">把喜欢的公众号排版存成专属风格。以后给 AI 一篇文章，就能按保存的风格生成公众号正文片段和预览。</p>
+          <ol class="skill-steps">
+            <li>把兼容的排版配置和这个 Skill 交给 AI，说“把这套风格存为小A”。</li>
+            <li>给 AI 文章，说“用小A风格排版”，先检查生成的正文片段和预览。</li>
+            <li>如需推到草稿箱，再接入自己的公众号连接器并单独确认授权。</li>
+          </ol>
+          <p class="skill-compatibility"><a href="wechat-templates.html">去公众号排版编辑器选择风格 →</a><br>安装包已经放入会员下载，可读取当前 10 套模板的 v3 配置和经典配置。</p>
+          <p class="skill-requirements">离线排版需要 Python、Node.js 18+，以及本机 Chrome、Edge 或 Chromium；不会自动安装。真实微信兼容尚未验证，当前包不会直接推送 v3 模板。</p>
+        </div>
+        <div class="skill-download">
+          <button id="skillDownload" type="button" data-skill="wechatpublish" disabled>正在确认账户…</button>
+          <p class="skill-access">Pro / Max 可下载</p>
+          <p id="skillDownloadStatus" class="skill-status" role="status" aria-live="polite"></p>
+          <noscript>请启用 JavaScript 后登录下载。</noscript>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer class="site-footer"><strong>梦玉的能力岛</strong><nav class="site-footer-nav" aria-label="网站说明"><a href="terms.html">用户协议</a><a href="privacy.html">隐私说明</a><a href="cancellation.html">账号注销</a></nav><span>© 2026 MENGYU</span></footer>
+  <script src="homepage.js?v=site-audit-004"></script>
+  <script src="platform-account.js"></script>
+  <script src="skills.js?v=catalog-001"></script>
+</body>
+</html>

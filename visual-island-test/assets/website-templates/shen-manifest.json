@@ -1,0 +1,373 @@
+{
+  "id": "shen",
+  "version": "20261011-v1",
+  "source": "references/amy-porterfield-20261010/prototype",
+  "pages": [
+    "index.html",
+    "about.html",
+    "programs.html",
+    "program-detail.html",
+    "content.html",
+    "article.html",
+    "contact.html"
+  ],
+  "files": [
+    {
+      "source": "references/amy-porterfield-20261010/prototype/index.html",
+      "output": "index.html",
+      "text": true,
+      "sha256": "9b5b2bceed790a58f1a2c364efe069a83754faa69ad84c14fad3241eefc8843b",
+      "bytes": 5322,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/hero.jpg",
+          "to": "assets/91aec5888f24-hero.jpg"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/about.jpg",
+          "to": "assets/e35584dac9de-about.jpg"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "../reference-assets/expression-practice-guide.svg",
+          "to": "assets/7446c1d209d4-expression-practice-guide.svg"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "program-detail.html",
+          "to": "program-detail.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/phone-scene.jpg",
+          "to": "assets/96ea88d40736-phone-scene.jpg"
+        },
+        {
+          "from": "article.html",
+          "to": "article.html"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/newsletter.jpg",
+          "to": "assets/bc926da1a044-newsletter.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/amy-porterfield-20261010/prototype/about.html",
+      "output": "about.html",
+      "text": true,
+      "sha256": "f9b3c4e8c8250fbaf597cadcaa0a10f241b3afd2ef22584f2cb89537cfb5cc69",
+      "bytes": 2711,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/about.jpg",
+          "to": "assets/e35584dac9de-about.jpg"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/hero.jpg",
+          "to": "assets/91aec5888f24-hero.jpg"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/newsletter.jpg",
+          "to": "assets/bc926da1a044-newsletter.jpg"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/amy-porterfield-20261010/prototype/programs.html",
+      "output": "programs.html",
+      "text": true,
+      "sha256": "7c59f9084492a5e4e59b5a0c334982725a80f0e500bfe719f0399ebd1826d014",
+      "bytes": 2533,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/hero.jpg",
+          "to": "assets/91aec5888f24-hero.jpg"
+        },
+        {
+          "from": "../reference-assets/expression-practice-guide.svg",
+          "to": "assets/7446c1d209d4-expression-practice-guide.svg"
+        },
+        {
+          "from": "program-detail.html",
+          "to": "program-detail.html"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/about.jpg",
+          "to": "assets/e35584dac9de-about.jpg"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/newsletter.jpg",
+          "to": "assets/bc926da1a044-newsletter.jpg"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/amy-porterfield-20261010/prototype/program-detail.html",
+      "output": "program-detail.html",
+      "text": true,
+      "sha256": "4a6a224863ba575d474ddf8310393ded31e8dfb88b926db14804808734bc3f61",
+      "bytes": 1712,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/about.jpg",
+          "to": "assets/e35584dac9de-about.jpg"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/amy-porterfield-20261010/prototype/content.html",
+      "output": "content.html",
+      "text": true,
+      "sha256": "eedfa6fce011d9f523360f055075d2fecfa9f8df8fcbc6a128ef4523e39fdb6a",
+      "bytes": 2638,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/phone-scene.jpg",
+          "to": "assets/96ea88d40736-phone-scene.jpg"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/about.jpg",
+          "to": "assets/e35584dac9de-about.jpg"
+        },
+        {
+          "from": "article.html",
+          "to": "article.html"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/hero.jpg",
+          "to": "assets/91aec5888f24-hero.jpg"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/newsletter.jpg",
+          "to": "assets/bc926da1a044-newsletter.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/amy-porterfield-20261010/prototype/article.html",
+      "output": "article.html",
+      "text": true,
+      "sha256": "6745b3b4264ad60388587e769675d9b065d9addf71c59b76af95d7f19726c424",
+      "bytes": 1765,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/hero.jpg",
+          "to": "assets/91aec5888f24-hero.jpg"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/amy-porterfield-20261010/prototype/contact.html",
+      "output": "contact.html",
+      "text": true,
+      "sha256": "ad6ebe9c3f382b09720ab198d4418fb3e2ac411197685b66b7bde0b1b1687162",
+      "bytes": 1383,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/amy-porterfield-20261010/prototype/site.css",
+      "output": "site.css",
+      "text": true,
+      "sha256": "01943eabfd5f23a4fc91d8750ce7db2b9f47790a3683712c0dcd7d9df9de5ef1",
+      "bytes": 21018,
+      "refs": [
+        {
+          "from": "../../../assets/fonts/PuHui-400.woff2",
+          "to": "assets/c2fd63663a66-PuHui-400.woff2"
+        },
+        {
+          "from": "../../../assets/fonts/PuHui-700.woff2",
+          "to": "assets/69d2fa0f8c2d-PuHui-700.woff2"
+        }
+      ]
+    },
+    {
+      "source": "references/amy-porterfield-20261010/reference-assets/curated-20261011/hero.jpg",
+      "output": "assets/91aec5888f24-hero.jpg",
+      "text": false,
+      "sha256": "91aec5888f2417122b8ec45caec0685523a56c9a785d5f31f7448accaef32b0b",
+      "bytes": 780540,
+      "refs": []
+    },
+    {
+      "source": "references/amy-porterfield-20261010/reference-assets/curated-20261011/about.jpg",
+      "output": "assets/e35584dac9de-about.jpg",
+      "text": false,
+      "sha256": "e35584dac9debf93b2cecbaed7208e8122c4fccbaa69ce2cd3a72d01b25dcfcf",
+      "bytes": 667269,
+      "refs": []
+    },
+    {
+      "source": "references/amy-porterfield-20261010/reference-assets/expression-practice-guide.svg",
+      "output": "assets/7446c1d209d4-expression-practice-guide.svg",
+      "text": false,
+      "sha256": "7446c1d209d495d85293159b98dee46bc98c2cfe88920b1aad471520f71d4876",
+      "bytes": 4432,
+      "refs": []
+    },
+    {
+      "source": "references/amy-porterfield-20261010/reference-assets/curated-20261011/phone-scene.jpg",
+      "output": "assets/96ea88d40736-phone-scene.jpg",
+      "text": false,
+      "sha256": "96ea88d40736d255fc073738082430848f3c42b1c2cda1eb041aaf1f0f029f7f",
+      "bytes": 652700,
+      "refs": []
+    },
+    {
+      "source": "references/amy-porterfield-20261010/reference-assets/curated-20261011/newsletter.jpg",
+      "output": "assets/bc926da1a044-newsletter.jpg",
+      "text": false,
+      "sha256": "bc926da1a044a466ea12e1761ce49b602db834bb831ce2e9dba1025799a0f91a",
+      "bytes": 441031,
+      "refs": []
+    },
+    {
+      "source": "references/amy-porterfield-20261010/prototype/site.js",
+      "output": "site.js",
+      "text": true,
+      "sha256": "b758b8b68f892dc950bbcccd97affc2398c18a09ddce7486a2ba821c2aea3f05",
+      "bytes": 3450,
+      "refs": [
+        {
+          "from": "../reference-assets/curated-20261011/testimonial-01.jpg",
+          "to": "assets/f71cdc0a8cf0-testimonial-01.jpg"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/testimonial-04.jpg",
+          "to": "assets/c7e6f7321ae8-testimonial-04.jpg"
+        },
+        {
+          "from": "../reference-assets/curated-20261011/testimonial-07.jpg",
+          "to": "assets/12c1985605f9-testimonial-07.jpg"
+        }
+      ]
+    },
+    {
+      "source": "assets/fonts/PuHui-400.woff2",
+      "output": "assets/c2fd63663a66-PuHui-400.woff2",
+      "text": false,
+      "sha256": "c2fd63663a6612e15f5488367c65991934a6bf8f4d010afde080337be1d49ab2",
+      "bytes": 59516,
+      "refs": []
+    },
+    {
+      "source": "assets/fonts/PuHui-700.woff2",
+      "output": "assets/69d2fa0f8c2d-PuHui-700.woff2",
+      "text": false,
+      "sha256": "69d2fa0f8c2da7b2b26fcba19103e89248345af549059640bf25c3390faee364",
+      "bytes": 58468,
+      "refs": []
+    },
+    {
+      "source": "references/amy-porterfield-20261010/reference-assets/curated-20261011/testimonial-01.jpg",
+      "output": "assets/f71cdc0a8cf0-testimonial-01.jpg",
+      "text": false,
+      "sha256": "f71cdc0a8cf0bf8230e632c899652bf9d27bc6811830f4f4804587c2cfe62995",
+      "bytes": 486510,
+      "refs": []
+    },
+    {
+      "source": "references/amy-porterfield-20261010/reference-assets/curated-20261011/testimonial-04.jpg",
+      "output": "assets/c7e6f7321ae8-testimonial-04.jpg",
+      "text": false,
+      "sha256": "c7e6f7321ae81b9972d9bb2dbc6edefb0df5f896f946c262eeb3eced1e120398",
+      "bytes": 407696,
+      "refs": []
+    },
+    {
+      "source": "references/amy-porterfield-20261010/reference-assets/curated-20261011/testimonial-07.jpg",
+      "output": "assets/12c1985605f9-testimonial-07.jpg",
+      "text": false,
+      "sha256": "12c1985605f9fa4e869c6f44346904869772081c68774f0cf4152714f5fcc273",
+      "bytes": 259739,
+      "refs": []
+    }
+  ]
+}

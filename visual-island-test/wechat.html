@@ -3,26 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>公众号排版｜梦玉视觉能力岛</title>
-  <link rel="stylesheet" href="wechat.css?v=prototype-3">
-  <link rel="stylesheet" href="platform-theme.css?v=unified-2">
+  <script>if(new URLSearchParams(location.search).has('template'))location.replace('wechat-template-editor.html'+location.search);</script>
+  <title>公众号排版｜梦玉的能力网站</title>
+  <link rel="stylesheet" href="wechat.css?v=qr-style-v3">
+  <link rel="stylesheet" href="platform-theme.css?v=site-audit-004">
   <script src="platform-theme.js?v=unified-2"></script>
+<link rel="stylesheet" href="platform-workspace.css?v=1">  <script src="preview-mode.js"></script>
 </head>
 <body class="platform-wechat">
   <header class="appbar">
-    <a class="back" href="index.html">← 返回能力岛</a>
-    <div class="tool-name"><span>微</span><div><b>公众号排版</b><small>逐项确定样式，生成个人风格配置</small></div></div>
+    <a class="back" href="wechat-templates.html">← 返回公众号模板</a>
+    <div class="tool-name"><span>微</span><div><b>公众号排版</b><small>逐项确定样式，带走可执行文章 Skill</small></div></div>
     <div class="progress-note"><b id="progressCount">9 / 9</b><span>结构位置可调整</span></div>
     <div class="top-actions">
       <button class="quiet" id="helpBtn">使用说明</button>
       <button class="quiet" id="saveBtn">保存项目</button>
-      <button class="primary" id="downloadBtn">下载风格配置</button>
-      <button class="quiet disabled" id="skillBtn" disabled title="待接入">生成 Skill 包 · 待接入</button>
+      <button class="primary" id="downloadBtn">下载可执行公众号 Skill</button>
     </div>
     <button class="mobile-action" id="editDrawerBtn">编辑</button>
   </header>
 
-  <main class="workspace">
+  <main class="workspace" data-owned-workspace>
     <aside class="control-panel" id="controlPanel" aria-label="文章结构样式">
       <div class="panel-head">
         <div><small>从文章顶部向下设置</small><h1>排版结构</h1></div>
@@ -40,30 +41,35 @@
       <div class="canvas-space" id="canvasSpace">
         <div class="phone-shell" id="phoneShell">
           <article class="wx-article style-paper density-balanced decor-dots" id="articlePreview">
-            <header class="article-hero preview-node" data-slot="title">
-              <div class="article-kicker">DESIGN × AI · 01</div>
-              <h1>AI进入团队之后，<br>设计发生了什么？</h1>
-              <p class="article-deck preview-node" data-slot="deck">一份关于协作关系的阶段观察</p>
-            </header>
+  <header class="article-hero preview-node" data-slot="title">
+    <div class="article-kicker">DESIGN × AI · 01</div>
+    <h1>AI进入团队之后，<br>设计发生了什么？</h1>
+    <p class="article-deck preview-node" data-slot="deck">一份关于协作关系的阶段观察</p>
+  </header>
+  <p class="article-lead preview-node" data-slot="body">过去，我们只是让 AI 帮忙修改文字和图片。现在，它开始理解内容关系，并参与一部分判断。真正需要改变的，不是工具的速度，而是人与工具之间的工作关系。</p>
+  <section class="chapter preview-node" data-slot="chapter"><span class="chapter-index">01</span><div><small>角色发生变化</small><h2>从操作工具<br>走向视觉同事</h2></div></section>
+  <section class="article-section preview-node" data-slot="subtitle"><h3>从执行命令，到理解项目</h3><p>最早进入设计流程的 AI，往往承担的是执行：去掉背景、调整尺寸、生成若干方向、把一段文字变成另一种语气。它提高了局部速度，却没有改变工作的基本结构。</p></section>
+  <section class="article-section preview-node" data-slot="body"><p>当 AI 开始读取项目背景、理解内容关系、记住已经确认的规则，情况才真正发生变化。它不再只等一句命令，而是需要知道这次任务为什么存在、哪些内容不能动、哪些判断必须由人完成。</p></section>
+  <blockquote class="quote preview-node" data-slot="emphasis">稳定的协作，不是让 AI 替人决定，而是让它承担<span class="marker">可验证的判断。</span></blockquote>
+  <figure class="media preview-node" data-slot="media"><div class="image-placeholder">图片位置</div><figcaption>图 01｜内容、判断与执行开始进入同一条协作链路</figcaption></figure>
+  <section class="chapter preview-node" data-slot="chapter"><span class="chapter-index">02</span><div><small>判断前移</small><h2>速度变快以后，<br>判断变得更重要</h2></div></section>
+  <section class="article-section preview-node" data-slot="subtitle"><h3>更多选项，不等于更好结果</h3><p>生成速度变快以后，团队很容易得到更多图片、更多版式和更多文案。可选项增加，并不等于结果更好。如果缺少清晰标准，人只是从“亲手制作”转向“不断筛选”。</p></section>
+  <section class="article-section preview-node" data-slot="body"><p>因此，设计工作的重点开始向前移动。现在更需要在生成之前定义内容层级、视觉边界、使用场景和审查方式。</p></section>
+  <blockquote class="quote preview-node" data-slot="emphasis">不是把更多结果交给人筛选，<br>而是让规则帮助 AI 先排除不合适的结果。</blockquote>
+  <section class="chapter preview-node" data-slot="chapter"><span class="chapter-index">03</span><div><small>责任重新分配</small><h2>工作流需要<br>重新分配</h2></div></section>
+  <section class="article-section preview-node" data-slot="body"><p>AI 进入团队，并不意味着所有步骤都应该自动化。更合理的方式，是先把工作拆成不同责任，再决定哪一部分由人完成、哪一部分交给 AI、哪一部分必须共同确认。</p></section>
+  <section class="list preview-node" data-slot="list">
+    <div><span>01</span><p><b>人负责目标与边界</b><small>确认真实任务、内容重点、审美方向和不能越过的限制</small></p></div>
+    <div><span>02</span><p><b>AI 负责整理与执行</b><small>读取材料、建立结构、生成候选、完成重复调整并记录版本</small></p></div>
+    <div><span>03</span><p><b>双方共同完成验证</b><small>在真实尺寸和真实场景中检查结果，只修改明确对象</small></p></div>
+  </section>
+  <section class="chapter preview-node" data-slot="chapter"><span class="chapter-index">04</span><div><small>协作持续校准</small><h2>真正改变的是<br>协作关系</h2></div></section>
+  <section class="article-section preview-node" data-slot="subtitle"><h3>稳定，不等于每篇都一样</h3><p>稳定意味着同一套原则可以在不同内容里重复生效：标题层级不会混乱，强调不会滥用，图片不足时不会硬拼，用户已经确认的风格不会在下一篇文章里突然消失。</p></section>
+  <section class="article-section preview-node" data-slot="body"><p>当规则可以被保存、测试和带走，AI 才能从一次性的生成工具，变成真正参与工作的协作者。</p></section>
+  <blockquote class="quote preview-node" data-slot="emphasis"><b>设计团队真正获得的，</b><br>不只是更多产出，而是一套可以持续校准的协作方法。</blockquote>
+  <footer class="ending preview-node" data-slot="ending"><div><small>KEEP IN TOUCH</small><b id="endingTitle">扫码，继续关注</b><p id="endingNote">获取后续设计与 AI 实践更新</p></div><div class="qr-placeholder unified-qr-block" aria-label="二维码占位，不可扫码">二维码占位</div></footer>
+</article>
 
-            <p class="article-lead preview-node" data-slot="body">过去，我们只是让 AI 帮忙修改文字和图片。现在，它开始<span class="keyword">理解内容关系</span>，并参与一部分判断。真正需要改变的，<span class="marker preview-node" data-slot="emphasis">不是工具的速度，而是人与工具之间的工作关系。</span></p>
-
-            <section class="chapter preview-node" data-slot="chapter"><span class="chapter-index">01</span><div><small>工作关系的变化</small><h2>从操作工具<br>走向视觉同事</h2></div></section>
-
-            <section class="article-section preview-node" data-slot="subtitle"><h3>工具开始理解内容之后</h3><p>当 AI 进入项目，角色、权限和确认机制都需要重新设计。它不能只会执行，也要知道什么时候应该停下来。</p></section>
-
-            <blockquote class="quote preview-node" data-slot="emphasis">稳定的协作，不是让 AI 替人决定，而是让它承担可验证的判断。</blockquote>
-
-            <figure class="media preview-node" data-slot="media"><div class="image-placeholder"><span>图片位置</span></div><figcaption>图 01｜内容、判断与执行开始形成新的连接</figcaption></figure>
-
-            <section class="list preview-node" data-slot="list">
-              <div><span>01</span><p><b>固定模板</b><small>先解决重复修改与替换</small></p></div>
-              <div><span>02</span><p><b>理解内容</b><small>再识别重点与内容关系</small></p></div>
-              <div><span>03</span><p><b>进入协作</b><small>最后承担一部分判断</small></p></div>
-            </section>
-
-            <footer class="ending preview-node" data-slot="ending"><div><small>KEEP IN TOUCH</small><b id="endingTitle">扫码，继续关注</b><p id="endingNote">获取后续设计与 AI 实践更新</p></div><div class="qr-placeholder">二维码</div></footer>
-          </article>
         </div>
       </div>
     </section>
@@ -77,8 +83,8 @@
       </section>
 
       <section class="inspector-section">
-        <div class="section-label"><b>颜色</b><small>只替换当前方向允许的色彩角色</small></div>
-        <div class="color-row"><label>主色<input type="color" id="primaryColor" value="#a94f2d"></label><label>浅色<input type="color" id="softColor" value="#ead6b2"></label><label>纸色<input type="color" id="paperColor" value="#f7f1e6"></label></div>
+        <div class="section-label"><b>套色</b><small>结构色、浅底、重点字和纸色分别调整</small></div>
+        <div class="color-row"><label>主色<input type="color" id="primaryColor" value="#a94f2d"></label><label>浅色<input type="color" id="softColor" value="#ead6b2"></label><label>重点色<input type="color" id="highlightColor" value="#a94f2d"></label><label>纸色<input type="color" id="paperColor" value="#f7f1e6"></label></div>
       </section>
 
       <section class="inspector-section">
@@ -104,23 +110,24 @@
       </section>
 
       <section class="output-card">
-        <div><small>当前输出</small><b id="outputName">纸本注释 · 个人风格配置</b></div>
-        <ul><li>9 个语义位置规则</li><li>1 套颜色与疏密参数</li><li>图片只用单图／双图／纯文字</li></ul>
-        <p><b>跨文章稳定性：</b>尚未完成第二篇文章回归，不标记百分比。</p>
+              <div><small>当前输出</small><b id="outputName">暖纸人文注释 · 可执行文章 Skill</b></div>
+        <ul><li>9 个语义位置规则</li><li>1 套颜色与疏密参数</li><li>结构合同 + 标准库渲染器</li></ul>
+        <p><b>正式交付：</b>渲染器输出文章片段；预览网页只用于检查，不再让 AI 自己猜版式。</p>
       </section>
     </aside>
   </main>
 
   <div class="drawer-backdrop" id="drawerBackdrop"></div>
-  <div class="mobile-dock"><button id="mobileStructureBtn">结构</button><button id="mobileStyleBtn">风格</button><button id="mobileDownloadBtn">带走配置</button></div>
+  <div class="mobile-dock"><button id="mobileStructureBtn">结构</button><button id="mobileStyleBtn">风格</button><button id="mobileDownloadBtn">带走公众号 Skill</button></div>
 
   <dialog class="modal" id="helpModal">
     <button class="modal-close" data-modal-close>×</button><div class="modal-kicker">HOW IT WORKS</div>
     <h2>先搭一套能反复使用的排版规则，<br>不是只排好这一篇。</h2>
-    <ol><li><b>选基础方向</b><span>纸本、索引、强势编辑或轻盈叙事。</span></li><li><b>从上往下调结构</b><span>标题、章节、正文、图片和结尾分别选择。</span></li><li><b>统一颜色和疏密</b><span>小元素只做少量、稳定的变化。</span></li><li><b>下载风格配置</b><span>把 JSON 与文章交给自己的 AI；本工具不连接微信后台。</span></li></ol>
+      <ol><li><b>选基础方向</b><span>从颜色、阅读节奏和版式气质中选一个起点。</span></li><li><b>从上往下调结构</b><span>标题、章节、正文、图片和结尾分别选择。</span></li><li><b>统一颜色和疏密</b><span>小元素只做少量、稳定的变化。</span></li><li><b>下载可执行 Skill</b><span>把整包交给你的 AI。它先整理文章结构，再运行渲染器；正式结果是文章片段，不是带导航的网页。本工具不连接微信后台。</span></li></ol>
     <button class="modal-primary" data-modal-close>开始设置</button>
   </dialog>
   <div class="toast" id="toast" role="status"></div>
-  <script src="wechat.js?v=prototype-1"></script>
+  <script src="platform-account.js"></script><script src="platform-workspace.js"></script><script src="portable-package.js?v=handoff-v2"></script>
+  <script src="wechat.js?v=beige-pilot-1"></script>
 </body>
 </html>

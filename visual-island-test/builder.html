@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>品牌网站组装器｜梦玉视觉能力岛</title>
-  <link rel="stylesheet" href="builder.css?v=responsive-3">
-<link rel="stylesheet" href="platform-theme.css?v=unified-2">
-<script src="platform-theme.js?v=unified-2"></script></head>
+  <title>品牌网站组装器｜梦玉的能力网站</title>
+  <link rel="stylesheet" href="builder.css?v=floating-nav-borderless-v1">
+<link rel="stylesheet" href="platform-theme.css?v=site-audit-004">
+<script src="platform-theme.js?v=unified-2"></script><link rel="stylesheet" href="platform-workspace.css">  <script src="preview-mode.js"></script>
+</head>
 <body class="platform-builder">
   <header class="appbar">
-    <a class="back" href="index.html">← 返回能力岛</a>
-    <div class="tool-name"><span>W</span><div><b>品牌网站组装器</b><small>选择结构与配色，生成网站方案</small></div></div>
+    <a class="back" href="index.html">← 返回能力网站</a>
+    <div class="tool-name"><span>W</span><div><b>品牌网站组装器</b><small>选择结构与配色，带走可运行网站</small></div></div>
     <nav class="page-tabs" aria-label="编辑页面">
       <button class="page-tab active" data-page="home">首页</button>
       <button class="page-tab" data-page="about">关于我们</button>
@@ -22,11 +23,11 @@
       <button class="quiet" id="helpBtn">使用说明</button>
       <button class="quiet" id="previewBtn">整页预览</button>
       <button class="quiet" id="saveBtn">保存项目</button>
-      <button class="primary" id="generateBtn">生成网站方案 <span>→</span></button>
+      <button class="primary" id="generateBtn">前往网站模板 <span>→</span></button>
     </div>
     <button class="mobile-action" id="moduleDrawerBtn">编辑</button>
   </header>
-  <main class="workspace">
+  <main class="workspace" data-owned-workspace>
     <aside class="side-panel modules-panel" id="modulesPanel">
       <header class="panel-title"><div><small>页面结构与整站设置</small><h2 id="panelPageName">首页模块</h2></div><button class="close-panel" data-close>×</button></header>
       <div class="panel-scope-note"><b>这里只选择结构、效果与配色</b><span>真实文字和图片由你自己的 AI 在生成后填充</span></div>
@@ -60,17 +61,17 @@
       <div><span>01</span><b>选择页面效果</b><p>为首页模块和内页选择排版结构。</p></div>
       <div><span>02</span><b>确定品牌配色</b><p>设置一个品牌主色和两个辅助色。</p></div>
       <div><span>03</span><b>查看完整预览</b><p>检查首页滚动、内页和手机端。</p></div>
-      <div><span>04</span><b>生成网站方案</b><p>下载方案配置，再与真实资料一起交给自己的 AI。</p></div>
+      <div><span>04</span><b>下载网站结果包</b><p>带走可运行样张、图片、字段表和 AI 接手说明。</p></div>
     </div><button class="modal-primary" data-modal-close="helpModal">开始选择</button>
   </dialog>
   <dialog class="modal generate-modal" id="generateModal">
-    <button class="modal-close" data-modal-close="generateModal">×</button><div class="modal-kicker">GENERATE</div><h2>生成网站方案</h2>
-    <p class="modal-lead">当前会生成并下载网站方案配置，包含页面结构、模块样式、三色品牌配色与内容字段约定；它还不是可运行的网站包。</p>
-    <ul class="output-list"><li>首页与内页结构选择</li><li>品牌主色与两个辅助色</li><li>桌面、平板与手机规则</li><li>AI 内容填充所需字段</li></ul>
-    <button class="modal-primary" id="confirmGenerate">生成并下载方案</button>
+    <button class="modal-close" data-modal-close="generateModal">×</button><div class="modal-kicker">GENERATE</div><h2>下载网站结果包</h2>
+    <p class="modal-lead">旧版项目仍可查看和保存。旧版下载已停用，请到网站模板选择新版完整网站。</p>
+    <button class="modal-primary" id="confirmGenerate">查看网站模板</button>
   </dialog>
   <div class="toast" id="toast" role="status"></div>
-  <script src="builder.js?v=fullbleed-hero-v6"></script>
+  <script src="platform-account.js"></script><script src="platform-workspace.js"></script><script src="portable-package.js?v=handoff-v1"></script>
+  <script src="builder.js?v=link-detail-v1"></script>
 </body>
 </html>
 

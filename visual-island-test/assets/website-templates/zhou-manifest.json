@@ -1,0 +1,367 @@
+{
+  "id": "zhou",
+  "version": "20261011-v1",
+  "source": "references/personal-ip-trio-20261010/melyssa-zhou-mubai",
+  "pages": [
+    "index.html",
+    "about.html",
+    "programs.html",
+    "program-detail.html",
+    "content.html",
+    "article.html",
+    "contact.html"
+  ],
+  "files": [
+    {
+      "source": "references/personal-ip-trio-20261010/melyssa-zhou-mubai/index.html",
+      "output": "index.html",
+      "text": true,
+      "sha256": "e57d8d04c7551b948255e72339c73bfa9f66db6994685fd25d7f6ebbf68d8b2b",
+      "bytes": 5102,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../melyssa-assets/curated-02.jpg",
+          "to": "assets/db883348da09-curated-02.jpg"
+        },
+        {
+          "from": "../melyssa-assets/curated-03.jpg",
+          "to": "assets/6c7566efe2b6-curated-03.jpg"
+        },
+        {
+          "from": "../melyssa-assets/curated-04.jpg",
+          "to": "assets/503c979d01ec-curated-04.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/melyssa-zhou-mubai/about.html",
+      "output": "about.html",
+      "text": true,
+      "sha256": "e692b032ba7a328d712cbfd69ab6f9385db01e7585017b5ae1da5663c8a6812d",
+      "bytes": 2504,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../melyssa-assets/curated-02.jpg",
+          "to": "assets/db883348da09-curated-02.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/melyssa-zhou-mubai/programs.html",
+      "output": "programs.html",
+      "text": true,
+      "sha256": "a822630ddbbb0890bef604c763b3d8108f5f0891e52a369d37421db70ab86f73",
+      "bytes": 2374,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "program-detail.html",
+          "to": "program-detail.html"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/melyssa-zhou-mubai/program-detail.html",
+      "output": "program-detail.html",
+      "text": true,
+      "sha256": "10f32ab81a02fb54cb1e5359d53b0ca07957a25dbe942fe5ad8c4c162387e125",
+      "bytes": 2438,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../melyssa-assets/curated-03.jpg",
+          "to": "assets/6c7566efe2b6-curated-03.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/melyssa-zhou-mubai/content.html",
+      "output": "content.html",
+      "text": true,
+      "sha256": "96ce21e1673d03bd410fd17cfe48ab54abf7ad7e45c520e09ecdaa652f82c924",
+      "bytes": 2526,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../melyssa-assets/curated-03.jpg",
+          "to": "assets/6c7566efe2b6-curated-03.jpg"
+        },
+        {
+          "from": "article.html",
+          "to": "article.html"
+        },
+        {
+          "from": "../melyssa-assets/curated-04.jpg",
+          "to": "assets/503c979d01ec-curated-04.jpg"
+        },
+        {
+          "from": "../melyssa-assets/curated-05.jpg",
+          "to": "assets/9a2b41ba83d1-curated-05.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/melyssa-zhou-mubai/article.html",
+      "output": "article.html",
+      "text": true,
+      "sha256": "1b7c6cbb80639c9aac973897b41d5be29f5f0d926170a8b4832cbba6fc44f963",
+      "bytes": 2117,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../melyssa-assets/curated-04.jpg",
+          "to": "assets/503c979d01ec-curated-04.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/melyssa-zhou-mubai/contact.html",
+      "output": "contact.html",
+      "text": true,
+      "sha256": "1a9dc120d8d48a5205e4fe17c5f61d0c1900832bb2521efab05e1a1b60812d8e",
+      "bytes": 2138,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/melyssa-zhou-mubai/site.css",
+      "output": "site.css",
+      "text": true,
+      "sha256": "183eccb2b6bfee026a3146ce3d1cd46013f88aace648b03fc06160c19d46c41e",
+      "bytes": 16671,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/melyssa-assets/curated-02.jpg",
+      "output": "assets/db883348da09-curated-02.jpg",
+      "text": false,
+      "sha256": "db883348da09666e8856d617131dc02f35e8b9c1eae78707e84a76269a5d7edf",
+      "bytes": 737427,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/melyssa-assets/curated-03.jpg",
+      "output": "assets/6c7566efe2b6-curated-03.jpg",
+      "text": false,
+      "sha256": "6c7566efe2b6956c4c94e984e472fef614743b60cbfb658cd971a388d90bde46",
+      "bytes": 891034,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/melyssa-assets/curated-04.jpg",
+      "output": "assets/503c979d01ec-curated-04.jpg",
+      "text": false,
+      "sha256": "503c979d01ecaf92cd0a07afcf0809deeb3f081f1d773a76900cdc3a76cd4d44",
+      "bytes": 459421,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/melyssa-zhou-mubai/site.js",
+      "output": "site.js",
+      "text": true,
+      "sha256": "a3afbba8dc9f716e87a76cd991e9148f4981e735192c9404a26fc8ae517f2b17",
+      "bytes": 1591,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/melyssa-assets/curated-05.jpg",
+      "output": "assets/9a2b41ba83d1-curated-05.jpg",
+      "text": false,
+      "sha256": "9a2b41ba83d1bc488b953b19d5104110894e5709644a63bf4eceea366fa6aac9",
+      "bytes": 576245,
+      "refs": []
+    }
+  ]
+}

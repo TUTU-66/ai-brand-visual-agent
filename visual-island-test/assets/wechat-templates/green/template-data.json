@@ -1,0 +1,1356 @@
+{
+  "id": "green",
+  "name": "橄榄舒展编注",
+  "family": "green",
+  "colors": [
+    "#777b57",
+    "#d9dacb",
+    "#777b57",
+    "#fbfaf5"
+  ],
+  "palettes": {
+    "original": {
+      "name": "橄榄原色",
+      "colors": [
+        "#777b57",
+        "#d9dacb",
+        "#777b57",
+        "#fbfaf5"
+      ]
+    },
+    "recommended1": {
+      "name": "森林浅雾",
+      "colors": [
+        "#416852",
+        "#e0eade",
+        "#52765a",
+        "#fbfdf8"
+      ]
+    },
+    "recommended2": {
+      "name": "沙丘褐金",
+      "colors": [
+        "#7c6243",
+        "#eee4d4",
+        "#927246",
+        "#fffdf7"
+      ]
+    },
+    "recommended3": {
+      "name": "湖岸青灰",
+      "colors": [
+        "#4a7072",
+        "#e0ebea",
+        "#5d8280",
+        "#fbfdfb"
+      ]
+    }
+  },
+  "tree": {
+    "tag": "article",
+    "attrs": {
+      "class": "article",
+      "id": "article"
+    },
+    "children": [
+      "\n  ",
+      {
+        "tag": "header",
+        "attrs": {
+          "class": "opening"
+        },
+        "children": [
+          "\n    ",
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "eyebrow"
+            },
+            "children": [
+              "DESIGN × AI"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "h1",
+            "attrs": {
+              "data-role": "title"
+            },
+            "children": [
+              "AI进入团队之后，",
+              {
+                "tag": "br",
+                "attrs": {},
+                "children": []
+              },
+              "设计发生了什么？"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "pill",
+              "data-role": "subtitle"
+            },
+            "children": [
+              "一份关于协作关系的阶段观察"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "p",
+            "attrs": {
+              "class": "lead"
+            },
+            "children": [
+              "过去，我们只是让 AI 帮忙修改文字和图片。现在，它开始理解内容关系，并参与一部分判断。",
+              {
+                "tag": "span",
+                "attrs": {
+                  "class": "highlight"
+                },
+                "children": [
+                  "真正需要改变的，不是工具的速度，而是人与工具之间的工作关系。"
+                ]
+              }
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "down",
+              "data-role": "decor"
+            },
+            "children": []
+          },
+          "\n  "
+        ]
+      },
+      "\n\n  ",
+      {
+        "tag": "section",
+        "attrs": {
+          "class": "chapter-title"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "part",
+              "data-role": "number"
+            },
+            "children": [
+              "PART 01"
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "name"
+            },
+            "children": [
+              {
+                "tag": "i",
+                "attrs": {
+                  "class": "dot",
+                  "data-role": "decor"
+                },
+                "children": []
+              },
+              {
+                "tag": "h2",
+                "attrs": {
+                  "data-role": "heading"
+                },
+                "children": [
+                  "从操作工具走向视觉同事"
+                ]
+              },
+              {
+                "tag": "i",
+                "attrs": {
+                  "class": "dot",
+                  "data-role": "decor"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "hint"
+            },
+            "children": [
+              "角色发生变化"
+            ]
+          }
+        ]
+      },
+      "\n  ",
+      {
+        "tag": "section",
+        "attrs": {
+          "class": "chapter-card"
+        },
+        "children": [
+          "\n    ",
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "media reference-media",
+              "data-role": "image",
+              "data-captioned": "true"
+            },
+            "children": [
+              {
+                "tag": "span",
+                "attrs": {},
+                "children": [
+                  "图片位置"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "media-note",
+              "data-role": "caption"
+            },
+            "children": [
+              "图 01｜AI 从局部执行进入项目协作"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "p",
+            "attrs": {
+              "class": "body"
+            },
+            "children": [
+              "最早进入设计流程的 AI，往往承担的是执行：去掉背景、调整尺寸、生成若干方向、把一段文字变成另一种语气。它提高了局部速度，却没有改变工作的基本结构——人仍然要逐项下达指令，也要逐项检查结果。"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "p",
+            "attrs": {
+              "class": "body"
+            },
+            "children": [
+              "当 AI 开始读取项目背景、理解内容关系、记住已经确认的规则，情况才真正发生变化。它不再只等一句命令，而是需要知道这次任务为什么存在、哪些内容不能动、哪些判断必须由人完成。"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "p",
+            "attrs": {
+              "class": "body"
+            },
+            "children": [
+              "这时，它更像一位尚需校准的视觉同事：可以接过明确的重复工作，也可以提出候选方案，但不能越过项目边界替人作最终决定。"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "quote-note"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "label"
+                },
+                "children": [
+                  "KEY POINT 01"
+                ]
+              },
+              {
+                "tag": "blockquote",
+                "attrs": {},
+                "children": [
+                  "稳定的协作，不是让 AI 替人决定，而是让它承担可验证的判断。"
+                ]
+              },
+              {
+                "tag": "p",
+                "attrs": {
+                  "class": "note"
+                },
+                "children": [
+                  "能被说明、复核和退回的判断，才适合进入稳定流程。"
+                ]
+              }
+            ]
+          },
+          "\n  "
+        ]
+      },
+      "\n\n  ",
+      {
+        "tag": "section",
+        "attrs": {
+          "class": "chapter-title"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "part",
+              "data-role": "number"
+            },
+            "children": [
+              "PART 02"
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "name"
+            },
+            "children": [
+              {
+                "tag": "i",
+                "attrs": {
+                  "class": "dot",
+                  "data-role": "decor"
+                },
+                "children": []
+              },
+              {
+                "tag": "h2",
+                "attrs": {
+                  "data-role": "heading"
+                },
+                "children": [
+                  "速度变快以后，判断更重要"
+                ]
+              },
+              {
+                "tag": "i",
+                "attrs": {
+                  "class": "dot",
+                  "data-role": "decor"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "hint"
+            },
+            "children": [
+              "把规则放到生成之前"
+            ]
+          }
+        ]
+      },
+      "\n  ",
+      {
+        "tag": "section",
+        "attrs": {
+          "class": "chapter-card"
+        },
+        "children": [
+          "\n    ",
+          {
+            "tag": "p",
+            "attrs": {
+              "class": "body"
+            },
+            "children": [
+              "生成速度变快以后，团队很容易得到更多图片、更多版式和更多文案。可选项增加，并不等于结果更好。如果缺少清晰标准，人只是从“亲手制作”转向“不断筛选”，新的时间会消耗在比较、返工和解释上。"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "double",
+              "data-captioned": "true"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "media reference-media",
+                  "data-role": "image"
+                },
+                "children": [
+                  {
+                    "tag": "span",
+                    "attrs": {},
+                    "children": [
+                      "图片位置"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "media reference-media",
+                  "data-role": "image"
+                },
+                "children": [
+                  {
+                    "tag": "span",
+                    "attrs": {},
+                    "children": [
+                      "图片位置"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "media-note",
+              "data-role": "caption"
+            },
+            "children": [
+              "图 02—03｜更多结果，与更清楚的判断标准"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "p",
+            "attrs": {
+              "class": "body"
+            },
+            "children": [
+              "因此，设计工作的重点开始向前移动。过去常常先做出结果，再讨论哪里不对；现在更需要在生成之前定义内容层级、视觉边界、使用场景和审查方式。"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "compare"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "keys"
+                },
+                "children": [
+                  {
+                    "tag": "span",
+                    "attrs": {},
+                    "children": [
+                      "不是"
+                    ]
+                  },
+                  {
+                    "tag": "span",
+                    "attrs": {},
+                    "children": [
+                      "而是"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "values"
+                },
+                "children": [
+                  {
+                    "tag": "p",
+                    "attrs": {},
+                    "children": [
+                      "把更多结果交给人筛选"
+                    ]
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {},
+                    "children": [
+                      "让规则先排除不合适的结果"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "\n  "
+        ]
+      },
+      "\n\n  ",
+      {
+        "tag": "section",
+        "attrs": {
+          "class": "chapter-title"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "part",
+              "data-role": "number"
+            },
+            "children": [
+              "PART 03"
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "name"
+            },
+            "children": [
+              {
+                "tag": "i",
+                "attrs": {
+                  "class": "dot",
+                  "data-role": "decor"
+                },
+                "children": []
+              },
+              {
+                "tag": "h2",
+                "attrs": {
+                  "data-role": "heading"
+                },
+                "children": [
+                  "工作流需要重新分配"
+                ]
+              },
+              {
+                "tag": "i",
+                "attrs": {
+                  "class": "dot",
+                  "data-role": "decor"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "hint"
+            },
+            "children": [
+              "目标、执行与验证各有归属"
+            ]
+          }
+        ]
+      },
+      "\n  ",
+      {
+        "tag": "section",
+        "attrs": {
+          "class": "chapter-card"
+        },
+        "children": [
+          "\n    ",
+          {
+            "tag": "p",
+            "attrs": {
+              "class": "body"
+            },
+            "children": [
+              "AI 进入团队，并不意味着所有步骤都应该自动化。更合理的方式，是先把工作拆成不同责任，再决定哪一部分由人完成、哪一部分交给 AI、哪一部分必须共同确认。"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "index-list"
+            },
+            "children": [
+              "\n      ",
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "item"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "num"
+                    },
+                    "children": [
+                      "01"
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "copy"
+                    },
+                    "children": [
+                      {
+                        "tag": "strong",
+                        "attrs": {},
+                        "children": [
+                          "人负责目标与边界"
+                        ]
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {},
+                        "children": [
+                          "确认真实任务、内容重点、审美方向和不能越过的限制。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "\n      ",
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "item"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "num"
+                    },
+                    "children": [
+                      "02"
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "copy"
+                    },
+                    "children": [
+                      {
+                        "tag": "strong",
+                        "attrs": {},
+                        "children": [
+                          "AI 负责整理与执行"
+                        ]
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {},
+                        "children": [
+                          "读取材料、建立结构、生成候选、完成重复调整并记录版本。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "\n      ",
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "item"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "num"
+                    },
+                    "children": [
+                      "03"
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "copy"
+                    },
+                    "children": [
+                      {
+                        "tag": "strong",
+                        "attrs": {},
+                        "children": [
+                          "双方共同完成验证"
+                        ]
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {},
+                        "children": [
+                          "在真实尺寸和真实场景中检查结果，只修改明确对象。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "\n    "
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "p",
+            "attrs": {
+              "class": "body"
+            },
+            "children": [
+              "当这三种责任被区分出来，AI 才不只是一个更快的按钮。它开始进入项目流程，但仍然保留人工确认门和失败后的回退路径。"
+            ]
+          },
+          "\n  "
+        ]
+      },
+      "\n\n  ",
+      {
+        "tag": "section",
+        "attrs": {
+          "class": "chapter-title"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "part",
+              "data-role": "number"
+            },
+            "children": [
+              "PART 04"
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "name"
+            },
+            "children": [
+              {
+                "tag": "i",
+                "attrs": {
+                  "class": "dot",
+                  "data-role": "decor"
+                },
+                "children": []
+              },
+              {
+                "tag": "h2",
+                "attrs": {
+                  "data-role": "heading"
+                },
+                "children": [
+                  "真正改变的是协作关系"
+                ]
+              },
+              {
+                "tag": "i",
+                "attrs": {
+                  "class": "dot",
+                  "data-role": "decor"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "hint"
+            },
+            "children": [
+              "稳定不是僵化，而是规则可复用"
+            ]
+          }
+        ]
+      },
+      "\n  ",
+      {
+        "tag": "section",
+        "attrs": {
+          "class": "chapter-card"
+        },
+        "children": [
+          "\n    ",
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "media reference-media",
+              "data-role": "image",
+              "data-captioned": "true"
+            },
+            "children": [
+              {
+                "tag": "span",
+                "attrs": {},
+                "children": [
+                  "图片位置"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "media-note",
+              "data-role": "caption"
+            },
+            "children": [
+              "图 04｜从一次生成走向持续校准"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "p",
+            "attrs": {
+              "class": "body"
+            },
+            "children": [
+              "工具升级通常是一次性的：安装新软件、学习新功能、替换旧流程。协作关系的变化却是持续发生的。团队需要不断回答：AI 可以看到哪些材料？可以修改到什么程度？什么结果必须留下证据？什么动作必须等待确认？"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "p",
+            "attrs": {
+              "class": "body"
+            },
+            "children": [
+              "稳定并不意味着每篇文章都长得一模一样。它意味着同一套原则可以在不同内容里重复生效：标题层级不会混乱，强调不会滥用，图片不足时不会硬拼，用户已经确认的风格不会在下一篇文章里突然消失。"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "p",
+            "attrs": {
+              "class": "body"
+            },
+            "children": [
+              "当规则可以被保存、测试和带走，AI 才能从一次性的生成工具，变成真正参与工作的协作者。"
+            ]
+          },
+          "\n    ",
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "open-quote"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "mark"
+                },
+                "children": [
+                  "“"
+                ]
+              },
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  "设计团队真正获得的，不只是更多产出，而是一套可以持续校准的协作方法。"
+                ]
+              }
+            ]
+          },
+          "\n  "
+        ]
+      },
+      "\n\n  ",
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "ending-sep",
+          "data-role": "decor"
+        },
+        "children": [
+          {
+            "tag": "i",
+            "attrs": {},
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attrs": {},
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attrs": {},
+            "children": []
+          }
+        ]
+      },
+      "\n  ",
+      {
+        "tag": "section",
+        "attrs": {
+          "class": "ending qr-group-centered",
+          "data-role": "qrgroup"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "qr qr-sleeve"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "unified-qr-block",
+                  "aria-label": "二维码占位，不可扫码",
+                  "data-role": "qr"
+                },
+                "children": [
+                  "二维码占位"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "cta",
+              "data-role-copy": "ending"
+            },
+            "children": [
+              {
+                "tag": "i",
+                "attrs": {
+                  "class": "mini",
+                  "data-role": "decor"
+                },
+                "children": []
+              },
+              {
+                "tag": "strong",
+                "attrs": {
+                  "data-role": "endingTitle"
+                },
+                "children": [
+                  "扫码继续关注"
+                ]
+              },
+              {
+                "tag": "span",
+                "attrs": {
+                  "data-role": "endingNote"
+                },
+                "children": [
+                  "获取后续设计与 AI 实践更新"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "\n  ",
+      {
+        "tag": "p",
+        "attrs": {
+          "class": "footnote"
+        },
+        "children": [
+          "校准样张｜二维码与图片均为占位资产"
+        ]
+      },
+      "\n"
+    ]
+  },
+  "bodyStyle": "",
+  "defaults": {
+    "primary": "#777b57",
+    "soft": "#d9dacb",
+    "emphasis": "#777b57",
+    "paper": "#fbfaf5",
+    "titleSize": 28,
+    "headingSize": 18,
+    "titleWeight": 800,
+    "subtitle": true,
+    "numbers": true,
+    "density": "normal",
+    "emphasisMode": "original",
+    "decor": true,
+    "captions": true,
+    "endingTitle": "扫码继续关注",
+    "endingNote": "获取后续设计与 AI 实践更新",
+    "signature": "",
+    "qr": ""
+  },
+  "recipes": {
+    "root": {
+      "tag": "article",
+      "attrs": {
+        "class": "article",
+        "id": "article"
+      }
+    },
+    "hero": {
+      "tag": "header",
+      "attrs": {
+        "class": "opening"
+      },
+      "children": [
+        "\n    ",
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "eyebrow"
+          },
+          "children": [
+            "DESIGN × AI"
+          ]
+        },
+        "\n    ",
+        {
+          "tag": "h1",
+          "attrs": {
+            "data-role": "title"
+          },
+          "children": [
+            "AI进入团队之后，",
+            {
+              "tag": "br",
+              "attrs": {},
+              "children": []
+            },
+            "设计发生了什么？"
+          ]
+        },
+        "\n    ",
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "pill",
+            "data-role": "subtitle"
+          },
+          "children": [
+            "一份关于协作关系的阶段观察"
+          ]
+        },
+        "\n    ",
+        {
+          "tag": "p",
+          "attrs": {
+            "class": "lead"
+          },
+          "children": [
+            "过去，我们只是让 AI 帮忙修改文字和图片。现在，它开始理解内容关系，并参与一部分判断。",
+            {
+              "tag": "span",
+              "attrs": {
+                "class": "highlight"
+              },
+              "children": [
+                "真正需要改变的，不是工具的速度，而是人与工具之间的工作关系。"
+              ]
+            }
+          ]
+        },
+        "\n    ",
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "down",
+            "data-role": "decor"
+          },
+          "children": []
+        },
+        "\n  "
+      ]
+    },
+    "intro": null,
+    "chapterHead": {
+      "tag": "section",
+      "attrs": {
+        "class": "chapter-title"
+      },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "part",
+            "data-role": "number"
+          },
+          "children": [
+            "PART 01"
+          ]
+        },
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "name"
+          },
+          "children": [
+            {
+              "tag": "i",
+              "attrs": {
+                "class": "dot",
+                "data-role": "decor"
+              },
+              "children": []
+            },
+            {
+              "tag": "h2",
+              "attrs": {
+                "data-role": "heading"
+              },
+              "children": [
+                "从操作工具走向视觉同事"
+              ]
+            },
+            {
+              "tag": "i",
+              "attrs": {
+                "class": "dot",
+                "data-role": "decor"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "hint"
+          },
+          "children": [
+            "角色发生变化"
+          ]
+        }
+      ]
+    },
+    "paragraph": {
+      "tag": "p",
+      "attrs": {
+        "class": "body"
+      },
+      "children": [
+        "最早进入设计流程的 AI，往往承担的是执行：去掉背景、调整尺寸、生成若干方向、把一段文字变成另一种语气。它提高了局部速度，却没有改变工作的基本结构——人仍然要逐项下达指令，也要逐项检查结果。"
+      ]
+    },
+    "quote": {
+      "tag": "blockquote",
+      "attrs": {},
+      "children": [
+        "稳定的协作，不是让 AI 替人决定，而是让它承担可验证的判断。"
+      ]
+    },
+    "list": {
+      "tag": "div",
+      "attrs": {
+        "class": "index-list"
+      },
+      "children": [
+        "\n      ",
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "item"
+          },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "num"
+              },
+              "children": [
+                "01"
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "copy"
+              },
+              "children": [
+                {
+                  "tag": "strong",
+                  "attrs": {},
+                  "children": [
+                    "人负责目标与边界"
+                  ]
+                },
+                {
+                  "tag": "span",
+                  "attrs": {},
+                  "children": [
+                    "确认真实任务、内容重点、审美方向和不能越过的限制。"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "\n      ",
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "item"
+          },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "num"
+              },
+              "children": [
+                "02"
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "copy"
+              },
+              "children": [
+                {
+                  "tag": "strong",
+                  "attrs": {},
+                  "children": [
+                    "AI 负责整理与执行"
+                  ]
+                },
+                {
+                  "tag": "span",
+                  "attrs": {},
+                  "children": [
+                    "读取材料、建立结构、生成候选、完成重复调整并记录版本。"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "\n      ",
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "item"
+          },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "num"
+              },
+              "children": [
+                "03"
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "copy"
+              },
+              "children": [
+                {
+                  "tag": "strong",
+                  "attrs": {},
+                  "children": [
+                    "双方共同完成验证"
+                  ]
+                },
+                {
+                  "tag": "span",
+                  "attrs": {},
+                  "children": [
+                    "在真实尺寸和真实场景中检查结果，只修改明确对象。"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "\n    "
+      ]
+    },
+    "ending": {
+      "tag": "section",
+      "attrs": {
+        "class": "ending qr-group-centered",
+        "data-role": "qrgroup"
+      },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "qr qr-sleeve"
+          },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "unified-qr-block",
+                "aria-label": "二维码占位，不可扫码",
+                "data-role": "qr"
+              },
+              "children": [
+                "二维码占位"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "cta",
+            "data-role-copy": "ending"
+          },
+          "children": [
+            {
+              "tag": "i",
+              "attrs": {
+                "class": "mini",
+                "data-role": "decor"
+              },
+              "children": []
+            },
+            {
+              "tag": "strong",
+              "attrs": {
+                "data-role": "endingTitle"
+              },
+              "children": [
+                "扫码继续关注"
+              ]
+            },
+            {
+              "tag": "span",
+              "attrs": {
+                "data-role": "endingNote"
+              },
+              "children": [
+                "获取后续设计与 AI 实践更新"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "image": {
+      "tag": "div",
+      "attrs": {
+        "class": "media reference-media",
+        "data-role": "image",
+        "data-captioned": "true"
+      },
+      "children": [
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "图片位置"
+          ]
+        }
+      ]
+    }
+  }
+}

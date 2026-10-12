@@ -22,3 +22,119 @@ html[data-platform-theme=dark] .palette-panel,html[data-platform-theme=dark] .st
 .tool-name b,.preset-copy b,.evidence-strip b,.demo-caption span,.copy-action b{font-weight:500}
 .panel-intro p,.block-title p,.preset-copy small,.micro-help,.stagebar small,.evidence-strip span,.evidence-strip em,.demo-caption small,.copy-kicker,.copy-body,.copy-action span,.copy-footer{font-family:PuHui,sans-serif;font-weight:400}
 button,input,.back,.stage-actions a{font-family:PuHui,sans-serif}
+
+/* CTRL-01 / TASK-PALETTE-VISUAL-001. Platform chrome only; --c-* artwork unchanged. */
+.platform-palette.palette-integrated{height:auto;min-height:100vh;overflow:auto;padding-bottom:0}
+.palette-integrated .palette-toolbar{min-height:62px;padding:10px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid var(--platform-line);background:transparent}
+.palette-integrated .palette-location{display:flex;align-items:center;gap:18px;min-width:0}
+.palette-integrated .palette-location>a{font-size:12px;color:var(--platform-muted)}
+.palette-integrated .palette-location h1{font-size:18px;line-height:1.3;font-weight:500;margin:0}
+.palette-integrated .palette-account{font-size:12px}
+.palette-integrated #paletteTier{padding:3px 7px;border:1px solid var(--platform-line);border-radius:5px;color:var(--platform-muted)}
+.palette-integrated #paletteUpgrade{color:var(--platform-purple)}
+.palette-integrated .top-actions{position:static;display:flex;gap:8px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+.palette-integrated .top-actions button{min-height:40px;padding:0 16px;font-size:13px;border:1px solid var(--platform-line);border-radius:7px;cursor:pointer;white-space:nowrap}
+.palette-integrated .top-actions .primary{background:#6e43af;color:#fff;border-color:#6e43af!important}
+.palette-integrated .top-actions button:hover{filter:brightness(.96)}
+.palette-integrated .top-actions button:disabled{opacity:.5;cursor:wait}
+.palette-integrated .palette-workspace{height:calc(100dvh - 126px);min-height:610px;grid-template-columns:310px minmax(0,1fr);gap:0;background:transparent}
+.palette-integrated .palette-panel{padding:24px 22px;background:var(--platform-paper)}
+.palette-integrated .panel-intro h2{font-size:20px;margin:0 0 7px;line-height:1.3}
+.palette-integrated .panel-intro p{font-size:12px}
+.palette-integrated .control-block{margin-top:24px;padding-top:22px}
+.palette-integrated .block-title h2{font-size:15px;font-weight:500}
+.palette-integrated .block-title p{font-size:11px}
+.palette-integrated .filter-row{flex-wrap:wrap;overflow:visible;gap:5px}
+.palette-integrated .filter-row button{border-radius:6px;min-height:34px}
+.palette-integrated .filter-row button.selected,.palette-integrated .preview-mode button.selected{color:var(--platform-purple);background:var(--platform-lav);border-color:var(--platform-purple)}
+.palette-integrated .preset-list{max-height:320px;gap:8px;padding-right:5px}
+.palette-integrated .preset-card{grid-template-columns:90px minmax(0,1fr);padding:10px 8px;gap:10px;border-radius:7px}
+.palette-integrated .preset-copy small{font-size:11px;line-height:1.5}
+.palette-integrated .preset-copy b{font-size:13px}
+.palette-integrated .mini-palette{height:44px;border-radius:4px}
+.palette-integrated .palette-stage{min-width:0;min-height:0;background:transparent}
+.palette-integrated .stagebar{background:transparent;min-height:48px;height:auto;padding:10px 24px;gap:10px;border-color:var(--platform-line)}
+.palette-integrated .stagebar small{display:none}
+.palette-integrated .stage-actions a{background:transparent;min-height:30px;line-height:30px;border:0;padding:0;font-size:12px;color:var(--platform-muted)}
+.palette-integrated .stage-scroll{padding:0 24px 24px;overflow:auto}
+.palette-integrated .swatch-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.palette-integrated .swatch{min-height:142px;border-radius:7px;padding:16px;min-width:0}
+.palette-integrated .swatch .lock{opacity:1;min-height:34px}
+.palette-integrated .swatch:first-child{grid-column:auto}
+.palette-integrated .swatch:nth-child(4),.palette-integrated .swatch:nth-child(5){min-height:142px}
+.palette-integrated .swatch .copy-color{min-height:32px}
+.palette-integrated .copy-color code{font-size:13px}
+.palette-integrated .palette-advice{margin:12px 0 20px;color:var(--platform-muted);font-size:12px}
+.palette-integrated .palette-advice summary{cursor:pointer;padding:8px 0;width:fit-content}
+.palette-integrated .evidence-strip{margin:10px 0 0;border-radius:7px;color:var(--platform-ink)}
+.palette-integrated .preview-head{margin:0 0 14px;gap:10px;align-items:center}
+.palette-integrated .preview-head h2{font-size:17px;line-height:1.4;margin:0;font-weight:500}
+.palette-integrated .preview-mode button{min-height:36px;border-radius:6px;padding:0 14px;font-size:12px}
+.palette-integrated .preview-shell{background:transparent!important;background-image:none!important;border:0;padding:0;min-height:0;border-radius:0}
+.palette-integrated .preview-board{width:100%;max-width:1500px;grid-template-columns:1.12fr .88fr;gap:18px}
+.palette-integrated .demo-card{max-width:none;border:1px solid var(--platform-line);box-shadow:0 8px 24px #3428410d}
+.palette-integrated .demo-caption{background:var(--platform-paper);color:var(--platform-ink);height:40px}
+.palette-integrated .copy-content{padding:38px 30px 26px}
+.palette-integrated .copy-content h3{font-size:clamp(28px,2.5vw,46px);line-height:1.18}
+.palette-integrated .copy-poster,.palette-integrated .graphic-poster{min-height:410px}
+.palette-integrated .palette-view-tabs{display:none}
+.palette-integrated .toast{color:var(--platform-paper);bottom:22px;z-index:110}
+.palette-integrated #paletteAvatar[hidden]{display:none}
+.palette-integrated.palette-account-locked .palette-view-tabs{visibility:hidden}
+@media(min-width:1800px){.palette-integrated .palette-workspace{grid-template-columns:340px minmax(0,1fr)}.palette-integrated .stage-scroll{padding:0 38px 30px}.palette-integrated .stagebar{padding-inline:38px}.palette-integrated .preview-board{max-width:none;gap:24px}.palette-integrated .copy-poster,.palette-integrated .graphic-poster{min-height:510px}.palette-integrated .copy-content{padding:50px}.palette-integrated .copy-content h3{max-width:680px}.palette-integrated .copy-body{max-width:620px;font-size:15px}.palette-integrated .swatch{min-height:154px}}
+@media(max-width:1150px) and (min-width:901px){.palette-integrated .palette-workspace{grid-template-columns:280px minmax(0,1fr)}.palette-integrated .palette-panel{padding:20px 16px}.palette-integrated .stage-scroll{padding-inline:18px}.palette-integrated .copy-content{padding:26px 20px}.palette-integrated .demo-caption small{display:none}.palette-integrated .swatch{padding:10px}.palette-integrated .copy-color code{font-size:11px}.palette-integrated .swatch .lock span:last-child{display:none}.palette-integrated .swatch .lock{width:34px;padding:0;justify-content:center}}
+@media(max-width:900px){
+ .palette-integrated .palette-toolbar{padding:12px 16px;display:block;min-height:112px}
+ .palette-integrated .palette-location{gap:12px;justify-content:space-between;margin-bottom:12px}
+ .palette-integrated .palette-location>a{display:none}
+ .palette-integrated .palette-location h1{font-size:16px}
+ .palette-integrated .top-actions{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px;position:static;inset:auto}
+ .palette-integrated .top-actions button{min-height:44px;padding:0 9px;font-size:13px}
+ .palette-integrated .palette-view-tabs{display:flex;gap:0;padding:0 16px;border-bottom:1px solid var(--platform-line)}
+ .palette-integrated .palette-view-tabs button{min-height:46px;flex:1;font-size:13px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--platform-muted);cursor:pointer}
+ .palette-integrated .palette-view-tabs button[aria-selected=true]{border-color:var(--platform-purple);color:var(--platform-purple);font-weight:500}
+ .palette-integrated .palette-workspace{height:auto;min-height:0;display:block}
+ .palette-integrated[data-palette-view=preview] .palette-panel,.palette-integrated[data-palette-view=settings] .palette-stage{display:none}
+ .palette-integrated .palette-panel{border:0;background:transparent;padding:22px 16px 32px;overflow:visible}
+ .palette-integrated .panel-intro{display:none}
+ .palette-integrated .control-block:first-of-type{margin-top:0;padding-top:0;border-top:0}
+ .palette-integrated .preset-list{max-height:none;overflow:visible;grid-template-columns:1fr 1fr;padding:0}
+ .palette-integrated .preset-card{grid-template-columns:1fr;padding:12px;gap:8px;align-items:start;background:var(--platform-paper)}
+ .palette-integrated .preset-card.selected{background:var(--platform-lav)}
+ .palette-integrated .preset-copy small{font-size:11px}
+ .palette-integrated .filter-row button,.palette-integrated .adjust-grid button,.palette-integrated .wide-secondary,.palette-integrated .seed-row input,.palette-integrated .seed-row button{min-height:44px}
+ .palette-integrated .filter-row{margin-bottom:10px}
+ .palette-integrated .palette-stage{min-height:0}
+ .palette-integrated .stagebar{padding:10px 16px}
+ .palette-integrated .stage-actions a{display:block;font-size:11px}
+ .palette-integrated .stage-scroll{padding:0 16px 24px;overflow:visible}
+ .palette-integrated .swatch-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+ .palette-integrated .swatch,.palette-integrated .swatch:nth-child(4),.palette-integrated .swatch:nth-child(5){min-height:168px;padding:48px 5px 5px;gap:0;align-items:center;border-radius:5px}
+ .palette-integrated .swatch strong{font-size:10px;margin:0;line-height:1.3}
+ .palette-integrated .swatch .lock{top:3px;right:calc(50% - 22px);width:44px;height:44px;padding:0;justify-content:center;border:0;background:transparent}
+ .palette-integrated .swatch .lock span:last-child{display:none}
+ .palette-integrated .swatch .lock.locked{background:currentColor}
+ .palette-integrated .swatch .copy-color{min-height:44px;align-self:center;display:flex;align-items:center}
+ .palette-integrated .copy-color code{font-size:10px}
+ .palette-integrated .swatch label{font-size:0;width:100%;height:44px;display:block;opacity:1}
+ .palette-integrated .swatch input[type=color]{width:100%;height:44px;padding:4px}
+ .palette-integrated .palette-advice{margin:6px 0 10px}
+ .palette-integrated .palette-advice summary{min-height:44px;display:flex;align-items:center;gap:8px}
+ .palette-integrated .palette-advice summary:before{content:'+';font-size:16px}
+ .palette-integrated .palette-advice[open] summary:before{content:'−'}
+ .palette-integrated .evidence-strip{grid-template-columns:1fr 1fr}
+ .palette-integrated .evidence-strip>div{border-bottom:1px solid var(--platform-line)}
+ .palette-integrated .preview-mode button{min-height:44px}
+ .palette-integrated .preview-board{grid-template-columns:1fr;gap:18px}
+ .palette-integrated .copy-poster,.palette-integrated .graphic-poster{min-height:360px}
+ .palette-integrated .copy-content{padding:30px 24px}
+ .palette-integrated .copy-content h3{font-size:32px}
+ .palette-integrated .copy-body{font-size:13px}
+ .palette-integrated .toast{left:16px;right:16px;bottom:16px;font-size:13px}
+}
+@media(max-width:370px){body[data-platform-tool=palette] .tool-name{display:none}body[data-platform-tool=palette] .back{margin-right:auto}.palette-integrated .copy-color code{font-size:9px}}
+/* Scrolling pages must paint the same atmosphere beyond the first viewport. */
+html body.platform-palette.palette-integrated[data-platform-tool=palette]{background-attachment:scroll}
+.palette-integrated .swatch .copy-color{min-width:44px;justify-content:center}
+/* Keep body backgrounds on the full document, not the old 100%-height root canvas. */
+html:has(body.palette-integrated){height:auto;min-height:100%;background-color:var(--platform-bg)}

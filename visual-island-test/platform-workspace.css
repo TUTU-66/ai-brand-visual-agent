@@ -1,0 +1,5 @@
+/* Account gate only, never style the work inside a preview. */
+.workspace-locked [data-owned-workspace]{visibility:hidden!important;pointer-events:none!important}
+#workspaceGuard{position:fixed;z-index:110;left:50%;top:45%;transform:translate(-50%,-50%);width:min(430px,calc(100% - 32px));padding:24px;background:#f7f3fb;color:#30213f;border:1px solid #bba4d3;border-radius:8px;font:14px/1.7 PuHui,"Microsoft YaHei",sans-serif}
+#workspaceGuard[hidden]{display:none}
+#workspaceGuard button{font:inherit;padding:10px 16px;min-height:44px;background:#6e43af;color:white;border:0;border-radius:6px;cursor:pointer}

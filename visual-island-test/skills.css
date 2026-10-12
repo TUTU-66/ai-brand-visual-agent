@@ -1,0 +1,36 @@
+/* List-page rules only; no changes to shared navigation or tool styling. */
+.skills-page .skills-main{max-width:1280px;width:calc(100% - 128px);margin-top:48px;min-height:calc(100vh - 330px)}
+.skills-page .skills-intro{margin-bottom:36px}
+.skills-page .skills-back{font-size:13px;color:#544169}
+.skills-page .skills-back:hover{text-decoration:underline;text-underline-offset:4px}
+.skills-page h1{margin:24px 0 0;font-size:36px;font-weight:500;line-height:1.3}
+.skills-page .skill-list{border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong)}
+.skills-page .skill-row{display:grid;grid-template-columns:minmax(0,1fr) 192px;gap:56px;padding:36px 0}
+.skills-page .skill-description{max-width:850px;min-width:0}
+.skills-page .skill-file{margin:0 0 12px;font-size:12px;color:#5b506a}
+.skills-page h2{margin:0 0 18px;font-size:24px;font-weight:500;line-height:1.5}
+.skills-page .skill-purpose{font-size:17px;line-height:1.85;margin:0 0 24px}
+.skills-page .skill-steps{padding-left:1.5em;margin:0 0 24px;font-size:14px;line-height:1.9}
+.skills-page .skill-steps li+li{margin-top:6px}
+.skills-page .skill-compatibility,.skills-page .skill-requirements{font-size:13px;line-height:1.8;margin:10px 0 0;color:#544169}
+.skills-page .skill-compatibility a{text-decoration:underline;text-underline-offset:3px}
+.skills-page .skill-download{padding-top:38px}
+.skills-page .skill-download button{width:100%;min-height:44px;padding:10px 16px;background:#6e43af;color:white;border:1px solid #6e43af;border-radius:6px;font:500 14px/1.5 PuHui,"Microsoft YaHei",sans-serif;cursor:pointer}
+.skills-page .skill-download button:hover{background:#59318f;border-color:#59318f}
+.skills-page .skill-download button:disabled{cursor:wait;opacity:.65}
+.skills-page .skill-download button:focus-visible,.skills-page a:focus-visible{outline:2px solid #573184;outline-offset:4px}
+.skills-page .skill-access{font-size:12px;text-align:center;line-height:1.7;margin:10px 0 0;color:#544169}
+.skills-page .skill-status{font-size:13px;line-height:1.8;color:#544169;margin:14px 0 0;overflow-wrap:anywhere}
+.skills-page .skill-status:empty{margin:0}
+@media(max-width:809px){
+ .skills-page .skills-main{width:calc(100% - 32px);margin-top:28px;min-height:0}
+ .skills-page .skills-intro{margin-bottom:24px}
+ .skills-page h1{font-size:28px;margin-top:20px}
+ .skills-page .skill-row{grid-template-columns:1fr;gap:24px;padding:24px 0}
+ .skills-page h2{font-size:21px;margin-bottom:14px}
+ .skills-page .skill-purpose{font-size:15px;line-height:1.85;margin-bottom:18px}
+ .skills-page .skill-steps{font-size:14px;margin-bottom:18px}
+ .skills-page .skill-download{padding-top:0}
+ .skills-page .skill-download button{width:100%}
+ .skills-page .skill-status{text-align:left}
+}

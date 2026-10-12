@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>暖米生活美学 · 微调｜梦玉的能力岛</title>
+<link rel="stylesheet" href="wechat-template-editor.css?v=color-roles-2">
+<link rel="stylesheet" href="saved-palettes.css?v=1">
+<link rel="stylesheet" href="platform-workspace.css?v=1"><link rel="stylesheet" href="editor-island-shell.css?v=site-audit-004">  <script src="preview-mode.js"></script>
+</head><body class="logged-out"><header class="editor-island-shell"><a class="editor-island-brand" href="index.html"><img src="assets/home-psd-001/mengyu-logo.webp" alt="MENGYU" width="2028" height="594"><span>梦玉的能力岛</span></a><button class="editor-island-toggle" id="navToggle" aria-label="打开导航" aria-expanded="false"><span></span><span></span></button><nav class="editor-island-nav" id="siteNav" aria-label="主导航"><a href="website-templates.html">网站</a><a href="wechat-templates.html" aria-current="page">公众号</a><a href="gallery.html?type=comic">分格漫画</a><a href="gallery.html?type=palette">配色</a><a href="membership.html">会员</a></nav><div class="editor-island-account"><div class="guest-links"><a href="login.html?returnTo=%2Fwechat-template-editor.html">登录</a><a href="register.html?returnTo=%2Fwechat-template-editor.html">注册</a></div><a class="account-avatar" id="accountAvatar" href="space.html" aria-label="进入个人空间"></a></div></header>
+<header class="editor-bar">
+ <a class="back" href="wechat-templates.html">← 返回模板</a>
+ <div class="page-name"><b>暖米生活美学</b><small>把这套模板，微调成你的</small></div>
+ <div class="actions" data-owned-workspace><button id="resetBtn">恢复原样</button><button id="saveBtn">保存项目</button><button id="downloadBtn" class="primary" disabled>下载风格包</button></div>
+</header>
+<main class="editor-workspace" data-owned-workspace>
+ <section class="preview-pane" aria-label="完整文章预览">
+  <div class="preview-toolbar"><span>文章预览 <small>点击内容可定位设置</small></span><button id="settingsToggle" aria-expanded="false" aria-controls="settingsPanel">调整样式</button><button id="toEndBtn">查看结尾 ↓</button></div>
+  <div id="previewScroll" class="preview-scroll" tabindex="0" aria-label="可滚动完整长文">
+   <div id="previewSizer"><iframe id="articleFrame" title="暖米生活美学完整文章" referrerpolicy="no-referrer"></iframe></div>
+  </div>
+ </section>
+ <aside id="settingsPanel" class="settings-panel" aria-label="模板微调">
+  <div class="settings-head"><h1>微调样式</h1><span id="saveState">原模板</span></div>
+  <form id="settingsForm">
+   <details data-group="palette" open><summary>整体配色</summary><div class="group-body">
+    <p class="hint">按本模板的深浅层次配色；深底文字单独适配。</p>
+    <div class="palette-presets" role="group" aria-label="推荐套色"></div>
+    <div class="color-grid"><label>主色<input type="color" name="primary" aria-label="主色"></label><label>辅助浅色<input type="color" name="soft" aria-label="辅助浅色"></label><label>重点色<input type="color" name="emphasis" aria-label="重点色"></label><label>页面底色<input type="color" name="paper" aria-label="页面底色"></label></div>
+    <section data-saved-palettes="wechat" aria-label="我的配色"></section>
+   </div></details>
+   <details data-group="headings"><summary>标题与章节</summary><div class="group-body">
+    <div class="field"><span id="titleSizeLabel">主标题大小</span><div class="choice-group size-choices" role="group" aria-labelledby="titleSizeLabel" data-setting="titleSize"><button type="button" data-value="28">28</button><button type="button" data-value="29">29<small>原样</small></button><button type="button" data-value="30">30</button><button type="button" data-value="31">31</button></div></div>
+    <div class="field"><span id="titleWeightLabel">主标题字重</span><div class="choice-group" role="group" aria-labelledby="titleWeightLabel" data-setting="titleWeight"><button type="button" data-value="400">常规</button><button type="button" data-value="500">中等</button><button type="button" data-value="600">稍重</button></div></div>
+    <div class="field"><span id="headingSizeLabel">章节标题大小</span><div class="choice-group size-choices" role="group" aria-labelledby="headingSizeLabel" data-setting="headingSize"><button type="button" data-value="19">19</button><button type="button" data-value="21">21<small>原样</small></button><button type="button" data-value="23">23</button></div></div>
+    <label class="switch"><span>显示副标题</span><input type="checkbox" name="subtitle"></label>
+    <label class="switch"><span>显示章节编号</span><input type="checkbox" name="numbers"></label>
+   </div></details>
+   <details data-group="body"><summary>正文与重点</summary><div class="group-body">
+    <div class="field"><span id="densityLabel">阅读疏密</span><div class="choice-group" role="group" aria-labelledby="densityLabel" data-setting="density"><button type="button" data-value="compact">稍紧凑</button><button type="button" data-value="normal">标准</button><button type="button" data-value="airy">稍舒展</button></div></div>
+    <div class="field"><span id="emphasisLabel">重点文字</span><div class="choice-group" role="group" aria-labelledby="emphasisLabel" data-setting="emphasisMode"><button type="button" data-value="original">原样</button><button type="button" data-value="color">重点色</button><button type="button" data-value="underline">浅下划线</button></div></div>
+    <p class="hint">只改变已有重点，不自动把普通文字标成重点。引用和列表沿用这套模板。</p>
+   </div></details>
+   <details data-group="media"><summary>配图与装饰</summary><div class="group-body">
+    <label class="switch"><span>小装饰</span><input type="checkbox" name="decor"></label>
+    <label class="switch"><span>有说明时显示图注</span><input type="checkbox" name="captions"></label>
+    <p class="hint">这里的灰块只展示版式。新文章有图才排图，缺图不留空位；不生成图片。</p>
+   </div></details>
+   <details data-group="ending"><summary>个人结尾</summary><div class="group-body">
+    <label class="field">引导标题<input name="endingTitle" maxlength="80" type="text"></label>
+    <label class="field">补充说明<textarea name="endingNote" maxlength="160" rows="2"></textarea></label>
+    <label class="field">名称或签名<input name="signature" maxlength="80" type="text" placeholder="可不填写"></label>
+    <label class="upload">替换自己的二维码<input id="qrFile" type="file" accept="image/png,image/jpeg,image/webp"></label>
+    <div class="qr-status"><span id="qrStatus">当前为占位块</span><button type="button" id="removeQrBtn">移除</button></div>
+    <p class="hint">图片只保存在本机，并随风格包带走。没有真实二维码时，新文章不显示占位块。</p>
+   </div></details>
+  </form>
+  <button class="help-link" id="helpBtn">风格包怎么用？</button>
+ </aside>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="helpDialog"><button id="closeHelp" aria-label="关闭说明">×</button><h2>带走的是这套排版规则</h2><p>把下载包交给自己的 AI，让它先读 SKILL.md，再按你的文章整理内容、运行包内渲染器。</p><p>运行需要 Node.js，无需安装 npm 依赖。没有图片就只排文字；不连接公众号后台，也不替你发布。</p><p>项目只保存在当前账户的浏览器。下载的包包含你的颜色、微调参数和自选二维码。</p></dialog>
+<script src="platform-account.js"></script><script src="editor-island-shell.js?v=site-audit-004"></script><script src="platform-workspace.js?v=site-catalog-006"></script><script src="portable-package.js"></script>
+<script src="assets/wechat-templates/shared/color-system.js?v=color-roles-2"></script>
+<script src="assets/wechat-templates/warm-beige-lifestyle/shared-renderer.js?v=color-roles-2"></script>
+<script src="wechat-template-registry.js?v=color-roles-2"></script>
+<script src="assets/wechat-templates/shared/template-renderer.js?v=color-roles-2"></script>
+<script src="wechat-template-editor.js?v=site-catalog-006"></script>
+<script src="saved-palettes.js?v=1"></script>
+<script src="saved-palette-connectors.js?v=1"></script>
+</body></html>

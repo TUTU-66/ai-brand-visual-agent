@@ -44,3 +44,90 @@ body{font-family:PuHui,"Microsoft YaHei",sans-serif}.brand strong{font-family:Pu
 .comic-canvas img{display:block;width:100%;height:auto;object-fit:contain;object-position:center top}
 .style-card img{height:120px;object-fit:contain;object-position:center;background:#eee9df}
 @media(max-width:780px){.style-card img{height:112px;object-fit:contain}}
+
+/* TASK-COMIC-INTEGRATE-001: unavailable generation is a status, not a primary action. */
+.platform-comic .unavailable-action{width:100%;min-height:40px;margin-top:8px;border:1px dashed var(--platform-line,var(--line));border-radius:7px;background:transparent;color:var(--platform-muted,var(--muted));font-size:12px;font-weight:600;cursor:not-allowed}
+.platform-comic .unavailable-action:disabled{opacity:1}
+
+/* CTRL-01: account verification hides stale account content, not just actions. */
+.platform-comic.comic-account-locked .workspace,.platform-comic.comic-account-locked .comic-toolbar,.platform-comic.comic-account-locked #comicLegacy{visibility:hidden}
+.platform-comic #comicAccountGuard{position:fixed;z-index:300;inset:25% 5% auto;max-width:600px;margin:auto;background:var(--platform-paper,#fafaf7);color:var(--platform-ink,#1f2030);padding:28px;border:1px solid var(--platform-line,#ddd)}
+.platform-comic #comicAccountGuard[hidden]{display:none}
+.platform-comic #comicAccountGuard a,.platform-comic #comicAccountGuard button{display:inline-block;padding:12px;font-size:14px}
+
+/* TASK-COMIC-VISUAL-001: scoped work surface; shared chrome lives in platform-theme.css. */
+.platform-comic.comic-integrated .comic-toolbar{height:70px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:transparent}
+.platform-comic.comic-integrated .comic-location{display:flex;gap:14px;align-items:center;font-size:13px}
+.platform-comic.comic-integrated #comicTier{font-size:12px;line-height:22px;padding:0 8px;border:1px solid var(--platform-line);border-radius:5px;color:var(--platform-muted)}
+.platform-comic.comic-integrated #comicUpgrade{font-size:12px;color:var(--platform-purple)}
+.platform-comic.comic-integrated .top-actions{display:flex;gap:8px;margin:0}
+.platform-comic.comic-integrated .top-actions button{display:block;height:40px;padding:0 18px;font-size:13px;border-radius:7px;border:1px solid var(--platform-line);background:var(--platform-paper);color:var(--platform-ink);white-space:nowrap;cursor:pointer}
+.platform-comic.comic-integrated .top-actions .primary{background:var(--platform-purple);color:#fff;border-color:transparent}
+.platform-comic.comic-integrated .top-actions button:disabled{cursor:wait;opacity:.65}
+.platform-comic.comic-integrated .workspace{display:grid;grid-template-columns:340px minmax(0,1fr);gap:18px;margin:0;padding:0 28px 20px;height:calc(100dvh - 134px);min-height:540px;width:100%;background:transparent}
+.platform-comic.comic-integrated .style-panel{padding:20px;height:100%;max-height:none;overflow:auto;border:1px solid var(--platform-line);border-radius:10px;background:var(--platform-paper)}
+.platform-comic.comic-integrated .flow-intro h1{font-size:18px;line-height:26px;font-weight:500;margin:0 0 6px}
+.platform-comic.comic-integrated .flow-intro p{font-size:12px;color:var(--platform-muted);line-height:1.7;margin:0 0 20px}
+.platform-comic.comic-integrated .flow-step{border:0;border-top:1px solid var(--platform-line);border-radius:0;margin:0;padding:16px 0;background:transparent}
+.platform-comic.comic-integrated .flow-step summary{padding:0;background:transparent;align-items:center;min-height:40px}
+.platform-comic.comic-integrated .flow-step summary b{font-size:14px;font-weight:500}
+.platform-comic.comic-integrated .flow-step summary small{font-size:12px;margin-top:3px;line-height:1.5;color:var(--platform-muted)}
+.platform-comic.comic-integrated .step-number{font-size:12px;color:var(--platform-purple);padding:0}
+.platform-comic.comic-integrated .step-body{padding:16px 0 0}
+.platform-comic.comic-integrated .style-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:0}
+.platform-comic.comic-integrated .style-card{min-width:0;border:1px solid var(--platform-line);border-radius:6px;overflow:hidden;background:var(--platform-paper);padding:4px;cursor:pointer}
+.platform-comic.comic-integrated .style-card img{display:block;width:100%;height:130px;object-fit:contain;background:#ede9df;border-radius:3px}
+.platform-comic.comic-integrated .style-card span{display:block;padding:9px 0 6px;text-align:center}
+.platform-comic.comic-integrated .style-card b{font-size:12px;font-weight:500;color:var(--platform-ink)}
+.platform-comic.comic-integrated .style-card.active{border-color:var(--platform-purple);box-shadow:0 0 0 1px var(--platform-purple);background:var(--platform-lav)}
+.platform-comic.comic-integrated .control-section{background:transparent;padding:0;border:0}
+.platform-comic.comic-integrated .control-section label{font-size:13px;margin-bottom:12px}
+.platform-comic.comic-integrated .control-section :is(input:not([type=color]),textarea,select){font-size:14px;background:var(--platform-paper);color:var(--platform-ink);min-height:40px;border-color:var(--platform-line)}
+.platform-comic.comic-integrated :is(.hint,.export-section p,.comic-export-note){font-size:12px;line-height:1.8;color:var(--platform-muted)}
+.platform-comic.comic-integrated .role-choices :is(small,b){font-size:12px}
+.platform-comic.comic-integrated .preview-stage{display:flex;flex-direction:column;height:100%;min-height:0;overflow:hidden;border:1px solid var(--platform-line);border-radius:10px;background:rgba(255,250,248,.24)}
+.platform-comic.comic-integrated .stage-bar{min-height:58px;height:auto;padding:8px 18px;border-bottom:1px solid var(--platform-line);background:transparent;gap:12px}
+.platform-comic.comic-integrated .stage-status{display:flex;align-items:center;gap:12px;font-size:13px}
+.platform-comic.comic-integrated .stage-status small{font-size:12px;color:var(--platform-muted)}
+.platform-comic.comic-integrated .stage-actions{gap:6px}
+.platform-comic.comic-integrated .stage-actions button{min-height:36px;font-size:12px;font-weight:400;border-radius:6px;background:var(--platform-paper);color:var(--platform-ink);border:1px solid var(--platform-line)}
+.platform-comic.comic-integrated .stage-actions button[aria-pressed=true]{color:var(--platform-purple);border-color:var(--platform-purple)}
+.platform-comic.comic-integrated #refreshRoute{display:none}
+.platform-comic.comic-integrated .canvas-wrap{background:transparent!important;flex:1;min-height:0;padding:16px;overflow:auto;scrollbar-gutter:stable both-edges}
+.platform-comic.comic-integrated .comic-canvas{display:block;width:500px;margin:0;flex:none;border:0;border-radius:0;box-shadow:0 8px 28px #2920301a;overflow:visible;background:#efece5}
+.platform-comic.comic-integrated .comic-canvas img{display:block;width:100%;height:auto;max-width:none;filter:none;opacity:1}
+.platform-comic.comic-integrated .stage-foot{display:flex;align-items:center;justify-content:space-between;min-height:42px;padding:8px 18px;gap:12px;border-top:1px solid var(--platform-line);background:transparent;font-size:12px;color:var(--platform-muted)}
+.platform-comic.comic-integrated .comic-view-tabs{display:none}
+.platform-comic.comic-integrated #comicLegacy{border-top:1px solid var(--platform-line);padding:12px 0;margin-top:14px;font-size:12px;line-height:1.8}
+.platform-comic.comic-integrated #comicLegacy[hidden]{display:none}
+.platform-comic.comic-integrated #comicLegacy button{min-height:40px;padding:8px;border:1px solid var(--platform-line);background:var(--platform-paper);color:var(--platform-ink);margin-top:10px}
+.platform-comic.comic-integrated .toast{font-size:13px;line-height:1.5;z-index:400;max-width:calc(100% - 32px)}
+html[data-platform-theme=dark] .platform-comic.comic-integrated .preview-stage{background:#211b2c55}
+html[data-platform-theme=dark] .platform-comic.comic-integrated .flow-step[open] summary{background:transparent}
+html[data-platform-theme=dark] .platform-comic.comic-integrated .top-actions .primary{color:#201627}
+@media(min-width:1900px){.platform-comic.comic-integrated .workspace{grid-template-columns:380px minmax(0,1fr)}.platform-comic.comic-integrated .style-card img{height:154px}}
+@media(max-width:900px){
+ .platform-comic.comic-integrated .comic-toolbar{height:auto;min-height:92px;padding:10px 14px;gap:8px;flex-wrap:wrap}
+ .platform-comic.comic-integrated .comic-location{flex-basis:100%;gap:12px}
+ .platform-comic.comic-integrated .comic-location #comicUpgrade{margin-left:auto}
+ .platform-comic.comic-integrated .top-actions{width:100%}
+ .platform-comic.comic-integrated .top-actions button{height:40px;flex:1;font-size:13px;padding:0 10px}
+ .platform-comic.comic-integrated .comic-view-tabs{display:flex;margin:2px 14px 12px;gap:6px;padding:3px;border:1px solid var(--platform-line);border-radius:8px;background:var(--platform-paper)}
+ .platform-comic.comic-integrated .comic-view-tabs button{flex:1;min-height:40px;border:0;border-radius:5px;background:transparent;color:var(--platform-muted);font-size:13px}
+ .platform-comic.comic-integrated .comic-view-tabs button[aria-selected=true]{background:var(--platform-lav);color:var(--platform-purple)}
+ .platform-comic.comic-integrated .workspace{display:block;padding:0 14px 14px;height:calc(100dvh - 222px);min-height:430px}
+ .platform-comic.comic-integrated .style-panel{height:100%;padding:18px;overflow:auto}
+ .platform-comic.comic-integrated[data-comic-view=preview] .style-panel{display:none}
+ .platform-comic.comic-integrated[data-comic-view=settings] .preview-stage{display:none}
+ .platform-comic.comic-integrated .preview-stage{height:100%;min-height:0}
+ .platform-comic.comic-integrated .stage-bar{min-height:56px;padding:8px 10px;gap:8px}
+ .platform-comic.comic-integrated .stage-status{font-size:12px}
+ .platform-comic.comic-integrated .stage-status small{display:none}
+ .platform-comic.comic-integrated .stage-actions button{min-height:40px;padding:0 9px}
+ .platform-comic.comic-integrated .stage-foot{min-height:38px;padding:8px 10px;font-size:12px}
+ .platform-comic.comic-integrated .stage-foot span:last-child{display:none}
+ .platform-comic.comic-integrated .style-card img{height:150px}
+ .platform-comic.comic-integrated .canvas-wrap{padding:12px}
+ .platform-comic.comic-integrated .flow-intro{display:none}
+ .platform-comic.comic-integrated #flow-style{border-top:0;padding-top:0}
+}

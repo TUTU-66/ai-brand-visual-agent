@@ -1,0 +1,391 @@
+{
+  "id": "lin",
+  "version": "20261011-v1",
+  "source": "references/personal-ip-trio-20261010/blair-lin-zhiqiu",
+  "pages": [
+    "index.html",
+    "about.html",
+    "programs.html",
+    "program-detail.html",
+    "content.html",
+    "article.html",
+    "contact.html"
+  ],
+  "files": [
+    {
+      "source": "references/personal-ip-trio-20261010/blair-lin-zhiqiu/index.html",
+      "output": "index.html",
+      "text": true,
+      "sha256": "449a5419b4a4121cbc56633ca15aed95dc375ec0e8198f0085380497268fba57",
+      "bytes": 5655,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../blair-assets/curated-01.jpg",
+          "to": "assets/5fbdba42df59-curated-01.jpg"
+        },
+        {
+          "from": "../blair-assets/curated-02.jpg",
+          "to": "assets/4b76d99b65fc-curated-02.jpg"
+        },
+        {
+          "from": "program-detail.html",
+          "to": "program-detail.html"
+        },
+        {
+          "from": "../blair-assets/curated-03.jpg",
+          "to": "assets/c1b1cf6d401b-curated-03.jpg"
+        },
+        {
+          "from": "../blair-assets/curated-04.jpg",
+          "to": "assets/b742599d7aeb-curated-04.jpg"
+        },
+        {
+          "from": "../blair-assets/curated-05.jpg",
+          "to": "assets/d4531361b30f-curated-05.jpg"
+        },
+        {
+          "from": "article.html",
+          "to": "article.html"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/blair-lin-zhiqiu/about.html",
+      "output": "about.html",
+      "text": true,
+      "sha256": "734e8eca07a8a55a348463dde063c767067b65df80828c499f2c42987c73a06b",
+      "bytes": 2543,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../blair-assets/curated-02.jpg",
+          "to": "assets/4b76d99b65fc-curated-02.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/blair-lin-zhiqiu/programs.html",
+      "output": "programs.html",
+      "text": true,
+      "sha256": "82766319bd4eb6978a2a8aa05fb6679b780e74107cbef8f9666686b3beac2ff6",
+      "bytes": 2458,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "program-detail.html",
+          "to": "program-detail.html"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/blair-lin-zhiqiu/program-detail.html",
+      "output": "program-detail.html",
+      "text": true,
+      "sha256": "e14105d9784b12eff3465bccd9db4371e28984034c7b7c79f8d1e74f0fcaeeac",
+      "bytes": 2480,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../blair-assets/curated-03.jpg",
+          "to": "assets/c1b1cf6d401b-curated-03.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/blair-lin-zhiqiu/content.html",
+      "output": "content.html",
+      "text": true,
+      "sha256": "2487b2baf229f6961e516359566a8f3a6a481896f1b3b2138806a416b8424b31",
+      "bytes": 2477,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../blair-assets/curated-03.jpg",
+          "to": "assets/c1b1cf6d401b-curated-03.jpg"
+        },
+        {
+          "from": "article.html",
+          "to": "article.html"
+        },
+        {
+          "from": "../blair-assets/curated-04.jpg",
+          "to": "assets/b742599d7aeb-curated-04.jpg"
+        },
+        {
+          "from": "../blair-assets/curated-05.jpg",
+          "to": "assets/d4531361b30f-curated-05.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/blair-lin-zhiqiu/article.html",
+      "output": "article.html",
+      "text": true,
+      "sha256": "9b8b740d4dadc9b44b1393b38263dcd22040e344ce378e18223ecca92c63007c",
+      "bytes": 2068,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../blair-assets/curated-04.jpg",
+          "to": "assets/b742599d7aeb-curated-04.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/blair-lin-zhiqiu/contact.html",
+      "output": "contact.html",
+      "text": true,
+      "sha256": "85dd2e2b6279a6cb880443b062c4162aa162ea083b9813b7767a099d4c70d166",
+      "bytes": 2170,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/blair-lin-zhiqiu/site.css",
+      "output": "site.css",
+      "text": true,
+      "sha256": "d1840186564e28358b503364fddbf577cdf9dca5fa4b5a66a9c082ddcd6c76db",
+      "bytes": 14716,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/blair-assets/curated-01.jpg",
+      "output": "assets/5fbdba42df59-curated-01.jpg",
+      "text": false,
+      "sha256": "5fbdba42df590f01b6a378eb13fc10f2b65f7e69bd90fc9934fadcf9af3b7ed8",
+      "bytes": 382840,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/blair-assets/curated-02.jpg",
+      "output": "assets/4b76d99b65fc-curated-02.jpg",
+      "text": false,
+      "sha256": "4b76d99b65fc13d5611fbbb1d1f205e21418bfc71947332b6a3afc4b7746ad97",
+      "bytes": 516087,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/blair-assets/curated-03.jpg",
+      "output": "assets/c1b1cf6d401b-curated-03.jpg",
+      "text": false,
+      "sha256": "c1b1cf6d401b14ab6e2c13d3b6fa6f41b8f4e62a29249f5121ffe58030fb2c12",
+      "bytes": 429468,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/blair-assets/curated-04.jpg",
+      "output": "assets/b742599d7aeb-curated-04.jpg",
+      "text": false,
+      "sha256": "b742599d7aeb3e75bca4f122f2a183f83d74f1a194c1ffce7b1bf30144b00e7b",
+      "bytes": 362945,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/blair-assets/curated-05.jpg",
+      "output": "assets/d4531361b30f-curated-05.jpg",
+      "text": false,
+      "sha256": "d4531361b30fa929f28dbf826d574a36212eeb237c6983e5fee4df3f26b19387",
+      "bytes": 448130,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/blair-lin-zhiqiu/site.js",
+      "output": "site.js",
+      "text": true,
+      "sha256": "a3afbba8dc9f716e87a76cd991e9148f4981e735192c9404a26fc8ae517f2b17",
+      "bytes": 1591,
+      "refs": []
+    }
+  ]
+}

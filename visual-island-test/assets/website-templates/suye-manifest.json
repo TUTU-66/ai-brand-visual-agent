@@ -1,0 +1,383 @@
+{
+  "id": "suye",
+  "version": "20261011-v1",
+  "source": "references/personal-ip-trio-20261010/charli-su-ye",
+  "pages": [
+    "index.html",
+    "about.html",
+    "programs.html",
+    "program-detail.html",
+    "content.html",
+    "article.html",
+    "contact.html"
+  ],
+  "files": [
+    {
+      "source": "references/personal-ip-trio-20261010/charli-su-ye/index.html",
+      "output": "index.html",
+      "text": true,
+      "sha256": "8a1e7d2c52adc2ab9c31b648f0682404ded4eeabb1e7cd2415604fac5ecfd580",
+      "bytes": 4648,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../charli-assets/curated-03.jpg",
+          "to": "assets/954d5a9c09de-curated-03.jpg"
+        },
+        {
+          "from": "../charli-assets/curated-02.jpg",
+          "to": "assets/3a57b2b76594-curated-02.jpg"
+        },
+        {
+          "from": "../charli-assets/curated-01.jpg",
+          "to": "assets/11a2f435a7fb-curated-01.jpg"
+        },
+        {
+          "from": "program-detail.html",
+          "to": "program-detail.html"
+        },
+        {
+          "from": "../charli-assets/curated-04.jpg",
+          "to": "assets/1c486b255741-curated-04.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/charli-su-ye/about.html",
+      "output": "about.html",
+      "text": true,
+      "sha256": "04bd5a9b451f8316d32cc23268a6fa9b43650445949d90e0a29a1847902a1872",
+      "bytes": 2587,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../charli-assets/curated-02.jpg",
+          "to": "assets/3a57b2b76594-curated-02.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/charli-su-ye/programs.html",
+      "output": "programs.html",
+      "text": true,
+      "sha256": "7de6be4b5025544f742db20ad964d8d4f4cdfa82388f7a5c0d4838d5716ed9d1",
+      "bytes": 2482,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "program-detail.html",
+          "to": "program-detail.html"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/charli-su-ye/program-detail.html",
+      "output": "program-detail.html",
+      "text": true,
+      "sha256": "cd2e39bca3044d6ae81883771b8cfea388bf18662897c8b594b659f84b23e79e",
+      "bytes": 2519,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../charli-assets/curated-03.jpg",
+          "to": "assets/954d5a9c09de-curated-03.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/charli-su-ye/content.html",
+      "output": "content.html",
+      "text": true,
+      "sha256": "3e3f843604839c3f8e6c133e938935a635cce50011b92c9ed0638e142aaeb654",
+      "bytes": 2460,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../charli-assets/curated-03.jpg",
+          "to": "assets/954d5a9c09de-curated-03.jpg"
+        },
+        {
+          "from": "article.html",
+          "to": "article.html"
+        },
+        {
+          "from": "../charli-assets/curated-04.jpg",
+          "to": "assets/1c486b255741-curated-04.jpg"
+        },
+        {
+          "from": "../charli-assets/curated-05.jpg",
+          "to": "assets/98d4f83d4242-curated-05.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/charli-su-ye/article.html",
+      "output": "article.html",
+      "text": true,
+      "sha256": "c592237df7f27e38e3136ff0d1f11eb68c05287660056478f8b66048091d3937",
+      "bytes": 2097,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "../charli-assets/curated-04.jpg",
+          "to": "assets/1c486b255741-curated-04.jpg"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/charli-su-ye/contact.html",
+      "output": "contact.html",
+      "text": true,
+      "sha256": "61a9a86ad3926e28ef78b7b2ff56e8902884fc5d4dce866d6531bc23bd6c4764",
+      "bytes": 2150,
+      "refs": [
+        {
+          "from": "site.css",
+          "to": "site.css"
+        },
+        {
+          "from": "index.html",
+          "to": "index.html"
+        },
+        {
+          "from": "about.html",
+          "to": "about.html"
+        },
+        {
+          "from": "programs.html",
+          "to": "programs.html"
+        },
+        {
+          "from": "content.html",
+          "to": "content.html"
+        },
+        {
+          "from": "contact.html",
+          "to": "contact.html"
+        },
+        {
+          "from": "site.js",
+          "to": "site.js"
+        }
+      ]
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/charli-su-ye/site.css",
+      "output": "site.css",
+      "text": true,
+      "sha256": "7b1d8b15310e1aff585134ed26d1992ce767e7aac44d1abfd7a55b14b1fcea1a",
+      "bytes": 14020,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/charli-assets/curated-03.jpg",
+      "output": "assets/954d5a9c09de-curated-03.jpg",
+      "text": false,
+      "sha256": "954d5a9c09de8fb626665fbc1f358b007f1f436240daedc13283b8f0b437ca7d",
+      "bytes": 429206,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/charli-assets/curated-02.jpg",
+      "output": "assets/3a57b2b76594-curated-02.jpg",
+      "text": false,
+      "sha256": "3a57b2b76594e4486cae18da513bd445408c71b7c6b57179df89c601aec1a13e",
+      "bytes": 1163080,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/charli-assets/curated-01.jpg",
+      "output": "assets/11a2f435a7fb-curated-01.jpg",
+      "text": false,
+      "sha256": "11a2f435a7fb8400f7e4e3ff4f9cb1d3fd2566fbe79cae528f2c28dfdd7a33c7",
+      "bytes": 622752,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/charli-assets/curated-04.jpg",
+      "output": "assets/1c486b255741-curated-04.jpg",
+      "text": false,
+      "sha256": "1c486b2557419b65b809d7c6b4f4ffbcbc5722d33903b4eba4a77f2465ab5ee1",
+      "bytes": 621999,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/charli-su-ye/site.js",
+      "output": "site.js",
+      "text": true,
+      "sha256": "a3afbba8dc9f716e87a76cd991e9148f4981e735192c9404a26fc8ae517f2b17",
+      "bytes": 1591,
+      "refs": []
+    },
+    {
+      "source": "references/personal-ip-trio-20261010/charli-assets/curated-05.jpg",
+      "output": "assets/98d4f83d4242-curated-05.jpg",
+      "text": false,
+      "sha256": "98d4f83d424291b90a57e2d6539ab1a4b0d4423715e16990e599c621089c39b1",
+      "bytes": 522272,
+      "refs": []
+    }
+  ]
+}
