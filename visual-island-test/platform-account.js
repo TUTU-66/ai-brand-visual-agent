@@ -1,6 +1,33 @@
 /* CTRL-01 shared account adapter. Entitlements are never stored in localStorage. */
 (() => {
   const comicKey = id => `mengyu-comic-project-v02:${encodeURIComponent(id)}`;
+  const toolByPage = {
+    'comic.html':'comic','palette.html':'palette','skills.html':'skills',
+    'builder.html':'website','website-template-editor.html':'website',
+    'wechat.html':'wechat','wechat-template-editor.html':'wechat'
+  };
+  const currentTool = () => toolByPage[location.pathname.split('/').pop()] || '';
+  let activityStarted = false, activityTimer = 0;
+  const activitySession = (() => {
+    try {
+      const key='mengyu-activity-session-v1', found=sessionStorage.getItem(key);
+      if(found) return found;
+      const value=(crypto.randomUUID?.()||Math.random().toString(36).slice(2)+Date.now().toString(36)).replace(/[^A-Za-z0-9_-]/g,'');
+      sessionStorage.setItem(key,value);return value;
+    } catch { return 'session-'+Math.random().toString(36).slice(2)+Date.now().toString(36); }
+  })();
+  async function trackActivity(event,tool=currentTool()) {
+    if(!tool) return false;
+    try {
+      const response=await fetch('/api/activity',{method:'POST',credentials:'same-origin',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify({event,tool,sessionId:activitySession})});
+      return response.ok;
+    } catch { return false; }
+  }
+  function startActivity() {
+    if(activityStarted||!currentTool()) return;
+    activityStarted=true;void trackActivity('tool.open');
+    activityTimer=setInterval(()=>{if(!document.hidden)void trackActivity('activity.ping')},120000);
+  }
   async function currentUser() {
     const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 8000);
     try {
@@ -8,7 +35,9 @@
       if (!response.ok) throw new Error('暂时无法确认账户，请重试');
       const data = await response.json();
       if (!data.ok) throw new Error('账户服务暂不可用');
-      return data.authenticated && data.user?.id ? data.user : null;
+      const user=data.authenticated && data.user?.id ? data.user : null;
+      if(user)startActivity();
+      return user;
     } finally { clearTimeout(timer); }
   }
   function readComic(id) {
@@ -21,6 +50,7 @@
   function writeComic(id, project) {
     if (!id) throw new Error('请先登录');
     localStorage.setItem(comicKey(id), JSON.stringify({schema:'mengyu-owned-draft/v1',ownerId:id,project}));
+    void trackActivity('project.save','comic');
   }
   const paletteKey = id => `mengyu-owned-palettes-v1:${encodeURIComponent(id)}`;
   function readPalettes(id) {
@@ -37,6 +67,7 @@
     const index=items.findIndex(x=>x.id===assetId);
     if(index<0)items.push(entry);else items[index]=entry;
     localStorage.setItem(paletteKey(id),JSON.stringify({schema:'mengyu-owned-palettes/v1',ownerId:id,items}));
+    void trackActivity('project.save','palette');
     return entry;
   }
   const palettes = [
@@ -54,6 +85,7 @@
   }
   function notifyChanged() { try { localStorage.setItem('mengyu-account-change',String(Date.now())); } catch {} }
   function promptUpgrade(plan='pro') {
+    void trackActivity('upgrade.intent');
     let dialog=document.querySelector('#platformUpgradeDialog');
     if(!dialog){
       const style=document.createElement('style');
@@ -75,5 +107,6 @@
     select(plan==='max'?'max':'pro');
     if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','');
   }
+  window.PlatformActivity = {track:trackActivity,start:startActivity,tool:currentTool,sessionId:activitySession};
   window.PlatformAccount = {currentUser,comicKey,readComic,writeComic,paletteKey,readPalettes,writePalette,paintAvatar,notifyChanged,promptUpgrade};
 })();

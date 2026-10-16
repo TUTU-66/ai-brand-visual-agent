@@ -1,8 +1,11 @@
 {
-  "version": "stage-043a",
-  "mode": "github-with-server-api",
-  "apiOrigin": "https://124.220.229.39",
-  "login": "password-only",
-  "membership": "manual",
-  "wechatExportReady": false
+    "version":  "stage-045",
+    "mode":  "github-with-server-api",
+    "apiOrigin":  "https://124.220.229.39",
+    "login":  "password-only",
+    "membership":  "manual",
+    "activityAnalytics":  true,
+    "contentCollected":  false,
+    "retentionDays":  180,
+    "wechatExportReady":  false
 }
