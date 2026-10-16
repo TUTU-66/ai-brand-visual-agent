@@ -7,7 +7,7 @@
   let user=null;
 
   const labels={free:'Free',pro:'Pro',max:'Max'};
-  const authUrl=(mode='login')=>`${mode==='register'?'register':'login'}.html?returnTo=${encodeURIComponent('/membership.html')}`;
+  const authUrl=(mode='login')=>`${mode==='register'?'register':'login'}.html?returnTo=${encodeURIComponent('/ai-brand-visual-agent/visual-island-test/membership.html')}`;
   const showUpgrade=plan=>{
     title.textContent=`联系工作人员开通 ${labels[plan]}`;
     text.textContent=`扫码添加工作人员，说明你的登录手机号和要开通的 ${labels[plan]} 方案。确认后会在原账户上开通会员。`;

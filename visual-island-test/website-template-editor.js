@@ -23,7 +23,12 @@
  $('.single-colors').addEventListener('change',e=>{if(e.target.dataset.hexKey&&!/^#[\da-f]{6}$/i.test(e.target.value)){e.target.setAttribute('aria-invalid','true');toast('请输入完整色号，例如 #d6e4e8；当前颜色未改变')}});
  $('.single-colors').addEventListener('click',e=>{const b=e.target.closest('[data-reset-color]');if(!b)return;editColor(b.dataset.resetColor,T.colorFields(t,selected).find(f=>f.key===b.dataset.resetColor).value)});
  $('#resetTweaks').onclick=()=>{delete adjustments[selected];renderControls();applyTweaks();toast('已恢复本套配色，其他套色的微调保留')};
- window.WebsiteEditorPalette={current,selection:()=>JSON.parse(JSON.stringify(selection()))};
+ function applySharedRoles(roles){
+  const mappings={shen:{primary:'blue',soft:'aqua',emphasis:'yellow',paper:'paper'},suye:{primary:'purple',soft:'peach',emphasis:'lime',paper:'paper'},zhou:{primary:'green',soft:'pink',emphasis:'heroStart',paper:'cream'},lin:{primary:'brown',soft:'cream',emphasis:'rose',paper:'white'}},available=new Set(T.colorFields(t,selected).map(field=>field.key)),semantic={primary:'brand',soft:'soft',emphasis:'accent',paper:'paper'},raw={};
+  for(const role of ['primary','soft','emphasis','paper']){const key=available.has(semantic[role])?semantic[role]:mappings[t.id]?.[role];if(key&&available.has(key))raw[key]=roles[role]}
+  const clean=T.cleanOverrides(t,selected,raw);if(Object.keys(clean).length)adjustments[selected]=clean;else delete adjustments[selected];renderControls();applyTweaks();return current();
+ }
+ window.WebsiteEditorPalette={current,selection:()=>JSON.parse(JSON.stringify(selection())),applyRoles:applySharedRoles};
  function resize(){T.sizeFrame(frame,host,mode)}new ResizeObserver(resize).observe(host);
  function showPalette(){
   const retained=selected!=='original'&&!t.palettes.some(p=>p.id===selected),box=$('#retainedPalette');

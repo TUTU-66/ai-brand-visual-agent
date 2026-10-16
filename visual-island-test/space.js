@@ -36,14 +36,17 @@ function savedJson(key){
 }
 
 function collectAssets(){
-  const assets=[];
+  const assets=[],paletteSignatures=new Set(),paletteSignature=colors=>Array.isArray(colors)&&colors.length===4?colors.map(x=>String(x).toLowerCase()).join('|'):'';
   try{window.PlatformWorkspace.list(assetOwner).forEach(item=>{const route=item.module==='website'?'website-template-editor.html':item.module==='wechat'?'wechat-template-editor.html':item.module==='builder'?'builder.html':'wechat.html';assets.push({name:item.name||'未命名项目',href:route+(item.module==='wechat-classic'?'?':'?template='+encodeURIComponent(item.templateId)+'&')+'asset='+encodeURIComponent(item.id),savedAt:item.savedAt||''});});}catch{$('#assetEmpty').textContent='部分项目读取失败，原记录已保留。';}
 
   const comic=window.PlatformAccount.readComic(assetOwner);
-  if(comic)assets.push({name:comic.content?.title||comic.title||'未命名分格漫画',href:'comic.html',savedAt:comic.savedAt||''});
+  if(comic)assets.push({name:comic.inputDraft?.title||comic.strip?.title||comic.content?.title||comic.title||'未命名故事条漫',href:'comic.html',savedAt:comic.savedAt||''});
 
-  try{window.PlatformAccount.readPalettes(assetOwner).forEach(item=>assets.push({name:item.snapshot.name||'未命名配色',href:`palette.html?asset=${encodeURIComponent(item.id)}`,savedAt:item.savedAt||''}));}
+  try{window.PlatformAccount.readPalettes(assetOwner).forEach(item=>{const signature=paletteSignature(item.snapshot.colors);if(signature)paletteSignatures.add(signature);assets.push({name:item.snapshot.name||'未命名配色',href:`palette.html?asset=${encodeURIComponent(item.id)}`,savedAt:item.savedAt||''});});}
   catch{$('#assetEmpty').textContent='部分本地配色记录读取失败，原记录已保留。';}
+
+  try{window.SavedPalettes?.list(assetOwner).forEach(item=>{const signature=paletteSignature(item.colors);if(signature&&paletteSignatures.has(signature))return;const tool=item.source?.tool,template=encodeURIComponent(item.source?.templateId||'');let href='palette.html';if(tool==='website'&&template)href=`website-template-editor.html?template=${template}&savedPalette=${encodeURIComponent(item.id)}`;else if(tool==='wechat'&&template)href=`wechat-template-editor.html?template=${template}&savedPalette=${encodeURIComponent(item.id)}`;assets.push({name:item.name||'未命名配色',href,savedAt:item.savedAt||''});if(signature)paletteSignatures.add(signature);});}
+  catch{$('#assetEmpty').textContent='部分共享配色读取失败，原记录已保留。';}
 
   return assets.sort((a,b)=>String(b.savedAt).localeCompare(String(a.savedAt)));
 }
@@ -100,7 +103,8 @@ function render(user){
   (user.identities||[]).forEach(item=>{
     const row=document.createElement('div');
     row.className='identity-item';
-    row.innerHTML=`<b>${providerName(item.provider)}</b><span>${item.label} · 已验证</span>`;
+    const state=item.assurance==='internal-test'?'内部测试':item.assurance==='local-unverified'?'登录账号':'已验证';
+    row.innerHTML=`<b>${providerName(item.provider)}</b><span>${item.label} · ${state}</span>`;
     identities.append(row);
   });
 
@@ -113,18 +117,18 @@ async function load(){
     const user=await window.PlatformAccount.currentUser();
     const data={authenticated:!!user,user};
     if(!data.authenticated||!data.user){
-      location.replace('/login.html?returnTo=/space.html');
+      location.replace('/ai-brand-visual-agent/visual-island-test/login.html?returnTo=/ai-brand-visual-agent/visual-island-test/space.html');
       return;
     }
     render(data.user);
   }catch{
-    location.replace('/login.html?returnTo=/space.html');
+    location.replace('/ai-brand-visual-agent/visual-island-test/login.html?returnTo=/ai-brand-visual-agent/visual-island-test/space.html');
   }
 }
 
 $('#logout').addEventListener('click',async()=>{
   try{await api('/api/logout',{method:'POST',body:'{}'});}
-  finally{window.PlatformAccount.notifyChanged();location.replace('/index.html');}
+  finally{window.PlatformAccount.notifyChanged();location.replace('/ai-brand-visual-agent/visual-island-test/index.html');}
 });
 
 $('#profileForm').addEventListener('submit',async event=>{

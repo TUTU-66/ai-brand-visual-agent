@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<script src="split-api-client.js?v=043"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>完整故事｜故事条漫</title>
+<link rel="stylesheet" href="platform-theme.css?v=site-audit-004">
+<link rel="stylesheet" href="homepage.css?v=site-audit-004">
+<link rel="stylesheet" href="catalog-shell.css?v=palette-shared-011">
+<link rel="stylesheet" href="assets/comic/comic-catalog.css?v=stories-r15-dark">
+<link rel="stylesheet" href="assets/comic/story-reader.css?v=r17">
+<script src="platform-theme.js?v=ctrl01-tool-1"></script>
+</head>
+<body class="editorial-home catalog-page comic-story-page logged-out">
+<div class="ambient-stage" aria-hidden="true">
+    <span class="ambient-blob ambient-primary"></span>
+    <span class="ambient-blob ambient-soft"></span>
+    <span class="ambient-blob ambient-warm"></span>
+    <span class="ambient-blob ambient-light"></span>
+  </div>
+<header class="site-header">
+    <a class="site-name island-brand" href="index.html"><img src="assets/home-psd-001/mengyu-logo.webp" alt="MENGYU" width="2028" height="594"><span>梦玉的能力岛</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="打开导航" aria-expanded="false"><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav" aria-label="主导航"><a href="website-templates.html">网站</a><a href="wechat-templates.html">公众号</a><a href="comic-story.html">条漫</a><a href="gallery.html?type=palette">配色</a><a href="membership.html">会员</a></nav>
+    <div class="account-nav"><div class="guest-links"><a href="login.html">登录</a><a href="register.html">注册</a></div><a class="account-avatar" id="accountAvatar" href="space.html" aria-label="进入个人空间"><span aria-hidden="true"></span></a></div>
+  </header>
+<main class="story-main">
+<a class="story-back" href="index.html">← 返回首页</a>
+<p class="story-error" id="storyError" role="status" hidden></p>
+<div class="story-layout" id="storyLayout">
+<aside class="story-info"><nav class="story-picker" aria-label="选择漫画风格"><h2>选择画风</h2><div class="story-style-links" id="storyStyleLinks"></div></nav><div class="story-current" aria-live="polite">
+<h1 id="storyStyleName">完整故事</h1>
+<p class="story-style" id="storyDetailedName"></p>
+<p class="story-meta" id="storyMeta"></p>
+</div><div class="story-actions"><a class="story-action" id="storyEdit" href="comic.html?style=p01">编辑内容</a><a class="story-action primary" id="storyDownload" href="comic.html?style=p01&amp;download=1">下载风格包</a></div>
+<section class="story-help" aria-label="下载与模型说明"><h2>把喜欢的画风带走</h2><p>点击<strong>下载风格包</strong>，获得风格规则、参考图和使用说明，交给自己的 AI 软件继续创作。</p><p><strong>本站暂未接入在线生图模型。</strong>右侧是完整故事案例，不会随你的输入实时生成。</p><p>不同模型的理解和画面效果会有差异，<strong>无法保证与案例完全一致</strong>。建议先试一格，再制作完整长漫。</p></section>
+</aside>
+<div class="story-content">
+<figure class="story-paper">
+<img id="storyImage" alt="完整故事加载中" width="750" height="2250" fetchpriority="high">
+<figcaption>完整故事案例 · AI 创作演示，非用户真实经历或实时生成结果。<a id="storyOriginal" href="#" target="_blank" rel="noopener">打开清晰原图 ↗</a></figcaption>
+</figure>
+<details class="story-transcript"><summary>展开故事文字版</summary><h2 id="storyTitleText"></h2><ol id="storyTranscript"></ol></details>
+
+
+</div></div>
+<noscript><p>请启用 JavaScript 阅读对应故事，或返回首页。</p></noscript>
+</main>
+<footer class="site-footer"><strong>梦玉的能力岛</strong><nav class="site-footer-nav" aria-label="网站说明"><a href="terms.html">用户协议</a><a href="privacy.html">隐私说明</a><a href="cancellation.html">账号注销</a></nav><span>© 2026 MENGYU</span></footer>
+<script src="homepage.js?v=site-catalog-006"></script>
+<script src="assets/comic/stories-r15/stories.js?v=r17"></script>
+<script src="assets/comic/story-reader.js?v=r17"></script>
+</body></html>

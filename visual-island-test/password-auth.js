@@ -5,12 +5,12 @@
   const phone=$('#phone');
   const message=$('#formMessage');
   const query=new URLSearchParams(location.search);
-  const requestedReturn=query.get('returnTo')||'/space.html';
-  const returnTo=/^\/(?!\/)[A-Za-z0-9_./?=&%-]*$/.test(requestedReturn)?requestedReturn:'/space.html';
+  const requestedReturn=query.get('returnTo')||'/ai-brand-visual-agent/visual-island-test/space.html';
+  const returnTo=/^\/(?!\/)[A-Za-z0-9_./?=&%-]*$/.test(requestedReturn)?requestedReturn:'/ai-brand-visual-agent/visual-island-test/space.html';
   // Keep the original tool destination when switching account entry methods.
   if(query.has('returnTo'))document.querySelectorAll('a[href]').forEach(link=>{
     const target=new URL(link.getAttribute('href'),location.href);
-    if(target.origin===location.origin&&['/login.html','/register.html','/forgot-password.html','/auth.html'].includes(target.pathname)){
+    if(target.origin===location.origin&&['/ai-brand-visual-agent/visual-island-test/login.html','/ai-brand-visual-agent/visual-island-test/register.html','/ai-brand-visual-agent/visual-island-test/forgot-password.html','/ai-brand-visual-agent/visual-island-test/auth.html'].includes(target.pathname)){
       target.searchParams.set('returnTo',returnTo);link.href=target.pathname+target.search+target.hash;
     }
   });
@@ -38,16 +38,16 @@
   }
 
   async function loadConfig(){
-    if(page==='login')return;
+    if(page!=='reset')return;
     try{
       const config=await api('/api/config');
       const note=$('#modeNote');
-      if(config.smsMode==='dev'){note.hidden=false;$('#modeText').textContent='当前是本地测试验证码模式，没有向手机发送真实短信。';}
+      if(config.smsMode==='dev'){note.hidden=false;$('#modeText').textContent='当前没有发送真实短信，验证码会直接显示在本页。';}
       else if(config.smsMode!=='tencent'){note.hidden=false;$('#modeText').textContent='手机号短信服务尚未启用。';$('#sendCode').disabled=true;}
     }catch{setMessage('账户服务未启动，请从能力网站启动器打开。','error')}
   }
 
-  if(page!=='login'){
+  if(page==='reset'){
     const code=$('#code');
     code.addEventListener('input',()=>code.value=code.value.replace(/\D/g,'').slice(0,6));
     $('#sendCode').addEventListener('click',async()=>{
@@ -70,10 +70,14 @@
     if(!validPassword(password)){setMessage('密码需要 8—64 位，并同时包含字母和数字','error');$('#password').focus();return}
     const payload={phone:p,password,returnTo};let endpoint='/api/auth/password/login';
     if(page!=='login'){
-      const code=$('#code').value.trim();const confirm=$('#confirmPassword').value;
-      if(!/^\d{6}$/.test(code)){setMessage('请输入 6 位验证码','error');return}
+      const confirm=$('#confirmPassword').value;
       if(password!==confirm){setMessage('两次输入的密码不一致','error');$('#confirmPassword').focus();return}
-      payload.code=code;endpoint=page==='register'?'/api/auth/password/register':'/api/auth/password/reset';
+      if(page==='reset'){
+        const code=$('#code').value.trim();
+        if(!/^\d{6}$/.test(code)){setMessage('请输入 6 位验证码','error');return}
+        payload.code=code;
+      }
+      endpoint=page==='register'?'/api/auth/password/register':'/api/auth/password/reset';
     }
     const button=$('#submitPassword');button.disabled=true;button.textContent=page==='login'?'正在登录…':page==='register'?'正在注册…':'正在保存…';setMessage('');
     try{

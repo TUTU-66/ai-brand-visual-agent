@@ -1,0 +1,8 @@
+{
+  "version": "stage-043a",
+  "mode": "github-with-server-api",
+  "apiOrigin": "https://124.220.229.39",
+  "login": "password-only",
+  "membership": "manual",
+  "wechatExportReady": false
+}

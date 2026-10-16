@@ -1,14 +1,15 @@
-/* CTRL-01 binding: guest trial, one verified owner, protected export, explicit legacy claim. */
+/* CTRL-01 binding: login-required Free use, one owner, protected paid export. */
 (() => {
   const account=window.PlatformAccount, mod=window.ComicModule;
   const guard=document.querySelector('#comicAccountGuard'), message=document.querySelector('#comicAccountMessage');
   const workspace=document.querySelector('.workspace'), actions=document.querySelector('.comic-toolbar');
   const legacyKey='mengyu-comic-project-v01', claimKey='mengyu-comic-legacy-owner-v1', guestKey='mengyu-comic-guest-draft-v1';
-  let owner=null, guest=false, dirty=false, refreshing=null, initialized=false, switched=false;
+  let owner=null, dirty=false, refreshing=null, initialized=false, switched=false;
   const initial=mod.serializeProject(), pendingKey=id=>`mengyu-comic-unsaved:${id}`;
-  function stash() { if(dirty&&!switched)try{sessionStorage.setItem(pendingKey(owner?.id||'guest'),JSON.stringify(mod.serializeProject()));}catch{} }
+  function stash() { if(dirty&&!switched&&owner)try{sessionStorage.setItem(pendingKey(owner.id),JSON.stringify(mod.serializeProject()));}catch{} }
   function cover(text) {
     stash(); guard.hidden=false; message.textContent=text;
+    guard.dataset.mode=text.startsWith('请先登录')?'login':'retry';
     workspace.inert=true; actions.inert=true;
     document.body.classList.add('comic-account-locked');
   }
@@ -28,23 +29,17 @@
       try {
         const user=await account.currentUser();
         if(!user){
-          if(owner){cover('账户已退出。请刷新后继续试用，原账户内容不会带入。');switched=true;return null;}
-          guest=true;showUser();
-          if(!initialized){initialized=true;let pending=null;try{pending=sessionStorage.getItem(pendingKey('guest'));}catch{}let saved=null;try{saved=localStorage.getItem(guestKey);}catch{}
-            const candidate=pending||saved;if(candidate&&mod.parseStoredProject(candidate).kind==='valid'){restore(JSON.parse(candidate));dirty=!!pending;}
-            document.querySelector('#comicLegacy').hidden=true;
-          }
-          uncover();return null;
+          if(owner){switched=true;}
+          showUser();cover('请先登录。Free 账户可以制作、预览和保存条漫；下载与导出需开通 Pro / Max。');return null;
         }
         if(switched){cover('账户已变化。请载入当前账户的设定。');return null;}
-        if(guest&&initialized){cover('检测到已登录，请刷新后载入当前账户。试用草稿仍保留在本机。');switched=true;return null;}
         if(owner&&owner.id!==user.id){
           cover('账户已切换。请重新打开，载入当前账户的设定。');
           switched=true;
           restore(initial); dirty=false; document.querySelector('#comicReload').hidden=false;
           return null;
         }
-        guest=false;owner=user; showUser(user);
+        owner=user; showUser(user);
         if(!initialized){
           initialized=true;
           let pending=null;try{pending=sessionStorage.getItem(pendingKey(user.id));}catch{}
@@ -64,10 +59,9 @@
   async function save() {
     const button=document.querySelector('#saveProject');button.disabled=true;button.textContent='正在保存…';
     try{
-      const user=await refresh();if(!user&&!guest)return null;
+      const user=await refresh();if(!user)return null;
       const project=mod.serializeProject();
-      if(user){account.writeComic(user.id,project);try{sessionStorage.removeItem(pendingKey(user.id));}catch{}window.comicToast('已保存到我的资产 · 仅当前浏览器');}
-      else{localStorage.setItem(guestKey,JSON.stringify(project));try{sessionStorage.removeItem(pendingKey('guest'));}catch{}window.comicToast('已保存为本机试用草稿');}
+      account.writeComic(user.id,project);try{sessionStorage.removeItem(pendingKey(user.id));}catch{}window.comicToast('已保存到我的资产 · 仅当前浏览器');
       dirty=false;return project;
     }catch{window.comicToast('保存失败，请检查浏览器存储空间后重试');return null;}
     finally{button.disabled=false;button.textContent='保存项目';}
@@ -77,10 +71,10 @@
     const label=button?.textContent;
     if(button){button.disabled=true;button.textContent='正在确认权限…';}
     try{
-      const user=await refresh();if(!user){if(guest){window.comicToast('可以继续在线试用；下载或导出需登录并开通 Pro / Max');document.querySelector('#comicUpgrade').focus();return {ok:false,error:'login-required'};}return {ok:false,error:'account-unavailable'};}
+      const user=await refresh();if(!user)return {ok:false,error:'login-required'};
       if(!user.membership?.canExport){
-        window.comicToast('Free 可体验和保存；下载或导出请升级会员');
-        document.querySelector('#comicUpgrade').focus();return {ok:false,error:'membership-required'};
+        account.promptUpgrade?.('pro');window.comicToast('扫码联系工作人员开通会员后即可下载或导出');
+        return {ok:false,error:'membership-required'};
       }
       if(button)button.textContent='正在准备下载…';
       const response=await fetch('/api/comic/export',{method:'POST',credentials:'same-origin',cache:'no-store',
@@ -103,7 +97,7 @@
     finally{if(button){button.disabled=false;button.textContent=label;}}
   }
   mod.saveProject=save;
-  mod.loadSavedProject=()=>{if(owner)return restore(account.readComic(owner.id));if(!guest)return false;try{const raw=localStorage.getItem(guestKey);return raw&&mod.parseStoredProject(raw).kind==='valid'?restore(JSON.parse(raw)):false;}catch{return false;}};
+  mod.loadSavedProject=()=>owner?restore(account.readComic(owner.id)):false;
   mod.dispatchExport=exportFile;
   document.querySelector('#comicRetry').onclick=()=>refresh();
   document.querySelector('#comicReload').onclick=()=>location.reload();
@@ -120,8 +114,8 @@
       document.querySelector('#comicLegacy').hidden=true;window.comicToast('旧草稿已归入我的资产，原记录保留');
     }catch{window.comicToast('导入失败，原记录未删除');}
   };
-  ['input','change'].forEach(event=>workspace.addEventListener(event,()=>{if(owner||guest)dirty=true;}));
-  workspace.addEventListener('click',e=>{if((owner||guest)&&e.target.closest('.style-card'))dirty=true;});
+  ['input','change'].forEach(event=>workspace.addEventListener(event,()=>{if(owner)dirty=true;}));
+  workspace.addEventListener('click',e=>{if(owner&&e.target.closest('.style-card'))dirty=true;});
   addEventListener('pagehide',stash);
   addEventListener('blur',()=>{if(initialized&&owner)cover('正在确认账户…');else stash();});
   addEventListener('focus',()=>refresh());

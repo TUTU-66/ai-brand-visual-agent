@@ -1,95 +1,136 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
+<script src="split-api-client.js?v=043"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>分格漫画生成器｜梦玉的能力岛</title>
-  <link rel="stylesheet" href="comic.css?v=ctrl01-visual-1">
-<link rel="stylesheet" href="platform-theme.css?v=site-audit-004">
-<script src="platform-theme.js?v=ctrl01-tool-1"></script>  <script src="preview-mode.js"></script>
-</head>
-<body class="platform-comic comic-integrated comic-account-locked" data-platform-tool="comic" data-comic-view="preview">
+  <title>故事条漫｜梦玉的能力岛</title>
+  <link rel="stylesheet" href="comic.css?v=portable-r14">
+  <link rel="stylesheet" href="platform-theme.css?v=site-audit-004">
+  <script src="platform-theme.js?v=ctrl01-tool-1"></script>
+<link rel="stylesheet" href="tool-save-access.css?v=lead-save-031-final"></head>
+<body class="platform-comic comic-integrated comic-account-locked" data-platform-tool="comic" data-comic-view="editor">
   <header class="topbar platform-tool-header">
     <a class="back platform-tool-brand" href="index.html"><img src="assets/home-psd-001/mengyu-logo.webp" alt="MENGYU" width="2028" height="594"><span>梦玉的能力岛</span></a>
-    <div class="tool-name"><b>分格漫画</b></div>
+    <div class="tool-name"><b>故事条漫</b></div>
     <nav id="toolNav" class="platform-tool-nav" aria-label="主导航">
-      <a href="website-templates.html">网站</a><a href="wechat-templates.html">公众号</a><a href="gallery.html?type=comic" aria-current="page">分格漫画</a><a href="gallery.html?type=palette">配色</a><a href="membership.html">会员</a>
+      <a href="website-templates.html">网站</a><a href="wechat-templates.html">公众号</a><a href="gallery.html?type=comic" aria-current="page">条漫</a><a href="gallery.html?type=palette">配色</a><a href="membership.html">会员</a>
       <div data-platform-theme-host></div>
     </nav>
     <a id="toolAvatar" class="platform-tool-avatar" href="space.html" aria-label="个人空间"></a>
     <button id="toolNavToggle" class="platform-tool-menu" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="toolNav">菜单</button>
   </header>
+
   <div class="comic-toolbar">
-    <div class="comic-location"><a href="gallery.html?type=comic">← 漫画案例</a><span id="comicTier">—</span><a id="comicUpgrade" href="membership.html">升级会员</a></div>
-    <div class="top-actions"><button class="ghost" id="saveProject" type="button">保存项目</button><button class="primary" id="exportProfile" type="button">下载风格包</button></div>
+    <div class="comic-location">
+      <a id="comicStoryBack" href="comic-story.html">← 返回条漫</a>
+      <span id="comicTier">—</span>
+      <a id="comicUpgrade" href="membership.html">升级会员</a>
+    </div>
+    <div class="comic-primary-actions">
+      <button class="start-button" id="startStrip" type="button">编辑内容</button>
+      <button class="ghost" id="saveProject" type="button">保存项目</button>
+      <label class="export-kind" hidden><span class="sr-only">导出内容</span><select id="exportFormat"><option value="package">制作包</option><option value="json">配置 JSON</option></select></label>
+      <button class="primary" id="exportProfile" type="button" title="下载风格规则、参考样张与通用 AI 接手说明；权限按现有会员规则">下载风格包</button>
+    </div>
   </div>
-  <div class="comic-view-tabs" role="tablist" aria-label="漫画工作区">
-    <button id="comicPreviewTab" role="tab" aria-selected="true" aria-controls="comicPreviewPanel" data-comic-view="preview">样张预览</button>
-    <button id="comicSettingsTab" role="tab" aria-selected="false" aria-controls="comicSettingsPanel" data-comic-view="settings" tabindex="-1">制作设定</button>
+
+  <div class="comic-view-tabs" role="tablist" aria-label="故事条漫工作区">
+    <button id="comicEditorTab" role="tab" aria-selected="true" aria-controls="comicSettingsPanel" data-comic-view="editor">内容与脚本</button>
+    <button id="comicPreviewTab" role="tab" aria-selected="false" aria-controls="comicPreviewPanel" data-comic-view="preview" tabindex="-1">完整故事</button>
   </div>
+
   <p id="comicExportNote" class="comic-export-note" hidden></p>
-  <section id="comicAccountGuard" role="status" aria-live="polite">
+  <section class="platform-login-guard" id="comicAccountGuard" role="status" aria-live="polite">
     <p id="comicAccountMessage">正在确认账户…</p>
-    <button id="comicRetry" type="button">重试</button>
-    <a href="login.html?returnTo=%2Fcomic.html">重新登录</a>
-    <button id="comicReload" type="button" hidden>载入当前账户</button>
-    <a href="gallery.html?type=comic">返回漫画案例</a>
+    <div class="platform-login-actions">
+      <a class="platform-login-button" href="login.html?returnTo=%2Fcomic.html">登录</a>
+      <span class="platform-login-hint">登录后继续</span>
+      <button class="platform-login-retry" id="comicRetry" type="button">重试</button>
+      <button class="platform-login-retry" id="comicReload" type="button" hidden>载入当前账户</button>
+      <a class="platform-login-secondary" href="gallery.html?type=comic">返回条漫</a>
+    </div>
   </section>
+
   <main class="workspace" inert>
-    <aside class="style-panel" id="comicSettingsPanel" aria-label="制作设定">
-      <div class="panel-heading"><span>STYLE</span><h1>选择已有样张</h1><p>从六种完整样张中选择，并记录下一次制作设定。</p></div>
-      <div class="style-grid" id="styleGrid">
-        <button class="style-card active" data-style="p01" data-name="扁平编辑"><img src="assets/comic/xiaomiao-p01-v4.webp" alt="好奇小喵工具屋扁平编辑完整漫画"><span><b>扁平编辑</b><small>知识解释 · 清楚轻快</small></span></button>
-        <button class="style-card" data-style="p02" data-name="轻线条"><img src="assets/comic/xiaomiao-p02-v4.webp" alt="好奇小喵工具屋轻线条完整漫画"><span><b>轻线条</b><small>人物连载 · 亲和自然</small></span></button>
-        <button class="style-card" data-style="p03" data-name="手绘日记"><img src="assets/comic/xiaomiao-p03-v4.webp" alt="好奇小喵工具屋手绘日记完整漫画"><span><b>手绘日记</b><small>个人经验 · 温暖松弛</small></span></button>
-        <button class="style-card" data-style="p04" data-name="黑白报刊"><img src="assets/comic/xiaomiao-p04-v4.webp" alt="好奇小喵工具屋黑白报刊完整漫画"><span><b>黑白报刊</b><small>观点观察 · 有力度</small></span></button>
-        <button class="style-card" data-style="p05" data-name="孔版印刷"><img src="assets/comic/xiaomiao-p05-v4.webp" alt="好奇小喵工具屋孔版印刷完整漫画"><span><b>孔版印刷</b><small>步骤知识 · 年轻醒目</small></span></button>
-        <button class="style-card" data-style="p06" data-name="剪纸拼贴"><img src="assets/comic/xiaomiao-p06-v4.webp" alt="好奇小喵工具屋剪纸拼贴完整漫画"><span><b>剪纸拼贴</b><small>抽象关系 · 图形表达</small></span></button>
-      </div>
+    <aside class="story-editor" id="comicSettingsPanel" aria-label="故事条漫内容与脚本">
+      <header class="editor-heading">
+        
+        <h1>选好画风，把创作方法带走</h1>
+        <p>可以直接下载风格包，也可以先填入自己的内容再带走。不需要逐格设置，下载后交给你常用的 AI 继续制作。</p>
+      </header>
+
+      <p class="field-note" id="generationBoundary">本站暂未接入在线生图模型。你可以先参考目前的风格，下载喜欢的风格包，在自己的 AI 软件中验证。不同模型的画面表现会有差异，风格包提供规则与参考，不保证每次完全一致。</p><button class="unavailable-action" id="generateStrip" type="button" disabled>画面生成服务待接入</button><span id="selectedStyleName" hidden>扁平编辑插画</span>
+
+      <details class="field-note comic-ai-guide"><summary>下载后怎么用</summary><ol><li>解压风格包，先打开 README.md，无需安装。</li><li>能读文件的 AI：交给它 AI-HANDOFF.md、风格卡和你的内容；能看图时再附参考图。</li><li>不能读 ZIP：复制 style/prompt-template.md 的完整提示词，再粘贴你的内容。</li><li>先试一个画格，确认后再做全文。没有生图能力的 AI 会先给你脚本和生图提示词。</li></ol><p>包内不含模型或调用额度。上传素材与使用费用按你选择的 AI 软件规则处理。下载沿用平台会员权限。</p></details>
+      <section class="editor-step" id="flow-content">
+        <div class="step-heading"><span>01</span><div><h2>放入内容</h2><p>日常故事、文章、观点、产品介绍或对话记录</p></div></div>
+        <label>标题（选填）<input id="titleInput" type="text" value="" maxlength="60" placeholder="输入标题，末尾无需标点"></label>
+        <label>原始内容<textarea id="contentInput" rows="8" maxlength="6000" placeholder="粘贴日常故事、文章、观点、产品介绍或对话记录。可以先整理，也可以直接带原文下载；当前不会在线生图"></textarea></label>
+        <div class="content-actions"><button class="wide-button" id="analyzeBtn" type="button">整理制作内容</button><span id="analysisStatus" role="status">尚未拆解</span></div>
+        <p class="field-note">当前使用本地规则初步整理，不等同于 AI 已理解或生成画面。成品流程会先完成图文构图，再按完整段落分段。</p>
+      </section>
+
+      <section class="editor-step" id="flow-structure" hidden>
+        <div class="step-heading"><span>02</span><div><h2>选择条漫结构</h2><p id="structureHint">系统会给出建议，你可以改选</p></div></div>
+        <fieldset class="structure-grid">
+          <legend class="sr-only">条漫结构</legend>
+          <label><input type="radio" name="stripStructure" value="daily" checked><span><b>日常故事</b><small>事件推进与生活细节</small></span></label>
+          <label><input type="radio" name="stripStructure" value="dialogue"><span><b>人物对话</b><small>追问、回应与表情切换</small></span></label>
+          <label><input type="radio" name="stripStructure" value="knowledge"><span><b>知识解释</b><small>问题、拆解、对比与方法</small></span></label>
+          <label><input type="radio" name="stripStructure" value="promo"><span><b>宣传介绍</b><small>场景、介入、价值与行动</small></span></label>
+        </fieldset>
+      </section>
+
+      <details class="editor-step script-step" id="flow-script"><summary>查看自动整理的内容</summary>
+        <div class="step-heading"><span>03</span><div><h2>制作内容概览</h2><p>无需逐格填写；如需调整，修改上方原文后重新整理</p></div></div>
+        <div class="script-toolbar"><span id="panelCount">0 格</span><button id="addPanel" type="button" hidden>＋ 增加一格</button></div>
+        <div id="storyboardList" class="storyboard-list" aria-live="polite"></div>
+      </details>
+
+      <section class="editor-step" id="flow-palette" hidden>
+        <div class="step-heading"><span>04</span><div><h2>配色与输出</h2><p>配色只辅助当前画风，不把画风变成简单换色</p></div></div>
+        <div id="paletteChoices" class="palette-choices" aria-label="条漫配色"></div>
+        <div class="saved-palette-row"><button id="refreshPalettes" type="button">读取我的配色</button><span id="paletteStatus">默认配色可用</span></div>
+        <p class="field-note">母版固定为 750px 宽。完整 PNG／JPG 和朋友圈文件导出仍待生成服务接入；当前会员导出只提供配置与 AI 交接材料。</p>
+        
+      </section>
+      <section class="editor-step export-section" id="flow-export" hidden><div class="step-heading"><span>05</span><div><h2>保存与会员导出</h2><p>Free 可编辑、预览与保存；导出由总控权限层处理</p></div></div></section>
     </aside>
 
-    <section id="comicPreviewPanel" class="preview-stage" aria-label="漫画预览">
+    <section id="comicPreviewPanel" class="preview-stage" aria-label="750px 故事条漫预览">
       <div class="stage-bar">
-        <div class="stage-status"><b>已有样张</b><small id="routeStatus">故事型内容</small></div>
-        <div class="stage-actions"><button id="fitPreview" type="button">完整显示</button><button id="zoomPreview" type="button">放大查看</button><button class="icon-btn" id="refreshRoute" aria-label="重新分析内容">↻</button></div>
-      </div>
-      <div class="canvas-wrap">
-        <article class="comic-canvas" id="comicCanvas">
-          <header hidden><p id="previewKicker">好奇小喵工具屋</p><h2 id="previewTitle">好奇小喵的工具屋</h2></header>
-          <img id="previewImage" src="assets/comic/xiaomiao-p01-v4.webp" alt="好奇小喵工具屋扁平编辑完整漫画">
-        </article>
-      </div>
-      <div class="stage-foot"><span id="styleState">扁平编辑 · 好奇小喵完整样张</span><span>在制作设定中切换画风</span></div>
-    </section>
-
-    <aside class="inspector">
-      <section class="control-section"><div class="section-title"><span>01</span><h2>内容</h2></div>
-        <label>标题<input id="titleInput" value="好奇小喵的工具屋"></label>
-        <label>校准内容<textarea id="contentInput" rows="5">小喵先听清大家想做什么、卡在哪里，再梳理问题、研究和试验，把真正调好的工具交给需要的人。</textarea></label>
-        <button class="wide-button" id="analyzeBtn">判断内容关系</button>
-      </section>
-      <section class="control-section"><div class="section-title"><span>02</span><h2>个人形象</h2></div>
-        <label class="toggle-row"><span><b>使用我的漫画形象</b><small>填写角色设定；在线形象生成尚未接入</small></span><input id="identityToggle" type="checkbox"><i></i></label>
-        <div class="identity-fields" id="identityFields" hidden>
-          <label>角色名称<input id="characterName" placeholder="例如：梦玉"></label>
-          <label>身份特点<input id="characterTraits" placeholder="短发、眼镜、米色外套"></label>
-          <label class="upload">添加参考照片<input id="portraitUpload" type="file" accept="image/*"><span id="uploadState">仅用于当前会话；刷新后不保留</span></label>
+        <div class="stage-status"><b id="previewStyleName">扁平编辑插画案例</b><small id="routeStatus">完整故事案例 · 750px母版</small></div>
+        <div class="stage-actions">
+          <button id="showLong" type="button" aria-pressed="true">完整故事</button>
+          <button id="showSegments" hidden type="button" aria-pressed="false">朋友圈分段</button>
+          <button id="fitPreview" type="button" aria-pressed="true">适配</button>
+          <button id="zoomPreview" type="button" aria-pressed="false">原尺寸</button>
+          <button id="mobileReadZoom" class="comic-mobile-read" type="button" aria-pressed="false" aria-label="放大漫画阅读">放大</button>
         </div>
-      </section>
-      <section class="control-section"><div class="section-title"><span>03</span><h2>颜色与字体</h2></div>
-        <div class="color-row"><label>主色<input id="primaryColor" type="color" value="#315cd6"></label><label>强调色<input id="accentColor" type="color" value="#ef5a3c"></label><label>底色<input id="paperColor" type="color" value="#f6f2e9"></label></div>
-        <label>字体组合<select id="fontPair"><option value="editorial">现代编辑黑体</option><option value="diary">手记楷体</option><option value="news">报刊宋体</option><option value="bold">醒目黑体</option></select></label>
-        <p class="hint">标题、配色和字体只记录到下一次制作设定，不会改写已有样张。</p>
-      </section>
-      <section class="control-section export-section"><div class="section-title"><span>04</span><h2>保存与带走</h2></div><p>风格包含所选样张、规则与 Skill 操作说明，不含生图服务或私人照片。跨内容稳定性仍待验证。</p></section>
-    </aside>
+      </div>
+      <div class="canvas-wrap" id="canvasWrap">
+        <figure class="rendered-strip-preview" id="renderedStripPreview">
+          <img id="referenceLongImage" src="assets/comic/stories-r17/p01.webp" decoding="async" alt="扁平编辑插画完整案例">
+          <div class="reference-segments" id="referenceSegments" hidden aria-label="朋友圈语义分段案例"></div>
+          <figcaption>这是此风格的完整故事案例，不是当前输入内容的生成结果。可向下滚动阅读；下载包保留已确认的风格规则与参考，指导外部 AI 按你的内容制作 750px 纵向长漫。</figcaption>
+        </figure>
+      </div>
+      <div class="stage-foot"><span id="styleState">750px · 扁平编辑插画真实案例</span><span id="segmentState">完整长图</span></div>
+    </section>
   </main>
-  <details id="comicLegacy" hidden><summary>本机旧草稿</summary><p>旧版本没有账户归属。确认是你的草稿后再导入；原记录保留。</p><label><input type="checkbox" id="comicClaimCheck">这是我的旧草稿</label><button id="comicImportLegacy" type="button">确认并导入</button></details>
+
+  <details id="comicLegacy" hidden><summary>本机旧草稿</summary><p>旧版本没有账户归属。确认是你的草稿后再导入；原记录保留，并转换为条漫脚本原型。</p><label><input type="checkbox" id="comicClaimCheck">这是我的旧草稿</label><button id="comicImportLegacy" type="button">确认并导入</button></details>
   <div class="toast" id="toast" role="status"></div>
-  <script src="portable-package.js?v=handoff-v1"></script>
-  <script src="platform-account.js?v=comic-ctrl01-1"></script>
-  <script src="comic.js?v=comic-ctrl01-1"></script>
+
+  <script src="platform-account.js?v=palette-shared-011"></script>
+  <script src="saved-palettes.js?v=palette-shared-011"></script>
+  <script src="assets/comic/semantic-segments.js?v=r3"></script>
+  <script src="assets/comic/package-metadata.js?v=r14"></script>
+  <script src="assets/comic/portable-package.js?v=r14"></script>
+  <script src="comic.js?v=editor-story-r17"></script>
   <script src="comic-account.js?v=site-catalog-006"></script>
-  <script src="comic-shell.js?v=ctrl01-1"></script>
-</body>
+<script src="assets/comic/download-entry.js?v=r14"></script>
+<script src="tool-save-access.js?v=lead-save-031-final"></script></body>
 </html>
+

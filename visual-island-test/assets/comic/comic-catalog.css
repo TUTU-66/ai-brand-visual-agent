@@ -1,0 +1,36 @@
+/* Scoped secondary catalog treatment for verified long-strip comic styles. */
+.catalog-page[data-gallery-type="comic"] .gallery-list{grid-template-columns:repeat(3,minmax(0,1fr));justify-content:center;background:transparent;border:0;box-shadow:none;backdrop-filter:none;gap:22px}
+.catalog-page[data-gallery-type="comic"] .comic-strip-card{padding:18px;border:1px solid rgba(60,47,73,.16);border-radius:14px;background:rgba(255,254,252,.78);box-shadow:0 20px 64px rgba(66,49,83,.08)}
+.catalog-page[data-gallery-type="comic"] .device.strip{min-height:440px;padding:18px;background:linear-gradient(145deg,rgba(236,226,213,.82),rgba(232,225,244,.72))}
+.catalog-page[data-gallery-type="comic"] .device.strip .device-shell{width:min(280px,90%);height:400px;border:8px solid #fffdf9;border-radius:8px;background:#f5ead7;box-shadow:0 18px 46px rgba(60,43,54,.18)}
+.catalog-page[data-gallery-type="comic"] .device.strip img{display:block;width:100%;height:auto;object-fit:initial;object-position:top}
+.catalog-page[data-gallery-type="comic"] .gallery-item-copy{align-items:flex-start}.catalog-page[data-gallery-type="comic"] .gallery-item-copy p{display:block;margin:7px 0 0;color:var(--muted);font-size:13px;line-height:1.7}.catalog-page[data-gallery-type="comic"] .gallery-item-copy span{white-space:nowrap}
+@media(max-width:1050px){.catalog-page[data-gallery-type="comic"] .gallery-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.catalog-page[data-gallery-type="comic"] .gallery-list{grid-template-columns:1fr}.catalog-page[data-gallery-type="comic"] .comic-strip-card{padding:16px}.catalog-page[data-gallery-type="comic"] .device.strip{min-height:440px;padding:18px}.catalog-page[data-gallery-type="comic"] .device.strip .device-shell{width:min(300px,88%);height:400px}.catalog-page[data-gallery-type="comic"] .gallery-item-copy{gap:12px}.catalog-page[data-gallery-type="comic"] .gallery-item-copy span{font-size:12px}}
+
+/* R14 approved single-panel references, not cropped fake long strips. */
+.catalog-page[data-gallery-type="comic"] .device.strip{display:block;min-height:0;padding:0;background:transparent}
+.catalog-page[data-gallery-type="comic"] .device.strip .device-shell{width:100%;height:auto;border:0;border-radius:8px;box-shadow:none;background:transparent}
+.catalog-page[data-gallery-type="comic"] .device.strip img{width:100%;height:auto;object-fit:contain}
+.catalog-page[data-gallery-type="comic"] .gallery-item-copy{display:block;margin-top:16px}
+.catalog-page[data-gallery-type="comic"] .comic-card-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.catalog-page[data-gallery-type="comic"] .comic-card-actions a{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border:1px solid currentColor;border-radius:8px;text-decoration:none;font-size:14px;line-height:1.4}
+.catalog-page[data-gallery-type="comic"] .comic-card-actions a:last-child{background:var(--text,#302539);color:var(--bg,#fff)}
+.catalog-page[data-gallery-type="comic"] .comic-card-actions a:focus-visible{outline:3px solid #9172cc;outline-offset:3px}
+
+/* R15 directory shows a bounded excerpt; the reader always shows the full, uncropped story. */
+.catalog-page[data-gallery-type="comic"] .device.strip .device-shell{position:relative;aspect-ratio:var(--story-crop-ratio,1.8);height:auto;overflow:hidden;border-radius:8px;background:#fffaf1}
+.catalog-page[data-gallery-type="comic"] .device.strip .device-shell img{position:absolute;top:0;left:0;display:block;width:100%;height:auto;max-height:none;transform:translateY(var(--story-crop-y,0%));object-fit:initial}
+.catalog-page[data-gallery-type="comic"] .comic-story-open{display:block;padding:13px 0 0;color:var(--violet);font-size:13px;font-weight:600;line-height:1.6}
+.catalog-page[data-gallery-type="comic"] .device.strip{text-decoration:none}
+
+/* Keep the shared dark palette legible in the comic module; never recolor the artwork. */
+html[data-platform-theme=dark] :is(.catalog-page[data-gallery-type="comic"],.comic-story-page){--bg:var(--platform-bg);--text:var(--platform-ink);--violet:var(--platform-purple);background:var(--platform-bg);color:var(--platform-ink)}
+html[data-platform-theme=dark] :is(.catalog-page[data-gallery-type="comic"],.comic-story-page) .ambient-stage{display:none}
+html[data-platform-theme=dark] :is(.catalog-page[data-gallery-type="comic"],.comic-story-page) .site-header{background:var(--platform-paper);border-color:var(--platform-line)}
+html[data-platform-theme=dark] :is(.catalog-page[data-gallery-type="comic"],.comic-story-page) .site-nav a{color:var(--platform-ink)}
+html[data-platform-theme=dark] .catalog-page[data-gallery-type="comic"] .comic-strip-card{background:var(--platform-paper);border-color:var(--platform-line);box-shadow:none}
+html[data-platform-theme=dark] .catalog-page[data-gallery-type="comic"] .catalog-tool-action{color:var(--platform-bg)!important}
+html[data-platform-theme=dark] .comic-story-page .story-action.primary{color:var(--platform-bg)}
+html[data-platform-theme=dark] .catalog-page[data-gallery-type="comic"] .catalog-description{color:var(--platform-muted)}
+html[data-platform-theme=dark] :is(.catalog-page[data-gallery-type="comic"],.comic-story-page) .guest-links a:last-child{color:var(--platform-bg)}

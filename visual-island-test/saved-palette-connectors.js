@@ -5,7 +5,7 @@
  if(host.dataset.savedPalettes==='website'){
   const t=WebsiteTemplates.get(new URLSearchParams(location.search).get('template'));if(!t)return;
   const current=()=>{const p=window.WebsiteEditorPalette?.current()||WebsiteTemplates.palette(t,document.querySelector('#colorPanel [data-palette][aria-pressed=true]')?.dataset.palette),saved=S.fromWebsite(t,p);if(p.readingRoles)saved.roles={...p.readingRoles};return saved};
-  const ui=S.mount(host,{current,notify});window.addEventListener('website-colors-change',()=>ui.setName(current().name));
+  let ui;ui=S.mount(host,{current,notify,apply:p=>{const {roles,adjusted}=S.reading(p);WebsiteEditorPalette.applyRoles(roles);ui.message('已应用“'+p.name+'”'+(adjusted?'，已适配页面底色和文字对比':'')+'；模板结构与内容不变')}});window.addEventListener('website-colors-change',()=>ui.setName(current().name));
   document.querySelector('#colorPanel').addEventListener('click',e=>{if(e.target.closest('[data-palette]'))ui.setName(current().name)});document.querySelector('#resetColors').addEventListener('click',()=>ui.setName(current().name));
  }}
  if(host.dataset.savedPalettes==='website'){if(window.WebsiteEditorPalette)initWebsite();else addEventListener('website-editor-ready',initWebsite,{once:true});}else{

@@ -29,13 +29,21 @@ function create(data){
   ['subtitle','kicker','word','closing'].forEach(k=>text(a[k]));
   if(a.intro!=null&&!Array.isArray(a.intro))throw Error('intro应为数组');
   (a.intro||[]).forEach(p=>text(p.text));im(a.heroImage);
-  a.sections.forEach(sec=>{text(sec.title);text(sec.label);if(!Array.isArray(sec.blocks)||sec.blocks.length>200)throw Error('blocks应为数组');
+  a.sections.forEach(sec=>{text(sec.title);text(sec.label);text(sec.subtitle);if(!Array.isArray(sec.blocks)||sec.blocks.length>200)throw Error('blocks应为数组');
    sec.blocks.forEach(b=>{if(!['paragraph','quote','statement','list','image','images'].includes(b.type))throw Error('未知内容块');
     if(b.type==='images'){if(!Array.isArray(b.items)||b.items.length>9)throw Error('图片组最多9张');b.items.forEach(im);}
     else if(b.type==='image')im(b);else if(b.type==='list'){if(!Array.isArray(b.items)||b.items.length>50)throw Error('列表过长');b.items.forEach(i=>{text(i.title);text(i.text)});}
     else text(b.text);
    });
   });
+ }
+ function pruneMedia(n,limit){
+  if(!Number.isInteger(limit))return n;let seen=0;
+  function visit(x,inEnding){if(!x||typeof x==='string')return x;const c=(x.attrs?.class||'').split(/\s+/),ending=inEnding||c.some(v=>v.includes('ending'))||role(x)==='qrgroup';
+   const slot=!ending&&(role(x)==='image'||c.includes('media-placeholder')||c.includes('image-block')||c.includes('photo-block'));
+   if(slot){seen++;if(seen>limit)return null;return x;}
+   const out=[];let removedSlot=false;for(const child of x.children||[]){const kept=visit(child,ending);if(kept==null){removedSlot=true;continue}if(removedSlot&&role(kept)==='caption'){removedSlot=false;continue}removedSlot=false;out.push(kept);}x.children=out;if((c.includes('media')||x.tag==='figure')&&!ending&&!out.some(y=>typeof y==='object'&&(role(y)==='image'||(y.children||[]).length)))return null;return x;}
+  return visit(n,false);
  }
  function prepare(n,x,cal){
   if(typeof n==='string')return esc(n);
@@ -95,11 +103,12 @@ function create(data){
    const blocks=sec.blocks.flatMap(b=>block(b)||[]);if(!blocks.length)return;
    let head=clone(recipes.chapterHead);
    if(F==='legacy'){head.children=head.children.filter(c=>typeof c==='string'||!classes(c).includes('article-section'));}
+   if(F==='purple')filter(head,e=>!(e.tag==='p'&&!role(e)&&!sec.subtitle));
    if(sec.title){fill(head,'heading',sec.title);
     walk(head,e=>{
      if(role(e)==='number')e.children=[F==='green'?'PART '+String(i+1).padStart(2,'0'):String(i+1).padStart(2,'0')];
      if(role(e)==='partlabel')e.children=['PART '+String(i+1).padStart(2,'0')+(sec.label?' / '+sec.label:'')];
-     if((e.tag==='p'||e.tag==='small')&&!role(e))e.children=rich(sec.label||'');
+     if((e.tag==='p'||e.tag==='small')&&!role(e))e.children=F==='purple'&&e.tag==='p'?[node('mark','',rich(sec.subtitle||''))]:rich(sec.label||'');
      if(classes(e).includes('hint'))e.children=rich(sec.label||'');
     });
    }else head=null;
@@ -108,7 +117,8 @@ function create(data){
    else root.children.push(node('section','chapter'+(F==='editorial'?' chapter-'+Math.min(i+1,4):''),[...(head?[head]:[]),...blocks]));
   });
   const ending=clone(recipes.ending);
-  filter(ending,e=>!['image'].includes(role(e))&&!classes(e).some(c=>['ghost','ending-en','slash'].includes(c))&&!(F==='purple'&&e.tag==='small'));
+  // W036: preserve the selected footer decoration structure for real articles too.
+  filter(ending,e=>!['image'].includes(role(e)));
   walk(ending,e=>{if(classes(e).includes('ending-copy'))e.children=rich(a.closing||'');});
   if((F==='green'||F==='legacy')&&a.closing)root.children.push(node('p',F==='green'?'body':'article-lead',rich(a.closing)));
   root.children.push(ending);
@@ -143,7 +153,7 @@ function create(data){
  function render(a,raw,base,options={}){
   validate(a);const x=normalize(raw),cal=options.calibration===true;
   if(cal&&a.calibrationTemplate!==ID)throw Error('校准样稿不属于此模板');
-  const tree=cal?data.tree:liveTree(a),article=prepare(tree,x,cal),css=styles(base,x,cal);
+  const tree=cal?pruneMedia(clone(data.tree),options.bodyImageCount):liveTree(a),article=prepare(tree,x,cal),css=styles(base,x,cal);
   return {article,css,html:'<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(a.title)+'</title><style>'+css+'</style></head><body'+(data.bodyStyle?' data-style="'+data.bodyStyle+'"':'')+'>'+article+'</body></html>'};
  }
  return {ID,defaults,normalize,profile,render,raster};

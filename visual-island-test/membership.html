@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
+<script src="split-api-client.js?v=043"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>会员方案｜梦玉的能力岛</title>
@@ -8,7 +9,6 @@
   <link rel="stylesheet" href="platform-theme.css?v=site-audit-004">
   <link rel="stylesheet" href="homepage.css?v=site-audit-004">
   <link rel="stylesheet" href="membership.css?v=member-plans-5">
-  <script src="preview-mode.js"></script>
 </head>
 <body class="editorial-home membership-page logged-out">
   <header class="site-header">
@@ -30,11 +30,11 @@
         <div class="plan-top">
           <p class="plan-name">Free</p>
           <p class="plan-price"><strong>¥0</strong><span>/ 长期</span></p>
-          <p class="plan-summary">无需注册，直接体验</p>
+          <p class="plan-summary">免费注册，即可使用</p>
         </div>
-        <a class="plan-action" data-plan-action="free" href="index.html">开始体验</a>
+        <a class="plan-action" data-plan-action="free" href="register.html?returnTo=/index.html">免费注册</a>
         <ul class="plan-list">
-          <li><span aria-hidden="true">✓</span>无需注册体验开放工具</li>
+          <li><span aria-hidden="true">✓</span>登录后使用平台开放工具</li>
           <li><span aria-hidden="true">✓</span>在线编辑与预览结果</li>
           <li><span aria-hidden="true">✓</span>后续新增工具持续开放体验</li>
           <li class="locked"><span aria-hidden="true">—</span>不能下载或导出结果</li>
@@ -92,8 +92,8 @@
       <h2 id="upgradeTitle">联系工作人员开通 Pro</h2>
       <p id="upgradeText">扫码添加工作人员，说明你的登录手机号和要开通的方案。确认后会在原账户上开通会员。</p>
     </div>
-    <div class="qr-frame"><img src="assets/membership-contact-qr-placeholder.svg" alt="会员开通示意二维码，暂不可扫码"></div>
-    <p class="qr-note">示意二维码 · 暂不可扫码</p>
+    <div class="qr-frame"><img src="assets/membership-contact-qr.jpg" alt="添加梦玉的联系二维码"></div>
+    <p class="qr-note">扫码联系梦玉 · 确认后人工开通，不会自动扣款</p>
     <button class="dialog-done" id="dialogDone" type="button">我知道了</button>
   </dialog>
 

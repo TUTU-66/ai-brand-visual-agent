@@ -1,0 +1,7 @@
+/* Visible save -> personal space -> continue editing, using existing storage. */
+.tool-save-primary{border:1px solid #9c80cb!important;background:#f1ebfa!important;color:#5d378e!important;font-weight:600!important}
+.tool-assets-link{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;padding:6px 10px;font-size:12px;color:#65428e;text-decoration:none;border:1px solid #ded3ee;border-radius:6px;background:#fff}
+#editorGuide{position:fixed;left:22px;width:172px;z-index:20;color:#6c6379;font-size:14px;line-height:1.7}
+#editorGuide[hidden]{display:none!important}#editorGuide strong{font-size:16px;color:#493958}#editorGuide p{margin:10px 0 16px}#editorGuide button{font-size:12px;display:block;width:100%;background:#6e43af;color:#fff;border:0;padding:9px;border-radius:7px}#editorGuide a{display:block;color:#6e43af;font-size:14px;margin:12px 0}#editorGuide small{display:block;font-size:13px;line-height:1.7;color:#827a8b;margin-top:5px}
+#editorGuide.compact-guide{display:none}
+@media(max-width:760px){.tool-assets-link{font-size:10px;padding:4px 6px}.actions,.top-actions{flex-wrap:wrap}#editorGuide{display:none}}

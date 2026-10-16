@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
+<script src="split-api-client.js?v=043"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>免费注册｜梦玉的能力岛</title>
   <meta name="description" content="注册 Free 账号，体验梦玉的能力岛">
   <link rel="stylesheet" href="account.css?v=site-audit-004">
-  <script src="preview-mode.js"></script>
 </head>
 <body data-account-page="register">
   <main class="account-shell">
@@ -30,18 +30,12 @@
         <div class="mobile-brand"><a href="index.html"><img class="account-wordmark" src="assets/home-psd-001/mengyu-logo.webp" alt="MENGYU" width="2028" height="594"><span>梦玉的能力岛</span></a></div>
         <div class="eyebrow" style="color:var(--purple)">REGISTER</div>
         <h2>免费注册</h2>
-        <p class="lead">验证手机号并设置密码，建立一个 Free 账户。</p>
-        <div class="mode-note" id="modeNote" hidden><span class="mode-dot"></span><span id="modeText"></span></div>
+        <p class="lead">使用手机号作为账号，并设置登录密码。</p>
         <form id="passwordAuthForm" novalidate>
           <div class="field">
             <label for="phone">账号（手机号）</label>
             <div class="phone-control"><span class="country">+86</span><input id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="请输入 11 位手机号"></div>
           </div>
-          <div class="field">
-            <label for="code">短信验证码</label>
-            <div class="code-row"><input class="control" id="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="6 位验证码"><button class="btn btn-secondary btn-code" id="sendCode" type="button">获取验证码</button></div>
-          </div>
-          <div class="dev-code" id="devCode" hidden><span>本轮测试验证码</span><b id="devCodeValue"></b></div>
           <div class="password-grid">
             <div class="field"><label for="password">设置密码</label><div class="password-control"><input id="password" type="password" autocomplete="new-password" maxlength="64" placeholder="8—64位，含字母和数字"><button type="button" data-password-toggle="password" aria-label="显示密码">显示</button></div></div>
             <div class="field"><label for="confirmPassword">确认密码</label><div class="password-control"><input id="confirmPassword" type="password" autocomplete="new-password" maxlength="64" placeholder="再次输入密码"><button type="button" data-password-toggle="confirmPassword" aria-label="显示确认密码">显示</button></div></div>
@@ -49,7 +43,7 @@
           <button class="btn btn-primary" id="submitPassword" type="submit">注册并进入</button>
           <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
         </form>
-        <div class="account-paths"><span>已经注册？<a href="login.html">直接登录</a></span><a href="auth.html?mode=register">只使用验证码进入</a></div>
+        <div class="account-paths"><span>已经注册？<a href="login.html">直接登录</a></span></div>
         <nav class="account-policy-links" aria-label="注册说明"><a href="terms.html">用户协议</a><a href="privacy.html">隐私说明</a><a href="cancellation.html">账号注销</a></nav>
       </div>
     </section>
@@ -57,4 +51,3 @@
   <script src="password-auth.js?v=site-pages-1"></script>
 </body>
 </html>
-

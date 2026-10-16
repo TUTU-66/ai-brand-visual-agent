@@ -1,4 +1,4 @@
-/* One renderer for the editor and portable package. No network or dependencies. */
+﻿/* One renderer for the editor and portable package. No network or dependencies. */
 (function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory((()=>{try{return require('./color-system.js')}catch(e){if(e.code!=='MODULE_NOT_FOUND')throw e;return require('../shared/color-system.js')}})());else root.BeigeRenderer=factory(root.WechatColorSystem);})(typeof globalThis!=='undefined'?globalThis:this,function(Colors){
 'use strict';
 const ID='warm-beige-lifestyle';
@@ -71,7 +71,7 @@ function render(a,raw,base,options={}){
   if(!b.text?.trim())return '';
   return b.type==='quote'?'<blockquote>'+rich(b.text)+'</blockquote>':'<p'+(b.type==='statement'?' class="statement"':'')+'>'+rich(b.text)+'</p>';
  }
- const hero='<header class="hero"><div class="topline"><span>设计与协作</span><span>DESIGN</span></div>'+(a.kicker?'<p class="kicker">'+rich(a.kicker)+'</p>':'')+'<h1>'+rich(a.title)+'</h1>'+(x.subtitle&&a.subtitle?'<p class="subtitle">'+rich(a.subtitle)+'</p>':'')+(a.word?'<div class="hero-word" aria-hidden="true">'+rich(a.word)+'</div>':'')+media(a.heroImage,'hero-media')+'</header>';
+ const hero='<header class="hero"><div class="topline"><span>设计与协作</span><span>DESIGN</span></div>'+(a.kicker?'<p class="kicker">'+rich(a.kicker)+'</p>':'')+'<h1>'+rich(a.title)+'</h1>'+(x.subtitle&&a.subtitle?'<p class="subtitle">'+rich(a.subtitle)+'</p>':'')+(a.word?'<div class="hero-word" aria-hidden="true">'+rich(a.word)+'</div>':'')+(a.heroImage?.src?media(a.heroImage,'hero-media'):'')+'</header>';
  const intro=(a.intro||[]).filter(p=>p.text?.trim()).map(p=>'<p'+(p.lead?' class="lead"':'')+'>'+rich(p.text)+'</p>').join('');
  const chapters=a.sections.map((s,i)=>{
   const content=s.blocks.map(block).join('');if(!content)return '';
@@ -88,3 +88,4 @@ function render(a,raw,base,options={}){
 }
 return {ID,defaults,normalize,profile,render,raster};
 });
+

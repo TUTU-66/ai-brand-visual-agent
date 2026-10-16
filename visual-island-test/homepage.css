@@ -28,14 +28,15 @@ body.editorial-home::after{content:'';position:fixed;z-index:49;inset:-10%;point
 .site-name.island-brand{display:inline-flex;align-items:center;gap:12px;width:max-content;max-width:none;overflow:visible;font-size:17px;font-weight:500;white-space:nowrap}
 .site-name.island-brand img{display:block;width:140px;height:auto;aspect-ratio:2028/594;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(172,135,213,.26))}
 .site-nav a.active,.site-nav a[aria-current="page"]{background:rgba(110,67,175,.12);color:var(--violet);font-weight:700}
-.account-nav{justify-self:end;display:flex;align-items:center}
+.account-nav{justify-self:end;display:flex;align-items:center;gap:10px}
+.account-display-name{display:none;max-width:128px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;font-weight:500;color:var(--ink)}
 .guest-links{display:flex;align-items:center;gap:8px}
 .guest-links a{height:36px;padding:0 15px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line-strong);border-radius:999px;font-size:13px;transition:background .2s,border-color .2s,color .2s}
 .guest-links a:hover{border-color:var(--violet);background:rgba(169,108,255,.15)}
 .guest-links a:last-child{border-color:var(--violet);background:var(--violet);color:#fff}
 .guest-links a:last-child:hover{background:var(--violet-soft);border-color:var(--violet-soft)}
 .account-avatar{--avatar-a:#6e43af;--avatar-b:#9f84eb;--avatar-c:#ffb49e;--avatar-d:#f3d77a;display:none;width:38px;height:38px;border-radius:11px;background:radial-gradient(circle at 18% 18%,var(--avatar-a) 0 16%,transparent 47%),radial-gradient(circle at 82% 22%,var(--avatar-b) 0 18%,transparent 50%),linear-gradient(135deg,var(--avatar-c),var(--avatar-d));box-shadow:inset 0 0 0 1px rgba(255,255,255,.42),0 6px 18px rgba(33,22,58,.16)}.account-avatar span{display:none}
-.logged-in .guest-links{display:none}.logged-in .account-avatar{display:grid}
+.logged-in .guest-links{display:none}.logged-in .account-avatar{display:grid}.logged-in .account-display-name{display:block}
 .nav-toggle{display:none;border:0;background:transparent;padding:8px;color:var(--ink)}
 .nav-toggle span{display:block;width:22px;height:1px;margin:5px;background:currentColor}
 main,.site-footer{position:relative;z-index:1;width:calc(100% - 64px);max-width:var(--max);margin-left:auto;margin-right:auto}

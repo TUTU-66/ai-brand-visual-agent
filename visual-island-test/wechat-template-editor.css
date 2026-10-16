@@ -26,5 +26,55 @@
 .settings-panel .qr-status{font-size:12px}.settings-panel .qr-status button{font-size:12px}
 .settings-panel .help-link{font-size:13px}
 
+/* EDITOR-016-R1: contextual tools; derived color roles stay internal. */
+.context-kicker{display:block;color:#7b7785;font-size:10px;letter-spacing:.08em}.context-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-8px 0 14px}.context-actions button{padding:5px 9px;font-size:11px}.context-actions span{font-size:10px;color:#7b7785;text-align:right}.color-roles{display:none!important}
+@media(max-width:760px){.settings-panel{position:fixed;left:0;right:0;top:auto;bottom:0;width:100%;height:min(58dvh,560px);border-left:0;border-top:1px solid var(--line);border-radius:16px 16px 0 0;box-shadow:0 -12px 34px #241b3526;padding:18px 20px 28px}.settings-head{position:sticky;top:-18px;background:var(--paper);z-index:2;padding:12px 0 8px;margin-bottom:12px}.context-actions{position:sticky;top:42px;background:var(--paper);z-index:2;padding-bottom:10px}.settings-panel:before{content:"";display:block;width:42px;height:4px;border-radius:99px;background:#ccc7d3;margin:-7px auto 11px}}
+
 /* Read-only, actual renderer colors, not another settings form. */
 .color-roles{margin-top:18px;padding-top:15px;border-top:1px solid #dedce8}.color-roles>b{font-size:13px}.color-roles>p{font-size:12px;line-height:1.7;color:#666777;margin:8px 0 12px}.role-swatches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px 6px}.role-swatches i{display:block;height:26px;border:1px solid #00000016;border-radius:3px}.role-swatches span{display:block;font-size:11px;margin-top:4px;line-height:1.5}.role-gradient{height:26px;border:1px solid #00000014;margin-top:12px;border-radius:3px}.color-roles>small{display:block;margin-top:4px;font-size:11px;color:#666777}
+
+/* EDITOR-016-R2-QA: keep the mobile editor above the iframe and make every
+   control reachable without changing the desktop workspace. */
+@media(max-width:760px){
+ #previewSizer,#articleFrame{position:relative;z-index:0}
+ .settings-panel{
+  z-index:60;isolation:isolate;overflow-x:hidden;overflow-y:auto;
+  overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  top:auto!important;bottom:0!important;height:min(68dvh,600px);max-height:calc(100dvh - 212px);
+  padding:18px 20px calc(34px + env(safe-area-inset-bottom));
+  scroll-padding-top:132px;background:var(--paper)
+ }
+ .settings-panel form,.settings-panel details,.settings-panel .group-body{min-width:0}
+ .settings-panel input,.settings-panel textarea,.settings-panel select,.settings-panel button{max-width:100%}
+ .settings-head{top:0;z-index:3;margin-bottom:8px;padding:10px 0 8px}
+ .context-actions{top:66px;z-index:3;margin:0 0 12px;padding:7px 0 10px;border-bottom:1px solid var(--line)}
+ .context-actions span{min-width:0;overflow-wrap:anywhere}
+ body.settings-open .preview-scroll{overscroll-behavior:none}
+}
+
+/* W028 adjacent editing panel */
+@media(min-width:761px){.editor-workspace{display:block!important}.preview-pane{height:100%}#previewScroll{padding-right:370px!important}#previewSizer{position:relative}#settingsPanel{position:fixed!important;width:300px!important;right:auto!important;bottom:auto!important;overflow:auto;background:#fff;border:1px solid #ded8ed;border-radius:12px;box-shadow:0 10px 30px #36264e12;z-index:25}#localEditRail{position:absolute;left:calc(100% + 18px);top:0;width:140px}#localEditRail button{position:absolute;left:0;white-space:nowrap;background:#fff;color:#7250ab;border:1px solid #d9cbe9;font-size:12px;padding:6px 10px;box-shadow:0 3px 8px #4f3d6810}}
+@media(max-width:760px){#localEditRail{display:none}#settingsPanel{left:auto!important;top:auto!important;max-height:72dvh!important}}
+
+body[data-local-editing] #settingsPanel details[open]>summary{display:none}body[data-local-editing] #settingsPanel .help-link{display:none}@media(max-width:760px){#settingsPanel{height:auto!important;min-height:0!important;max-height:42dvh!important}#settingsPanel .settings-head{padding-top:4px;margin-bottom:4px}#settingsPanel .context-actions{position:static}}
+
+/* W029: fixed global settings; click-only contextual tools; no permanent edit rail. */
+#settingsForm{display:contents}#settingsPanel[hidden]{display:none!important}
+#globalPanel{position:fixed;top:128px;right:0;bottom:0;width:280px;padding:22px 20px;background:#fcfbfe;border-left:1px solid #e1dfe7;overflow:auto;z-index:26}
+.global-head{display:flex;align-items:center;justify-content:space-between}.global-head h2{font-size:17px;margin:0 0 12px}.global-head button{border:0;padding:2px 8px;font-size:22px;display:none}
+#globalPanel .help-link{display:block!important;margin:22px 0}#globalPanel #saveState{display:block;font-size:11px;color:#87818f}
+#globalPanel .decoration-entry{display:block;margin-top:18px;font-size:12px;width:100%}
+#settingsPanel{padding:16px!important}#settingsPanel .settings-head{margin-bottom:8px}#settingsPanel .settings-head h1{font-size:16px}#settingsPanel .context-kicker{display:none}
+#settingsPanel .context-actions{margin-bottom:14px}#settingsPanel #contextHint{font-size:10px}#settingsPanel #allSettingsBtn{padding:3px 6px;font-size:11px}
+#settingsPanel details{border:0}#settingsPanel details[open]>summary{display:none}#settingsPanel .group-body{padding-bottom:0}#settingsPanel .hint:last-child{margin-bottom:0}
+#settingsPanel [data-decoration-custom][hidden]{display:none}
+@media(min-width:1101px){.preview-pane{margin-right:280px}#previewScroll{padding:30px 324px 60px 24px!important}#settingsPanel{width:280px!important}#settingsToggle{display:none!important}}
+@media(max-width:1100px){
+ .preview-pane{margin-right:0}.editor-workspace{display:block!important}.preview-pane{height:100%}#previewScroll{padding:24px 12px 50px!important}#settingsToggle{display:block!important}
+ #settingsPanel,#globalPanel{display:none;position:fixed!important;inset:auto 0 0!important;width:100%!important;height:auto!important;min-height:0!important;max-height:42dvh!important;border:1px solid #ded8ed!important;border-radius:16px 16px 0 0!important;background:#fff;overflow:auto;z-index:45!important;box-shadow:0 -8px 30px #3827511a;transform:none!important}
+ body.settings-open #settingsPanel:not([hidden]){display:block!important}body.global-open #globalPanel{display:block!important;max-height:65dvh!important}.global-head button{display:block}
+}
+@media(min-width:1101px){#globalPanel{top:144px}}
+
+/* W030: errors remain actionable rather than disappearing into an empty frame. */
+#editorLoadStatus{flex:0 0 auto;padding:12px 24px;border-bottom:1px solid #ddd3eb;background:#faf7ff;font-size:13px;line-height:1.7;color:#513f6a}#editorLoadStatus[hidden]{display:none!important}#editorLoadStatus p{margin:0}#editorLoadStatus div{display:flex;align-items:center;gap:18px;margin-top:8px}#editorLoadStatus div[hidden]{display:none}#editorLoadStatus button{padding:5px 12px;background:#6e43af;color:#fff;border:0}#editorLoadStatus a{text-decoration:underline}#editorLoadStatus[data-mode=error]{background:#fff7f3;color:#793b2c}

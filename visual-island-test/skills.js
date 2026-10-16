@@ -3,7 +3,7 @@
  'use strict';
  const button=document.querySelector('#skillDownload'),status=document.querySelector('#skillDownloadStatus'),account=window.PlatformAccount;
  let busy=false,refreshing=false;
- const login='/login.html?returnTo=%2Fskills.html';
+ const login='/ai-brand-visual-agent/visual-island-test/login.html?returnTo=/ai-brand-visual-agent/visual-island-test/skills.html';
 function paint(user){button.textContent=!user?'登录后下载安装包':user.membership?.canExport?'下载 Skill 安装包':'升级后下载安装包';button.disabled=false;}
  async function refresh(){if(busy||refreshing)return;refreshing=true;try{paint(await account.currentUser());}catch{button.textContent='重试账户连接';button.disabled=false;status.textContent='暂时无法确认账户，请重试。';}finally{refreshing=false;}}
  button.addEventListener('click',async()=>{
@@ -12,7 +12,7 @@ function paint(user){button.textContent=!user?'登录后下载安装包':user.me
   try{
    user=await account.currentUser();
    if(!user){location.assign(login);return;}
-   if(!user.membership?.canExport){location.assign('membership.html');return;}
+   if(!user.membership?.canExport){account.promptUpgrade?.('pro');return;}
 button.textContent='正在准备安装包…';
    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20000);
    let blob;

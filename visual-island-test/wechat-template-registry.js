@@ -420,3 +420,20 @@ window.WechatTemplateRegistry={
     }
   }
 };
+
+/* TASK-WECHAT-EDITOR-016-R1: six approved R2 templates and stable personal slots. */
+(()=>{
+ const visible=['mengyu-purple-editorial','pastel-art-editorial','monochrome-order','warm-orange-journal','warm-beige-lifestyle','green'];
+ const labels={
+  'mengyu-purple-editorial':{version:'v6',lead:'紫调摄影导语',slots:{brandName:'导语栏目',displayName:'结尾署名',slogan:'导语重点句',columnName:'导语眉题',eyebrow:'标题上方短标',keywords:'导语短标签',authorName:'署名行',sourceName:'来源行'}},
+  'pastel-art-editorial':{version:'v4',lead:'周末灵感导语',slots:{brandName:'今日灵感来源',displayName:'结尾署名',slogan:'导语金句',columnName:'导语栏目',eyebrow:'标题上方短标',keywords:'日期旁短标签',authorName:'署名行',sourceName:'来源行'}},
+  'monochrome-order':{version:'v2',lead:'秩序笔记导语',slots:{brandName:'导语标签',displayName:'结尾署名',slogan:'导语重点句',columnName:'方法栏目',eyebrow:'标题上方短标',keywords:'黑白短标签',authorName:'署名行',sourceName:'来源行'}},
+  'warm-orange-journal':{version:'v5',lead:'慢行手账导语',slots:{brandName:'导语标签',displayName:'结尾署名',slogan:'橙色重点句',columnName:'手账栏目',eyebrow:'标题上方短标',keywords:'旅途短标签',authorName:'署名行',sourceName:'来源行'}},
+  'warm-beige-lifestyle':{version:'v3',lead:'日常器物导语',slots:{brandName:'导语标签',displayName:'结尾署名',slogan:'叠层金句',columnName:'生活栏目',eyebrow:'标题上方短标',keywords:'生活短标签',authorName:'署名行',sourceName:'来源行'}},
+  green:{version:'v5',lead:'一周自然观察',slots:{brandName:'编者按来源',displayName:'结尾署名',slogan:'自然观察金句',columnName:'一周自然观察',eyebrow:'城市自然观察眉题',keywords:'观察短标签',authorName:'署名行',sourceName:'来源行'}}};
+ for(const [id,entry] of Object.entries(window.WechatTemplateRegistry)){
+  entry.catalogVisible=visible.includes(id);
+  if(entry.catalogVisible)entry.editorV4={schema:'mengyu-wechat-editor-project/v4',...labels[id]};
+ }
+ window.WechatTemplateRegistry.visibleIds=visible;
+})();

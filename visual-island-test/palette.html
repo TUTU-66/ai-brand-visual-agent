@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
+<script src="split-api-client.js?v=043"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>五色配色卡｜梦玉的能力岛</title>
+  <title>四色配色卡｜梦玉的能力岛</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="palette.css?v=ctrl01-visual-1">
+  <link rel="stylesheet" href="palette.css?v=palette-shared-011">
   <link rel="stylesheet" href="platform-theme.css?v=site-audit-004">
   <script src="platform-theme.js?v=unified-2"></script>
-  <script src="preview-mode.js"></script>
-</head>
+<link rel="stylesheet" href="tool-save-access.css?v=lead-save-031-final"></head>
 <body class="platform-palette palette-integrated palette-account-locked" data-platform-tool="palette" data-palette-view="preview">
   <header class="appbar platform-tool-header">
     <a class="back platform-tool-brand" href="index.html"><img src="assets/home-psd-001/mengyu-logo.webp" alt="MENGYU" width="2028" height="594"><span>梦玉的能力岛</span></a>
@@ -22,7 +22,7 @@
     <button id="toolNavToggle" class="platform-tool-menu" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="toolNav">菜单</button>
   </header>
   <div class="palette-toolbar">
-    <div class="palette-location"><a href="gallery.html?type=palette">← 配色案例</a><h1>五色配色卡</h1><div class="palette-account"><span id="paletteTier"></span><a id="paletteUpgrade" href="membership.html" hidden>升级会员</a></div></div>
+    <div class="palette-location"><a href="gallery.html?type=palette">← 配色案例</a><h1>四色配色卡</h1><div class="palette-account"><span id="paletteTier"></span><a id="paletteUpgrade" href="membership.html" hidden>升级会员</a></div></div>
     <div class="top-actions" inert>
       <button class="quiet" id="saveBtn">保存配色</button>
       <button class="quiet" id="copyAllBtn">复制整组</button>
@@ -31,7 +31,7 @@
   </div>
   <div class="palette-view-tabs" role="tablist" aria-label="配色工作区"><button id="palettePreviewTab" role="tab" aria-selected="true" aria-controls="palettePreviewPanel" data-palette-view="preview">配色预览</button><button id="paletteSettingsTab" role="tab" aria-selected="false" aria-controls="paletteSettingsPanel" data-palette-view="settings" tabindex="-1">选择与调整</button></div>
 
-  <section class="palette-account-guard" id="paletteGuard" role="status"><p id="paletteGuardMessage">正在确认账户…</p><button id="paletteRetry" type="button">重试</button><a href="login.html?returnTo=%2Fpalette.html" id="paletteLogin">登录后继续</a></section>
+  <section class="palette-account-guard platform-login-guard" id="paletteGuard" role="status"><p id="paletteGuardMessage">正在确认账户…</p><div class="platform-login-actions"><a class="platform-login-button" href="login.html?returnTo=%2Fpalette.html" id="paletteLogin">登录</a><span class="platform-login-hint">登录后继续</span><button class="platform-login-retry" id="paletteRetry" type="button">重试</button></div></section>
   <main class="palette-workspace" inert>
     <aside class="palette-panel" id="paletteSettingsPanel" aria-label="配色选择与调整">
       <div class="panel-intro">
@@ -84,7 +84,7 @@
       </div>
 
       <div class="stage-scroll">
-        <section class="swatch-grid" id="swatchGrid" aria-label="当前五色配色"></section>
+        <section class="swatch-grid" id="swatchGrid" aria-label="当前四色配色"></section>
 
         <details class="palette-advice"><summary>配色建议与对比</summary><section class="evidence-strip" aria-label="配色可用性提示">
           <div><span>适合做</span><b id="scenarioText">—</b><em id="usageText">读取中</em></div>
@@ -108,8 +108,11 @@
   <script src="portable-package.js?v=handoff-v1"></script>
   <script>window.PaletteModuleConfig={autoRestoreLegacy:false,requireActionHandler:true,actionTimeoutMs:30000};</script>
   <script src="platform-account.js?v=palette-permission-1"></script>
-  <script src="palette.js?v=site-audit-004"></script>
-  <script src="palette-account.js?v=site-catalog-006"></script>
+  <script src="palette.js?v=palette-shared-011"></script>
+  <script src="saved-palettes.js?v=palette-shared-011"></script>
+  <script src="palette-account.js?v=palette-shared-011"></script>
   <script src="palette-shell.js?v=ctrl01-visual-1"></script>
-</body>
+<script src="tool-save-access.js?v=lead-save-031-final"></script></body>
 </html>
+
+

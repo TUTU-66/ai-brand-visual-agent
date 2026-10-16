@@ -1,4 +1,4 @@
-/* CTRL-01: guest trial, account-scoped assets and live server export. No paid rights cached. */
+/* CTRL-01: login-required Free use, account-scoped assets and paid server export. */
 (() => {
   'use strict';
   const account=window.PlatformAccount, mod=window.PaletteModule, $=s=>document.querySelector(s);
@@ -8,10 +8,10 @@
   const query=new URLSearchParams(location.search);
   let assetId=query.get('asset')||'', presetId=query.get('preset')||'', candidates=[];
   const returnPath=()=>location.pathname+location.search;
-  const draftKey=()=>`mengyu-palette-session-v1:${encodeURIComponent(owner||'guest')}:${encodeURIComponent(assetId||(presetId?`preset:${presetId}`:'new'))}`;
-  function stash(){if(initialized&&!switched)try{sessionStorage.setItem(draftKey(),JSON.stringify({ownerId:owner||'guest',snapshot:mod.getSnapshot()}));}catch{}}
-  function lock(message){locked=true;document.body.classList.add('palette-account-locked');$('.palette-workspace').inert=true;$('.top-actions').inert=true;$('#paletteGuard').hidden=false;$('#paletteGuardMessage').textContent=message;}
-  function unlock(user=null){locked=false;document.body.classList.remove('palette-account-locked');$('.palette-workspace').inert=false;$('.top-actions').inert=false;$('#paletteGuard').hidden=true;$('#paletteUpgrade').hidden=false;if(user){const tier=user.membership?.tier;$('#paletteTier').textContent=tier==='pro'?'Pro':tier==='max'?'Max':'Free';$('#paletteUpgrade').textContent=user.membership?.canExport?'查看会员':'升级会员';$('#paletteAvatar').hidden=false;account.paintAvatar($('#paletteAvatar'),user);}else{$('#paletteTier').textContent='试用';$('#paletteUpgrade').textContent='查看会员';$('#paletteAvatar').hidden=true;}}
+  const draftKey=()=>`mengyu-palette-session-v1:${encodeURIComponent(owner||'login-required')}:${encodeURIComponent(assetId||(presetId?`preset:${presetId}`:'new'))}`;
+  function stash(){if(initialized&&!switched&&owner)try{sessionStorage.setItem(draftKey(),JSON.stringify({ownerId:owner,snapshot:mod.getSnapshot()}));}catch{}}
+  function lock(message){locked=true;document.body.classList.add('palette-account-locked');$('.palette-workspace').inert=true;$('.top-actions').inert=true;$('#paletteGuard').dataset.mode=message.startsWith('请先登录')?'login':'retry';$('#paletteGuard').hidden=false;$('#paletteGuardMessage').textContent=message;}
+  function unlock(user){locked=false;document.body.classList.remove('palette-account-locked');$('.palette-workspace').inert=false;$('.top-actions').inert=false;$('#paletteGuard').hidden=true;$('#paletteUpgrade').hidden=false;const tier=user.membership?.tier;$('#paletteTier').textContent=tier==='pro'?'Pro':tier==='max'?'Max':'Free';$('#paletteUpgrade').textContent=user.membership?.canExport?'查看会员':'升级会员';$('#paletteAvatar').hidden=false;account.paintAvatar($('#paletteAvatar'),user);}
   function changed(){stash();switched=true;version++;mod.restoreSnapshot(initial);$('#paletteLegacyList').replaceChildren();$('#paletteTier').textContent='';$('#paletteAvatar').hidden=true;lock('账户已变化，请刷新后继续。');$('#paletteRetry').textContent='刷新页面';}
   function ensureSame(user){if(!user){changed();throw new Error('请重新登录后继续');}if(owner!==user.id){changed();throw new Error('账户已变化，请刷新后继续');}}
   async function refresh(){
@@ -20,7 +20,7 @@
     const attempt=++version;
     refreshing=(async()=>{try{
       const user=await account.currentUser();if(attempt!==version)return;
-      if(!user){if(owner){changed();return;}if(assetId){lock('请登录后从个人空间打开这条配色。');$('#paletteLogin').href='login.html?returnTo='+encodeURIComponent(returnPath());return;}if(!initialized){try{const draft=JSON.parse(sessionStorage.getItem(draftKey())||'null');if(draft?.ownerId==='guest')mod.restoreSnapshot(draft.snapshot);}catch{}initialized=true;}unlock();return;}
+      if(!user){if(owner)changed();else{lock('请先登录。Free 账户可以选择、调整、预览和保存配色；下载需开通 Pro / Max。');$('#paletteLogin').href='/ai-brand-visual-agent/visual-island-test/login.html?returnTo='+encodeURIComponent(returnPath());}return;}
       if((owner&&owner!==user.id)||(!owner&&initialized)){changed();return;}
       owner=user.id;
       if(!initialized){
@@ -70,6 +70,7 @@
           const id='legacy-'+item.id;
           claims[item.id]={ownerId:user.id,assetId:id,status:'reserved'};localStorage.setItem(claimsKey,JSON.stringify(claims));
           account.writePalette(user.id,id,item.snapshot);
+          if(window.SavedPalettes)await SavedPalettes.saveForOwner(SavedPalettes.fromPalette(item.snapshot),user.id);
           claims[item.id].status='complete';localStorage.setItem(claimsKey,JSON.stringify(claims));count++;
         }
         $('#paletteLegacyMessage').textContent=`已存入 ${count} 项；原记录保留。`;
@@ -81,12 +82,9 @@
     const start=performance.now(), stamp=version;
     const valid=()=>{if(switched||locked||stamp!==version||performance.now()-start>25000)throw new Error('账户状态已变化或操作超时，请重试');};
     try{
-      let user=null;
-      if(owner){user=await requireUser();valid();}
-      else{if(locked||switched||!initialized)throw new Error('工具尚未准备好，请重试');user=await account.currentUser();if(user){changed();throw new Error('已检测到登录状态，请刷新后继续');}valid();}
+      const user=await requireUser();valid();
       if(kind==='save'){
-        if(!user){sessionStorage.setItem(draftKey(),JSON.stringify({ownerId:'guest',snapshot}));return{ok:true,message:'已保存为本机试用草稿'};}
-        const save=()=>{valid();const id=assetId||crypto.randomUUID();const previousKey=draftKey();account.writePalette(user.id,id,snapshot);assetId=id;const url=new URL(location.href);url.searchParams.set('asset',id);history.replaceState(null,'',url.pathname+url.search);try{sessionStorage.removeItem(previousKey);sessionStorage.removeItem(draftKey());}catch{}return{ok:true,message:'已保存到我的资产（仅此浏览器）',assetId:id};};
+        const save=async()=>{valid();const id=assetId||crypto.randomUUID(),previousKey=draftKey();account.writePalette(user.id,id,snapshot);let shared=true;try{if(window.SavedPalettes)await SavedPalettes.saveForOwner(SavedPalettes.fromPalette(snapshot),user.id)}catch{shared=false}valid();assetId=id;const url=new URL(location.href);url.searchParams.set('asset',id);history.replaceState(null,'',url.pathname+url.search);try{sessionStorage.removeItem(previousKey);sessionStorage.removeItem(draftKey());}catch{}return{ok:true,message:shared?'已保存到个人空间，可在网站和公众号中使用':'已保存到个人空间；共享配色暂未同步',assetId:id};};
         return navigator.locks?await navigator.locks.request('mengyu-palette-save:'+user.id,save):save();
       }
       if(kind==='copy-color'||kind==='copy-all'){
@@ -95,8 +93,7 @@
         await navigator.clipboard.writeText(text);return{ok:true,message:'已复制色值'};
       }
       if(kind!=='download-package')throw new Error('不支持的操作');
-      if(!user){$('#paletteUpgrade').focus();return{ok:false,code:'login-required',message:'可以继续在线试用；下载需要登录并开通 Pro 或 Max。'};}
-      if(!user.membership?.canExport){$('#paletteUpgrade').focus();return{ok:false,code:'membership-required',message:'Free 可体验；下载请升级 Pro 或 Max。'};}
+      if(!user.membership?.canExport){account.promptUpgrade?.('pro');return{ok:false,code:'membership-required',message:'扫码联系工作人员开通会员后即可下载。'};}
       const controller=new AbortController(), remaining=Math.max(1,23000-(performance.now()-start));
       const timer=setTimeout(()=>controller.abort(),remaining);
       try{
@@ -104,14 +101,14 @@
         if(!response.ok){let data={};try{data=await response.json();}catch{}throw new Error(response.status===404?'配色下载服务尚未启用，请稍后再试。':data.error||'下载失败，请重试');}
         const blob=await response.blob();valid();
         const latest=await account.currentUser();ensureSame(latest);valid();if(!latest.membership?.canExport)throw new Error('会员状态已变化，未下载');
-        const url=URL.createObjectURL(blob), a=document.createElement('a');a.href=url;a.download=`五色配色应用包_${snapshot.name.replace(/[\\/:*?"<>|]/g,'_').slice(0,60)}.zip`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+        const url=URL.createObjectURL(blob), a=document.createElement('a');a.href=url;a.download=`四色配色应用包_${snapshot.name.replace(/[\\/:*?"<>|]/g,'_').slice(0,60)}.zip`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
         return{ok:true,message:'配色应用包已下载'};
       }finally{clearTimeout(timer);}
     }catch(error){return{ok:false,message:error.name==='AbortError'?'操作超时，请重试':error.message||'操作失败，请重试'};}
   }
   mod.setActionHandler(perform);
   $('#paletteRetry').onclick=()=>switched?location.reload():void refresh();
-  $('#paletteLogin').href='login.html?returnTo='+encodeURIComponent(returnPath());
+  $('#paletteLogin').href='/ai-brand-visual-agent/visual-island-test/login.html?returnTo='+encodeURIComponent(returnPath());
   addEventListener('blur',()=>{stash();if(owner){version++;lock('正在确认账户…');}});
   addEventListener('focus',()=>void refresh());
   addEventListener('pageshow',()=>void refresh());
