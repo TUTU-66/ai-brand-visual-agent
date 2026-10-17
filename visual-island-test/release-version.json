@@ -1,11 +1,9 @@
 {
-    "version":  "stage-045",
-    "mode":  "github-with-server-api",
-    "apiOrigin":  "https://124.220.229.39",
+    "version":  "stage-047",
+    "wechatExportReady":  true,
     "login":  "password-only",
+    "packageAudit":  "25/25-local",
     "membership":  "manual",
-    "activityAnalytics":  true,
-    "contentCollected":  false,
-    "retentionDays":  180,
-    "wechatExportReady":  false
+    "mode":  "github-with-server-api",
+    "apiOrigin":  "https://124.220.229.39"
 }

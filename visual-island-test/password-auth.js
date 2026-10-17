@@ -5,12 +5,15 @@
   const phone=$('#phone');
   const message=$('#formMessage');
   const query=new URLSearchParams(location.search);
-  const requestedReturn=query.get('returnTo')||'/ai-brand-visual-agent/visual-island-test/space.html';
-  const returnTo=/^\/(?!\/)[A-Za-z0-9_./?=&%-]*$/.test(requestedReturn)?requestedReturn:'/ai-brand-visual-agent/visual-island-test/space.html';
+  const requestedReturn=query.get('returnTo')||'/space.html';
+  const returnTo=/^\/(?!\/)[A-Za-z0-9_./?=&%-]*$/.test(requestedReturn)?requestedReturn:'/space.html';
+  const appBase=location.hostname.endsWith('.github.io')?location.pathname.slice(0,location.pathname.lastIndexOf('/')+1):'/';
+  const clientTarget=target=>appBase!=='/'&&target.startsWith('/')&&!target.startsWith(appBase)?appBase.replace(/\/$/,'')+target:target;
   // Keep the original tool destination when switching account entry methods.
   if(query.has('returnTo'))document.querySelectorAll('a[href]').forEach(link=>{
     const target=new URL(link.getAttribute('href'),location.href);
-    if(target.origin===location.origin&&['/ai-brand-visual-agent/visual-island-test/login.html','/ai-brand-visual-agent/visual-island-test/register.html','/ai-brand-visual-agent/visual-island-test/forgot-password.html','/ai-brand-visual-agent/visual-island-test/auth.html'].includes(target.pathname)){
+    const accountPath='/'+target.pathname.split('/').pop();
+    if(target.origin===location.origin&&['/login.html','/register.html','/forgot-password.html','/auth.html'].includes(accountPath)){
       target.searchParams.set('returnTo',returnTo);link.href=target.pathname+target.search+target.hash;
     }
   });
@@ -83,10 +86,10 @@
     try{
       const data=await api(endpoint,{method:'POST',body:JSON.stringify(payload)});
       setMessage(page==='login'?'登录成功，正在进入':page==='register'?'注册成功，正在进入':'密码已更新，正在进入','success');
-      location.href=data.redirect||returnTo;
+      location.href=clientTarget(data.redirect||returnTo);
     }catch(error){setMessage(error.message,'error');button.disabled=false;button.textContent=page==='login'?'登录':page==='register'?'注册并进入':'保存新密码并登录'}
   });
 
-  fetch('/api/me').then(response=>response.ok?response.json():null).then(data=>{if(data?.authenticated&&data.user)location.replace(returnTo)}).catch(()=>{});
+  fetch('/api/me').then(response=>response.ok?response.json():null).then(data=>{if(data?.authenticated&&data.user)location.replace(clientTarget(returnTo))}).catch(()=>{});
   loadConfig();
 })();
