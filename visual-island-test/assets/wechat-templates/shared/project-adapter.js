@@ -227,6 +227,30 @@ function finishDecorations029(article,id,p,editor){
  if(id==='monochrome-order')article.querySelectorAll(':scope > .chapter').item(article.querySelectorAll(':scope > .chapter').length-1)?.classList.add('wx-before-ending');
  const end=article.querySelector(':scope > .ending');if(end){decorate(end.querySelector('.ending-copy'),'ending-copy',article,false,false);decorate(end.querySelector('.ghost'),'ending-mark',article,false,false);decorate(end.querySelector('.ending-en'),'ending-en',article,true,false);}
 }
+// W048: English title ornaments are intentionally removed from every public
+// WeChat template. The warm-orange journal keeps its approved DESIGN marker.
+// This runs after the legacy decoration adapter so editor preview, saved
+// projects and exported packages share the same visible result.
+function removeEnglishTitleDecorations048(article,id){
+ const candidates=article.querySelectorAll([
+  '.article-head .eyebrow',
+  '.opening-en',
+  '[data-role="partlabel"]',
+  '.section-head p',
+  '.chapter-head small',
+  '.chapter-title > .part',
+  '.quote-note > .label',
+  '.ending-en',
+  '.ghost > small',
+  '.topline > span:last-child'
+ ].join(','));
+ candidates.forEach(node=>{
+  const text=(node.textContent||'').trim();
+  if(!/[A-Za-z]{2}/.test(text))return;
+  if(id==='warm-orange-journal'&&/^DESIGN$/i.test(text))return;
+  node.remove();
+ });
+}
 function enhanceDocument(doc,id,raw,editor){
   const p=normalize(raw,id),article=doc.querySelector('#article')||doc.body;if(!article)return p;
   doc.head.insertAdjacentHTML('beforeend',css(id,p));
@@ -254,7 +278,7 @@ function enhanceDocument(doc,id,raw,editor){
     caption.dataset.bodyImageSlot=slotId+'-caption';caption.dataset.editSection='media';
   });
   // W028 applies the unified sample mapping after structural preparation.
-  article.querySelectorAll('h2,h3,.section-head,.chapter-head,.chapter-title').forEach(x=>{(x.closest('section,div')||x).dataset.editSection='headings';});article.querySelectorAll('p,blockquote').forEach(x=>{if(!x.closest('[data-edit-section]'))x.dataset.editSection='body';});const ending=article.querySelector('.ending,[class*=ending],footer');if(ending)ending.dataset.editSection='ending';article.insertAdjacentHTML('beforeend',identityHTML(p));finish028(article,id,p);finishDecorations029(article,id,p,editor);return p;
+  article.querySelectorAll('h2,h3,.section-head,.chapter-head,.chapter-title').forEach(x=>{(x.closest('section,div')||x).dataset.editSection='headings';});article.querySelectorAll('p,blockquote').forEach(x=>{if(!x.closest('[data-edit-section]'))x.dataset.editSection='body';});const ending=article.querySelector('.ending,[class*=ending],footer');if(ending)ending.dataset.editSection='ending';article.insertAdjacentHTML('beforeend',identityHTML(p));finish028(article,id,p);finishDecorations029(article,id,p,editor);removeEnglishTitleDecorations048(article,id);return p;
 }
 function enhanceHTML(html,id,raw){const p=normalize(raw,id),content=contentFromHTML(html);let out=html.replace('</head>',css(id,p)+'</head>');out=replaceOpeningHTML(out,exactLeadHTML(id,p,false,content));return out.replace(/<\/article>/i,identityHTML(p)+'</article>');}
 function leadHTML(id,p,editor,content){return exactLeadHTML(id,p,editor,content||{});}function eyebrowHTML(){return '';}
