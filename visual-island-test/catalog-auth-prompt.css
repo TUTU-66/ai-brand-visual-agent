@@ -1,0 +1,6 @@
+/* One lightweight unauthenticated download prompt across catalog pages. */
+.website-toast,.template-toast,.catalog-auth-toast{position:fixed!important;left:50%!important;right:auto!important;bottom:24px!important;z-index:500!important;width:max-content;max-width:calc(100vw - 32px);padding:11px 15px!important;border:0!important;border-radius:7px!important;background:#2d2635!important;color:#fff!important;font:12px/1.55 PuHui,"Microsoft YaHei",sans-serif!important;box-shadow:0 12px 34px rgba(35,25,47,.2);opacity:0;transform:translate(-50%,20px)!important;pointer-events:none;transition:opacity .18s,transform .18s!important;box-sizing:border-box}
+.website-toast.show,.template-toast.show,.catalog-auth-toast.show{opacity:1!important;transform:translate(-50%,0)!important;pointer-events:auto}
+.catalog-auth-toast a{margin-left:8px;color:#e5d7ff!important;font-weight:700;text-decoration:none}.catalog-auth-toast a:hover{text-decoration:underline}
+@media(max-width:620px){.website-toast,.template-toast,.catalog-auth-toast{bottom:16px!important;text-align:center}}
+@media(prefers-reduced-motion:reduce){.website-toast,.template-toast,.catalog-auth-toast{transition:none!important}}

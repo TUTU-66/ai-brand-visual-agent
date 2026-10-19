@@ -10,7 +10,7 @@
   const returnPath=()=>location.pathname+location.search;
   const draftKey=()=>`mengyu-palette-session-v1:${encodeURIComponent(owner||'login-required')}:${encodeURIComponent(assetId||(presetId?`preset:${presetId}`:'new'))}`;
   function stash(){if(initialized&&!switched&&owner)try{sessionStorage.setItem(draftKey(),JSON.stringify({ownerId:owner,snapshot:mod.getSnapshot()}));}catch{}}
-  function lock(message){locked=true;document.body.classList.add('palette-account-locked');$('.palette-workspace').inert=true;$('.top-actions').inert=true;$('#paletteGuard').dataset.mode=message.startsWith('请先登录')?'login':'retry';$('#paletteGuard').hidden=false;$('#paletteGuardMessage').textContent=message;}
+  function lock(message){locked=true;document.body.classList.add('palette-account-locked');$('.palette-workspace').inert=true;$('.top-actions').inert=true;$('#paletteGuard').dataset.mode=/(?:请先登录|登录后)/.test(message)?'login':'retry';$('#paletteGuard').hidden=false;$('#paletteGuardMessage').textContent=message;}
   function unlock(user){locked=false;document.body.classList.remove('palette-account-locked');$('.palette-workspace').inert=false;$('.top-actions').inert=false;$('#paletteGuard').hidden=true;$('#paletteUpgrade').hidden=false;const tier=user.membership?.tier;$('#paletteTier').textContent=tier==='pro'?'Pro':tier==='max'?'Max':'Free';$('#paletteUpgrade').textContent=user.membership?.canExport?'查看会员':'升级会员';$('#paletteAvatar').hidden=false;account.paintAvatar($('#paletteAvatar'),user);}
   function changed(){stash();switched=true;version++;mod.restoreSnapshot(initial);$('#paletteLegacyList').replaceChildren();$('#paletteTier').textContent='';$('#paletteAvatar').hidden=true;lock('账户已变化，请刷新后继续。');$('#paletteRetry').textContent='刷新页面';}
   function ensureSame(user){if(!user){changed();throw new Error('请重新登录后继续');}if(owner!==user.id){changed();throw new Error('账户已变化，请刷新后继续');}}
@@ -20,7 +20,7 @@
     const attempt=++version;
     refreshing=(async()=>{try{
       const user=await account.currentUser();if(attempt!==version)return;
-      if(!user){if(owner)changed();else{lock('请先登录。Free 账户可以选择、调整、预览和保存配色；下载需开通 Pro / Max。');$('#paletteLogin').href='/ai-brand-visual-agent/visual-island-test/login.html?returnTo='+encodeURIComponent(returnPath());}return;}
+      if(!user){if(owner)changed();else{lock('登录后可以继续选择、调整和保存配色；下载应用包需开通 Pro / Max。');$('#paletteLogin').href='/ai-brand-visual-agent/visual-island-test/login.html?returnTo='+encodeURIComponent(returnPath());}return;}
       if((owner&&owner!==user.id)||(!owner&&initialized)){changed();return;}
       owner=user.id;
       if(!initialized){

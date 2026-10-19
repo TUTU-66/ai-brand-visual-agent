@@ -9,7 +9,7 @@
   function stash() { if(dirty&&!switched&&owner)try{sessionStorage.setItem(pendingKey(owner.id),JSON.stringify(mod.serializeProject()));}catch{} }
   function cover(text) {
     stash(); guard.hidden=false; message.textContent=text;
-    guard.dataset.mode=text.startsWith('请先登录')?'login':'retry';
+    guard.dataset.mode=/(?:请先登录|登录后)/.test(text)?'login':'retry';
     workspace.inert=true; actions.inert=true;
     document.body.classList.add('comic-account-locked');
   }
@@ -30,7 +30,7 @@
         const user=await account.currentUser();
         if(!user){
           if(owner){switched=true;}
-          showUser();cover('请先登录。Free 账户可以制作、预览和保存条漫；下载与导出需开通 Pro / Max。');return null;
+          showUser();cover('登录后可以继续编辑、预览和保存条漫；下载风格包需开通 Pro / Max。');return null;
         }
         if(switched){cover('账户已变化。请载入当前账户的设定。');return null;}
         if(owner&&owner.id!==user.id){

@@ -1,14 +1,20 @@
-/* Account gate only, never style the work inside a preview. */
+/* Unified account guard for protected editor workspaces. */
 .workspace-locked [data-owned-workspace]{visibility:hidden!important;pointer-events:none!important}
-#workspaceGuard{position:fixed;z-index:110;left:50%;top:45%;transform:translate(-50%,-50%)}
+#workspaceGuard{position:fixed;z-index:300;left:50%;top:calc(50% + 28px);transform:translate(-50%,-50%)}
 #workspaceGuard[hidden]{display:none}
-.platform-login-guard{width:min(480px,calc(100% - 32px));padding:28px 26px;background:#f7f3fb;color:#30213f;border:1px solid #bba4d3;border-radius:10px;box-shadow:0 18px 50px rgba(67,42,92,.08);font:14px/1.7 PuHui,"Microsoft YaHei",sans-serif;box-sizing:border-box}
-.platform-login-guard>p{margin:0 0 24px;max-width:40em}
-.platform-login-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px}
-.platform-login-button{display:inline-flex;align-items:center;justify-content:center;min-width:88px;min-height:44px;padding:9px 18px;background:#6e43af;color:#fff!important;border:1px solid #6e43af;border-radius:7px;text-decoration:none!important;font:inherit;font-weight:500;box-sizing:border-box}
-.platform-login-hint{color:#4b3a5f;white-space:nowrap}
-.platform-login-retry{min-height:44px;padding:9px 16px;background:#fff;color:#30213f;border:1px solid #9f8db3;border-radius:7px;cursor:pointer;font:inherit}
-.platform-login-secondary{color:#4b3a5f!important;text-underline-offset:3px}
-.platform-login-guard[data-mode="login"] .platform-login-retry,.platform-login-guard[data-mode="login"] .platform-login-secondary{display:none}
-.platform-login-guard[data-mode="retry"] .platform-login-hint{display:none}
-@media(max-width:700px){.platform-login-guard{padding:24px 20px}.platform-login-guard>p{margin-bottom:20px}.platform-login-actions{gap:12px 16px}}
+.platform-login-guard{width:min(430px,calc(100vw - 36px));padding:31px 30px 29px;background:rgba(251,249,253,.97);color:#30213f;border:1px solid #cbbbdc;border-radius:14px;box-shadow:0 24px 70px rgba(67,42,92,.12);font:14px/1.7 PuHui,"Microsoft YaHei",sans-serif;box-sizing:border-box;backdrop-filter:blur(12px)}
+.platform-login-guard>p{margin:0 0 25px;max-width:34em;color:#655970;font-size:13px;line-height:1.75}
+.platform-login-guard>p::before{content:'账户登录';display:block;margin-bottom:7px;color:#7a60ba;font-size:11px;font-weight:700;letter-spacing:.13em}
+.platform-login-guard[data-mode="login"]>p::before{content:'登录后继续';color:#30213f;font-size:22px;line-height:1.35;letter-spacing:0}
+.platform-login-actions{display:flex;align-items:center;flex-wrap:wrap;gap:11px}
+.platform-login-button,.platform-login-retry{display:inline-flex;align-items:center;justify-content:center;min-width:96px;min-height:43px;padding:9px 18px;border-radius:7px;text-decoration:none!important;font:inherit;font-weight:600;box-sizing:border-box}
+.platform-login-button{background:#6e43af;color:#fff!important;border:1px solid #6e43af}
+.platform-login-button:hover{background:#5e3898;border-color:#5e3898}
+.platform-login-retry{background:#fff;color:#30213f;border:1px solid #a99aba;cursor:pointer}
+.platform-login-secondary{display:inline-flex;align-items:center;min-height:43px;padding:8px 6px;color:#5c4c6b!important;text-decoration:none!important;font-size:13px}
+.platform-login-secondary:hover{text-decoration:underline!important;text-underline-offset:4px}
+.platform-login-hint{display:none!important}
+.platform-login-guard[data-mode="login"] .platform-login-retry{display:none}
+.platform-login-guard[data-mode="login"] .platform-login-secondary{display:inline-flex}
+.platform-login-guard[data-mode="retry"] .platform-login-secondary{display:none}
+@media(max-width:700px){#workspaceGuard{top:50%}.platform-login-guard{padding:27px 23px 25px}.platform-login-guard[data-mode="login"]>p::before{font-size:20px}.platform-login-actions{gap:9px}}
